@@ -1,0 +1,39 @@
+.jenkins-breadcrumbs {
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.jenkins-breadcrumb {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 13px;
+  opacity: 0.6;
+  font-weight: 700;
+  color: var(--foreground-color);
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+
+  &:hover {
+    opacity: 0.4;
+  }
+
+  &:active {
+    opacity: 0.2;
+  }
+
+  &::after {
+    content: "";
+    display: inline-block;
+    position: relative;
+    width: 4px;
+    height: 4px;
+    border-top: 2px solid currentColor;
+    border-right: 2px solid currentColor;
+    transform: rotate(45deg);
+    margin: 0 15px 0 10px;
+  }
+}

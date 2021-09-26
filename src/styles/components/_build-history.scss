@@ -1,0 +1,17 @@
+.jenkins-build-history {
+  display: flex;
+  flex-direction: column;
+  max-height: 284px;
+  overflow-y: scroll;
+  margin-bottom: -20px;
+
+  &__item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+
+    img {
+      margin-right: 15px;
+    }
+  }
+}

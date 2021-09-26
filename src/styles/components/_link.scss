@@ -1,0 +1,13 @@
+.jenkins-link {
+  color: var(--link-color);
+  text-decoration: none;
+
+  &:hover {
+    color: var(--link-color-hover);
+    text-decoration: underline;
+  }
+
+  &:active {
+    color: var(--link-color-active);
+  }
+}

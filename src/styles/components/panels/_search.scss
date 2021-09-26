@@ -1,0 +1,40 @@
+$search-animation-duration: 0.2s;
+
+.app-search-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(white, 0.6);
+  backdrop-filter: blur(10px);
+  animation: fade-in-search $search-animation-duration ease;
+
+  div {
+    max-width: 800px;
+    margin: 90px auto auto;
+    animation: fade-in-search-inner $search-animation-duration ease;
+
+    input {
+      appearance: none;
+      width: 100%;
+      background: transparent;
+      border: none;
+      outline: none;
+      font-size: 40px;
+      font-weight: 700;
+    }
+  }
+}
+
+@keyframes fade-in-search {
+  from {
+    opacity: 0;
+  }
+}
+
+@keyframes fade-in-search-inner {
+  from {
+    transform: translateY(100px);
+  }
+}

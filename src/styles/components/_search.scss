@@ -1,0 +1,23 @@
+.jenkins-search {
+  position: relative;
+  border: 2px solid rgba(black, 0.1);
+  margin-bottom: 20px;
+  border-radius: 6px;
+  //background: rgba(black, 0.1);
+
+  input {
+    appearance: none;
+    outline: none;
+    border: none;
+    font-size: 14px;
+    padding: 8px 20px 8px 36px;
+    background: transparent;
+  }
+
+  span {
+    position: absolute;
+    top: 7px;
+    left: 9px;
+    transform: scale(0.7);
+  }
+}

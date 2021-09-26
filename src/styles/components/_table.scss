@@ -1,0 +1,55 @@
+.jenkins-table {
+  display: table;
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 0 0 2px rgba(black, 0.075);
+  background-color: var(--background-color-overlay);
+  color: var(--foreground-color);
+
+  thead {
+    th {
+      background-color: var(--table-even-row-background-color);
+      color: var(--foreground-color);
+      text-align: left;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 12px;
+      padding: 15px;
+    }
+  }
+
+  tbody {
+    tr {
+      color: var(--foreground-color);
+      //border-bottom: 2px solid #dddddd;
+
+      &:nth-of-type(even) {
+        background-color: var(--table-even-row-background-color);
+      }
+
+      //&:last-of-type {
+      //  border-bottom: none
+      //}
+    }
+  }
+
+  th, td {
+    padding: 15px;
+  }
+
+  &-icon-host {
+    text-align: center!important;
+    padding: 0!important;
+  }
+
+  &-icon {
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 26px;
+    height: 26px;
+  }
+}

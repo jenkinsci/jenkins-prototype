@@ -1,0 +1,57 @@
+.jenkins-button {
+  position: relative;
+  display: inline-block;
+  background: var(--button-background-color);
+  color: var(--button-foreground-color);
+  padding: 10px 15px;
+  margin-left: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  text-shadow: 0 1px 0 var(--background-color);
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: inherit;
+    color: inherit;
+    border-bottom: 2px solid var(--button-foreground-color);
+    opacity: 0.05;
+  }
+
+  &:hover {
+    background: var(--button-background-color-hover);
+    color: var(--button-foreground-color-hover);
+  }
+
+  &:active {
+    background: var(--button-background-color-active);
+    color: var(--button-foreground-color-active);
+  }
+
+  &--overflow {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 37px;
+    padding-top: 1px;
+    padding-bottom: 0;
+
+    svg {
+      color: currentColor!important;
+    }
+  }
+
+  &--primary {
+    background: rgba(#0ebb43, 0.16);
+    color: #0ebb43;
+
+    &::after {
+      border-bottom: 2px solid #0ebb43;
+      opacity: 0.1;
+    }
+  }
+}
