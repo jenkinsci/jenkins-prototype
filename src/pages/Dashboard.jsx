@@ -205,7 +205,7 @@ function Dashboard() {
               <th>Last success</th>
               <th>Last failure</th>
               <th>Last duration</th>
-              <th className="jenkins-table-icon-host">Run</th>
+              <th className="jenkins-table-icon-host"></th>
             </tr>
           </thead>
           <tbody>
