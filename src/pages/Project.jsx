@@ -2,7 +2,8 @@ import {ReactComponent as Sun} from "../sun.svg";
 import {ReactComponent as Cloud} from "../cloud.svg";
 import Green from "../green.svg";
 import {Link} from "react-router-dom";
-import {EllipsisHorizontalOutline, SearchOutline} from "react-ionicons";
+import {EllipsisHorizontalOutline, PlayOutline, SearchOutline} from "react-ionicons";
+import Stageview from "../components/Stageview";
 
 function Dashboard() {
 
@@ -35,9 +36,12 @@ function Dashboard() {
           <h1>Scalemate</h1>
         </div>
         <div className={"jenkins-app-bar__controls"}>
-          <a className={"jenkins-button jenkins-button--primary"}>Build with parameters</a>
-          <a className={"jenkins-button"}>Configure</a>
-          <a className={"jenkins-button jenkins-button--overflow"}>
+          <a className={"jenkins-button jenkins-button--green"}>
+            <PlayOutline/>
+            Build with parameters
+          </a>
+          <Link to={"/project/configure"} className={"jenkins-button"}>Configure</Link>
+          <a className={"jenkins-button jenkins-button--icon"}>
             <EllipsisHorizontalOutline/>
           </a>
         </div>
@@ -54,15 +58,19 @@ function Dashboard() {
               return (
                 <div className={"jenkins-build-history__item"}>
                   <img src={Green}/>
-                  <Link to={"/build"} className={"jenkins-link"}>Build {374 - i}</Link>
+                  <Link to={"/project/build"} className={"jenkins-link"}>Build {374 - i}</Link>
                 </div>
               )
             })}
           </div>
         </div>
         <div className={"jenkins-cards__item jenkins-cards__item--wide"}>
-          <p className="jenkins-cards__item__title">Stage pipeline</p>
-
+          <p className="jenkins-cards__item__title">Stage view</p>
+          <Stageview/>
+        </div>
+        <div className={"jenkins-cards__item jenkins-cards__item--wide"}>
+          <p className="jenkins-cards__item__title">Stage view</p>
+          <img src="/assets/stageview.png" alt="" width={"100%"}/>
         </div>
         <div className={"jenkins-cards__item"}><p className="jenkins-cards__item__title">Build parameters</p></div>
         <div className={"jenkins-cards__item"}><p className="jenkins-cards__item__title">Stuff</p></div>

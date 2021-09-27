@@ -21,6 +21,7 @@ import ThemeSwitcher from "./components/panels/ThemeSwitcher";
 import Favorites from "./components/panels/Favorites";
 import Search from "./components/panels/Search";
 import Project from "./pages/Project";
+import ProjectSettings from "./pages/ProjectSettings";
 import Build from "./pages/Build";
 
 function App() {
@@ -115,11 +116,14 @@ function App() {
             <Route path="/build-monitor">
               <BuildMonitor/>
             </Route>
+            <Route path="/project/configure">
+              <ProjectSettings/>
+            </Route>
+            <Route path="/project/build">
+              <Build/>
+            </Route>
             <Route path="/project">
               <Project/>
-            </Route>
-            <Route path="/build">
-              <Build/>
             </Route>
             <Route path="/">
               <Dashboard/>

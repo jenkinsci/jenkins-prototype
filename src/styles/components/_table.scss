@@ -1,22 +1,22 @@
 .jenkins-table {
   display: table;
-  width: 100%;
+  width: calc(100% - 10px);
   border-collapse: collapse;
   border-radius: 8px;
   overflow: hidden;
-  box-shadow: 0 0 0 2px rgba(black, 0.075);
+  box-shadow: -5px 0 0 var(--background-color-overlay), 5px 0 0 var(--background-color-overlay), 0 2px 0 rgba(black, 0.02);
   background-color: var(--background-color-overlay);
   color: var(--foreground-color);
+  margin: 0 5px;
 
   thead {
     th {
-      background-color: var(--table-even-row-background-color);
       color: var(--foreground-color);
       text-align: left;
       text-transform: uppercase;
       letter-spacing: 2px;
       font-size: 12px;
-      padding: 15px;
+      padding: 15px 20px;
     }
   }
 
@@ -25,8 +25,23 @@
       color: var(--foreground-color);
       //border-bottom: 2px solid #dddddd;
 
-      &:nth-of-type(even) {
-        background-color: var(--table-even-row-background-color);
+      &:nth-of-type(odd) {
+        //background-color: var(--table-even-row-background-color);
+        // Set border-radius on the top-left and bottom-left of the first table data on the table row
+
+        td {
+          background: var(--table-even-row-background-color);
+        }
+        td:first-child,
+        th:first-child {
+          border-radius: 6px 0 0 6px;
+        }
+
+        // Set border-radius on the top-right and bottom-right of the last table data on the table row
+        td:last-child,
+        th:last-child {
+          border-radius: 0 6px 6px 0;
+        }
       }
 
       //&:last-of-type {
@@ -36,7 +51,7 @@
   }
 
   th, td {
-    padding: 15px;
+    padding: 15px 20px;
   }
 
   &-icon-host {

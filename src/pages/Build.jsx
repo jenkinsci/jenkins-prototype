@@ -2,6 +2,7 @@ import {ReactComponent as Sun} from "../sun.svg";
 import {ReactComponent as Cloud} from "../cloud.svg";
 import TerminalText from "../terminal";
 import {Link} from "react-router-dom";
+import {EllipsisHorizontalOutline, PlayOutline} from "react-ionicons";
 
 function Dashboard() {
 
@@ -34,28 +35,34 @@ function Dashboard() {
         <div className={"jenkins-app-bar__content"}>
           <h1>Build 374</h1>
         </div>
-        <div>
-          <a className={"jenkins-button jenkins-button--primary"}>Rebuild</a>
+        <div className={"jenkins-app-bar__controls"}>
+          <a className={"jenkins-button jenkins-button--green"}>
+            <PlayOutline/>
+            Rebuild
+          </a>
           <a className={"jenkins-button"}>Configure</a>
-          <a className={"jenkins-button"}>...</a>
+          <a className={"jenkins-button jenkins-button--icon"}>
+            <EllipsisHorizontalOutline/>
+          </a>
         </div>
       </div>
-      <div className={"jenkins-build__layout"}>
-        <div className={"jenkins-build__card"}>
-          <div className="jenkins-build__card__title-float">
-            <p className="jenkins-build__card__title">Terminal</p>
+      <div className={"jenkins-cards"}>
+        <div className={"jenkins-cards__item jenkins-cards__item--wide jenkins-build__terminal-card"}>
+          <div className="jenkins-cards__item__title-float">
+            <p className="jenkins-cards__item__title">Console output</p>
           </div>
           <code>
             {TerminalText}
           </code>
         </div>
-        <div className={"jenkins-build__card"}><p className="jenkins-build__card__title">Stuff</p></div>
-        <div className={"jenkins-build__card"}><p className="jenkins-build__card__title">Build parameters</p></div>
-        <div className={"jenkins-build__card"}><p className="jenkins-build__card__title">Stuff</p></div>
-        <div className={"jenkins-build__card"}><p className="jenkins-build__card__title">Stuff</p></div>
-        <div className={"jenkins-build__card"}><p className="jenkins-build__card__title">Stuff</p></div>
-        <div className={"jenkins-build__card"}><p className="jenkins-build__card__title">Stuff</p></div>
-        <div className={"jenkins-build__card"}><p className="jenkins-build__card__title">Stuff</p></div>
+        <div className={"jenkins-cards__item"}><p className="jenkins-cards__item__title">Details</p>
+          Started 5 mo 15 days ago
+          Took 3 min 2 sec
+          Started by user Jan Faracik
+          Build parameters
+        </div>
+        <div className={"jenkins-cards__item"}><p className="jenkins-cards__item__title">Links</p></div>
+        <div className={"jenkins-cards__item jenkins-cards__item--wide"}><p className="jenkins-cards__item__title">Cucumber</p></div>
       </div>
     </div>
   );

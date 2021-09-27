@@ -1,0 +1,36 @@
+.jenkins-tabs {
+  display: flex;
+  margin-bottom: 30px;
+
+  a {
+    position: relative;
+    display: inline-block;
+    padding-bottom: 20px;
+    margin-right: 20px;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    opacity: 0.6;
+    cursor: pointer;
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 2px;
+      background: transparent;
+      border-radius: 2px;
+    }
+  }
+
+  &__tab--selected {
+    opacity: 1!important;
+
+    &::after {
+      background: currentColor!important;
+    }
+  }
+}

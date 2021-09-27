@@ -1,13 +1,30 @@
 .jenkins-button {
   position: relative;
-  display: inline-block;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  height: 37px;
   background: var(--button-background-color);
   color: var(--button-foreground-color);
   padding: 10px 15px;
-  margin-left: 10px;
   border-radius: 10px;
   cursor: pointer;
   text-shadow: 0 1px 0 var(--background-color);
+  text-decoration: none;
+  outline: none;
+  border: none;
+
+  span {
+    width: 18px!important;
+    height: 18px!important;
+    margin-right: 6px;
+  }
+
+  svg {
+    width: 18px!important;
+    height: 18px!important;
+    color: currentColor!important;
+  }
 
   &::after {
     content: "";
@@ -32,25 +49,51 @@
     color: var(--button-foreground-color-active);
   }
 
-  &--overflow {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    height: 37px;
-    padding-top: 1px;
+  &--icon {
+    padding-top: 0;
     padding-bottom: 0;
 
-    svg {
-      color: currentColor!important;
+    span {
+      margin-right: 0;
     }
   }
 
-  &--primary {
+  &--green {
     background: rgba(#0ebb43, 0.16);
     color: #0ebb43;
 
+    &:hover {
+      background: rgba(#0ebb43, 0.24);
+      color: #0ebb43;
+    }
+
+    &:active {
+      background: rgba(#0ebb43, 0.28);
+      color: #0ebb43;
+    }
+
     &::after {
       border-bottom: 2px solid #0ebb43;
+      opacity: 0.1;
+    }
+  }
+
+  &--red {
+    background: rgba(red, 0.16);
+    color: red;
+
+    &:hover {
+      background: rgba(red, 0.22);
+      color: red;
+    }
+
+    &:active {
+      background: rgba(red, 0.28);
+      color: red;
+    }
+
+    &::after {
+      border-bottom: 2px solid red;
       opacity: 0.1;
     }
   }

@@ -2,6 +2,8 @@ import Sun from "../sun.svg";
 import Cloud from "../cloud.svg";
 import Green from "../green.svg";
 import {Link} from "react-router-dom";
+import Tippy from "@tippyjs/react";
+import {AddOutline, EllipsisHorizontalOutline, PlayOutline} from "react-ionicons";
 
 function Dashboard() {
 
@@ -171,11 +173,27 @@ function Dashboard() {
   return (
     <div className="jenkins-body">
       <div className="jenkins-app-bar">
-        <h1>Dashboard</h1>
-        <div>
-          <a className={"jenkins-button jenkins-button--primary"}>New item</a>
-          <a className={"jenkins-button"}>New view</a>
+        <div className={"jenkins-app-bar__content"}>
+          <h1>Dashboard</h1>
         </div>
+        <div className={"jenkins-app-bar__controls"}>
+          <a className={"jenkins-button"}>
+            <AddOutline/>
+            New item
+          </a>
+          <a className={"jenkins-button"}>
+            <AddOutline/>
+            New view
+          </a>
+          <a className={"jenkins-button jenkins-button--icon"}>
+            <EllipsisHorizontalOutline/>
+          </a>
+        </div>
+      </div>
+      <div className={"jenkins-tabs"}>
+        <a className={"jenkins-tabs__tab--selected"}>All</a>
+        <a>Build monitor</a>
+        <a>Trunk</a>
       </div>
       <div>
         <table className={"jenkins-table"}>
@@ -187,7 +205,7 @@ function Dashboard() {
               <th>Last success</th>
               <th>Last failure</th>
               <th>Last duration</th>
-              <th>Run</th>
+              <th className="jenkins-table-icon-host">Run</th>
             </tr>
           </thead>
           <tbody>
@@ -195,14 +213,18 @@ function Dashboard() {
               return (
                 <tr key={item.name}>
                   <td className="jenkins-table-icon-host">
-                    <div className="jenkins-table-icon">
-                      <img src={item.state}/>
-                    </div>
+                    <Tippy content="This build passed">
+                      <div className="jenkins-table-icon">
+                        <img src={item.state}/>
+                      </div>
+                    </Tippy>
                   </td>
                   <td className="jenkins-table-icon-host">
-                    <div className="jenkins-table-icon">
-                      <img src={item.weather}/>
-                    </div>
+                    <Tippy content="Build stability: 5 out of the last 5 builds passed.">
+                      <div className="jenkins-table-icon">
+                        <img src={item.weather}/>
+                      </div>
+                    </Tippy>
                   </td>
                   <td>
                     <Link className={"jenkins-link"} to={"/project"}>{item.name}</Link>
@@ -210,7 +232,11 @@ function Dashboard() {
                   <td>{item.lastSuccess}</td>
                   <td>{item.lastFailure}</td>
                   <td>{item.lastDuration}</td>
-                  <td>Run</td>
+                  <td className="jenkins-table-icon-host">
+                    <a className={"jenkins-button jenkins-button--icon jenkins-button--green"}>
+                      <PlayOutline/>
+                    </a>
+                  </td>
                 </tr>
               )})}
           </tbody>

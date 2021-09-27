@@ -1,6 +1,6 @@
 .jenkins-search {
   position: relative;
-  border: 2px solid rgba(black, 0.1);
+  border: 2px solid var(--border-color);
   margin-bottom: 20px;
   border-radius: 6px;
   //background: rgba(black, 0.1);
@@ -19,5 +19,8 @@
     top: 7px;
     left: 9px;
     transform: scale(0.7);
+    svg {
+      color: currentColor;
+    }
   }
 }

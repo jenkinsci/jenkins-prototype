@@ -1,57 +1,18 @@
-.jenkins-build {
-  &__layout {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-gap: 30px;
+.jenkins-build__terminal-card {
+  max-height: 400px;
+  background: black;
+  color: white;
 
-    .jenkins-build__card__title-float {
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      background: rgba(black, 0.25);
-      padding: 20px 20px 0 20px;
-      backdrop-filter: blur(10px);
-      z-index: 1;
-      border-radius: 10px 10px 0 0;
-    }
-
-    .jenkins-build__card__title {
-      margin: 0 0 20px 0;
-      padding: 0;
-      font-weight: 700;
-      font-size: 13px;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-    }
-
-    .jenkins-build__card {
-      position: relative;
-      border-radius: 10px;
-      padding: 20px;
-      background: var(--background-color-overlay);
-      min-height: 400px;
-      overflow: hidden;
-    }
-
-    & > .jenkins-build__card:first-of-type {
-      grid-column: 1 / span 2;
-      max-height: 400px;
-      background: black;
-      color: white;
-
-      code {
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
-        overflow: scroll;
-        white-space: pre-line;
-        padding: 56px 20px 20px 20px;
-        line-height: 1.4;
-      }
-    }
+  code {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+    overflow: scroll;
+    white-space: pre-line;
+    padding: 56px 20px 20px 20px;
+    line-height: 1.4;
   }
 }

@@ -6,6 +6,8 @@
 
   --foreground-color: black;
 
+  --border-color: rgba(0, 0, 0, 0.1);
+
   // Table
   --table-even-row-background-color: #f5f5f5;
 
@@ -38,8 +40,10 @@
 
     --foreground-color: white;
 
+    --border-color: rgba(255, 255, 255, 0.1);
+
     // Table
-    --table-even-row-background-color: #333333;
+    --table-even-row-background-color: #3a3a3a;
 
     // Root
     --button-background-color: rgba(255, 255, 255, 0.1);
@@ -50,9 +54,9 @@
     --button-foreground-color-active: white;
 
     // Link
-    --link-color: #69a0ff;
-    --link-color-hover: #083a65;
-    --link-color-active: #032746;
+    --link-color: #3784ff;
+    --link-color-hover: #2165d2;
+    --link-color-active: #12489d;
 
     // Nav bar
     --nav-background-color: #1e1e1e;
@@ -70,7 +74,9 @@
 @import "components/_cards";
 @import "components/_link";
 @import "components/_search";
+@import "components/_stageview";
 @import "components/_table";
+@import "components/_tabs";
 
 @import "components/panels/_favorites";
 @import "components/panels/_search";
@@ -245,9 +251,9 @@ h1 {
       justify-content: center;
       width: 36px;
       height: 36px;
-      background: var(--foreground-color);
       border-radius: 100px;
       margin-right: 15px;
+      background: var(--button-background-color);
 
       span {
         display: flex;
@@ -258,7 +264,7 @@ h1 {
       span, svg {
         width: 20px;
         height: 20px;
-        fill: var(--foreground-color) !important;
+        color: var(--button-foreground-color) !important;
       }
     }
 
@@ -277,30 +283,20 @@ h1 {
     }
 
     &:hover::before {
-      background: var(--foreground-color);
+      background: var(--button-background-color-hover);
     }
 
     &:active {
       transform: scale(0.975);
 
       &::before {
-        background: var(--foreground-color);
+        background: var(--button-background-color-active);
       }
     }
 
     &--selected::before {
-      background: var(--foreground-color);
+      background: var(--button-background-color-hover);
     }
-  }
-
-  &::after {
-    content: "";
-    position: absolute;
-    top: -30px;
-    right: 0;
-    bottom: 0;
-    width: 2px;
-    background: var(--foreground-color);
   }
 }
 
