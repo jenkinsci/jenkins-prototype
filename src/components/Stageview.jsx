@@ -46,7 +46,7 @@ function Stageview() {
             <button className={"jenkins-button jenkins-button--green"}>37m</button>
           </td>
         </tr>
-        {Array.from(Array(5), (e, i) => {
+        {Array.from(Array(4), (e, i) => {
           return (
             <tr className={"jenkins-stageview__build"}>
               <td>

@@ -2,8 +2,9 @@ import {ReactComponent as Sun} from "../sun.svg";
 import {ReactComponent as Cloud} from "../cloud.svg";
 import Green from "../green.svg";
 import {Link} from "react-router-dom";
-import {EllipsisHorizontalOutline, PlayOutline, SearchOutline} from "react-ionicons";
+import {EllipsisHorizontalOutline, PlayOutline, ResizeOutline, SearchOutline} from "react-ionicons";
 import Stageview from "../components/Stageview";
+import Tippy from "@tippyjs/react";
 
 function Dashboard() {
 
@@ -47,6 +48,18 @@ function Dashboard() {
         </div>
       </div>
       <div className={"jenkins-cards"}>
+        <div className={"jenkins-cards__item"}><p className="jenkins-cards__item__title">Links</p></div>
+        <div className={"jenkins-cards__item jenkins-cards__item--wide"}>
+          <p className="jenkins-cards__item__title">
+            Stage view
+            <Tippy content="Fullscreen">
+              <a href="#">
+                <ResizeOutline />
+              </a>
+            </Tippy>
+          </p>
+          <Stageview/>
+        </div>
         <div className={"jenkins-cards__item"}>
           <p className="jenkins-cards__item__title">Build history</p>
           <div className={"jenkins-search"}>
@@ -65,19 +78,23 @@ function Dashboard() {
           </div>
         </div>
         <div className={"jenkins-cards__item jenkins-cards__item--wide"}>
-          <p className="jenkins-cards__item__title">Stage view</p>
-          <Stageview/>
+          <p className="jenkins-cards__item__title">Test result trend</p>
+          <img src="/assets/img.png" alt="" width={"100%"}/>
         </div>
+        <div className={"jenkins-cards__item"}><p className="jenkins-cards__item__title">Stuff</p></div>
         <div className={"jenkins-cards__item jenkins-cards__item--wide"}>
-          <p className="jenkins-cards__item__title">Stage view</p>
-          <img src="/assets/stageview.png" alt="" width={"100%"}/>
+          <p className="jenkins-cards__item__title">
+            Stages
+            <Tippy content="Fullscreen">
+              <a href="#">
+                <ResizeOutline />
+              </a>
+            </Tippy>
+          </p>
+          <img src="/assets/img_1.png" alt="" width={"100%"}/>
         </div>
-        <div className={"jenkins-cards__item"}><p className="jenkins-cards__item__title">Build parameters</p></div>
         <div className={"jenkins-cards__item"}><p className="jenkins-cards__item__title">Stuff</p></div>
-        <div className={"jenkins-cards__item"}><p className="jenkins-cards__item__title">Stuff</p></div>
-        <div className={"jenkins-cards__item"}><p className="jenkins-cards__item__title">Stuff</p></div>
-        <div className={"jenkins-cards__item"}><p className="jenkins-cards__item__title">Stuff</p></div>
-        <div className={"jenkins-cards__item"}><p className="jenkins-cards__item__title">Stuff</p></div>
+        <div className={"jenkins-cards__item jenkins-cards__item--wide"}><p className="jenkins-cards__item__title">Stuff</p></div>
       </div>
     </div>
   );

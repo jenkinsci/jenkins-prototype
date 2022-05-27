@@ -8,11 +8,11 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  font-size: 13px;
+  // text-transform: uppercase;
+  // letter-spacing: 2px;
+  font-size: 14px;
   opacity: 0.6;
-  font-weight: 700;
+  font-weight: 600;
   color: var(--foreground-color);
   text-decoration: none;
   transition: opacity 0.2s ease;
@@ -29,11 +29,12 @@
     content: "";
     display: inline-block;
     position: relative;
-    width: 4px;
-    height: 4px;
+    width: 5px;
+    height: 5px;
     border-top: 2px solid currentColor;
     border-right: 2px solid currentColor;
     transform: rotate(45deg);
     margin: 0 15px 0 10px;
+    opacity: 0.35;
   }
 }

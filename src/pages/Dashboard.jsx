@@ -3,7 +3,14 @@ import Cloud from "../cloud.svg";
 import Green from "../green.svg";
 import {Link} from "react-router-dom";
 import Tippy from "@tippyjs/react";
-import {AddOutline, EllipsisHorizontalOutline, PlayOutline} from "react-ionicons";
+import {
+  AccessibilityOutline,
+  AddOutline,
+  AlbumsOutline,
+  EllipsisHorizontalOutline, ExtensionPuzzleOutline,
+  PlayOutline,
+  SearchOutline
+} from "react-ionicons";
 
 function Dashboard() {
 
@@ -172,30 +179,99 @@ function Dashboard() {
 
   return (
     <div className="jenkins-body">
+      <div className={"jenkins-breadcrumbs"} style={{opacity: 0}}>
+        <Link to={"/"} className={"jenkins-breadcrumb"}>Dashboard</Link>
+      </div>
       <div className="jenkins-app-bar">
         <div className={"jenkins-app-bar__content"}>
-          <h1>Dashboard</h1>
+          <h1>Morning Jan</h1>
         </div>
         <div className={"jenkins-app-bar__controls"}>
           <a className={"jenkins-button"}>
             <AddOutline/>
             New item
           </a>
-          <a className={"jenkins-button"}>
-            <AddOutline/>
-            New view
-          </a>
           <a className={"jenkins-button jenkins-button--icon"}>
             <EllipsisHorizontalOutline/>
           </a>
         </div>
       </div>
-      <div className={"jenkins-tabs"}>
-        <a className={"jenkins-tabs__tab--selected"}>All</a>
-        <a>Build monitor</a>
-        <a>Trunk</a>
-      </div>
-      <div>
+      <div class="iamsidebar">
+        <div class="squalorVictoria">
+          <div className="jenkins-sidebar">
+            <h1 style={{"margin": "30px"}}>Dashboard</h1>
+            <br/>
+            <a className="jenkins-sidebar__item jenkins-sidebar__item--selected">
+              <div className="jenkins-sidebar__item__icon">
+                <AlbumsOutline />
+              </div>
+              System
+            </a>
+            <a className="jenkins-sidebar__item">
+              <div className="jenkins-sidebar__item__icon">
+                <AccessibilityOutline />
+              </div>
+              Tool configuration
+            </a>
+            <a className="jenkins-sidebar__item">
+              <div className="jenkins-sidebar__item__icon">
+                <ExtensionPuzzleOutline />
+              </div>
+              Plugins
+            </a>
+            <a className="jenkins-sidebar__item">
+              <div className="jenkins-sidebar__item__icon">
+                <AlbumsOutline />
+              </div>
+              Nodes and cloud
+            </a>
+            <h2 className="jenkins-sidebar__heading">Hello</h2>
+            <a className="jenkins-sidebar__item">
+              <div className="jenkins-sidebar__item__icon">
+                <AccessibilityOutline />
+              </div>
+              Security
+            </a>
+            <a className={"jenkins-button"}>
+              <AddOutline/>
+              New view
+            </a>
+          </div>
+        </div>
+        <div class="sidebar-item">
+          <div className={"jenkins-cards__item"}>
+            <p className="jenkins-cards__item__title" style={{margin: 0, lineHeight: 1.66}}>
+              This instance hosts several GitHub Organization folders organized by subject area.
+              <br/>
+              <br/>
+              To add continuous integration and PR builds for a Jenkins plugin in the jenkinsci organization, just add a Jenkinsfile to your repository. You'll likely only need one line:
+              <br/>
+              <br/>
+              buildPlugin()
+            </p>
+          </div>
+          <div className={"jenkins-cards__item"}>
+            <p className="jenkins-cards__item__title">Queue</p>
+            <div className={"jenkins-build-history"}>
+              <div className={"jenkins-build-history__item"}>
+                <Link to={"/project/build"} className={"jenkins-link"}>part of Infra » acceptance-tests » install-lts-debian-package #43775</Link>
+              </div>
+            </div>
+          </div>
+          <div className={"jenkins-cards__item"}>
+            <p className="jenkins-cards__item__title">Executors</p>
+            <div className={"jenkins-build-history"}>
+              {Array.from(Array(10), (e, i) => {
+                return (
+                  <div className={"jenkins-build-history__item"}>
+                    <img src={Green}/>
+                    <Link to={"/project/build"} className={"jenkins-link"}>Build {374 - i}</Link>
+                  </div>
+                )
+              })}
+            </div>
+          </div>
+        </div>
         <table className={"jenkins-table"}>
           <thead>
             <tr>

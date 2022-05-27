@@ -7,12 +7,13 @@
   background: var(--button-background-color);
   color: var(--button-foreground-color);
   padding: 10px 15px;
-  border-radius: 10px;
+  border-radius: 8px;
   cursor: pointer;
   text-shadow: 0 1px 0 var(--background-color);
   text-decoration: none;
   outline: none;
   border: none;
+  transition: 0.2s ease;
 
   span {
     width: 18px!important;
@@ -35,7 +36,7 @@
     bottom: 0;
     border-radius: inherit;
     color: inherit;
-    border-bottom: 2px solid var(--button-foreground-color);
+    //border-bottom: 2px solid var(--button-foreground-color);
     opacity: 0.05;
   }
 

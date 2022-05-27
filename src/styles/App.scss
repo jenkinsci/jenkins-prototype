@@ -1,21 +1,29 @@
 :root {
   --accent-color: blue;
 
-  --background-color: #f5f5f5;
-  --background-color-overlay: white;
+  --background-color: hsl(255, 13%, 97%);
 
-  --foreground-color: black;
+  --foreground-color: hsl(255, 13%, 20%);
 
   --border-color: rgba(0, 0, 0, 0.1);
 
+  // Card
+  --card-background: white;
+  --card-gap: 10px;
+
   // Table
-  --table-even-row-background-color: #f5f5f5;
+  --table-background-color: white;
+  --table-header-foreground: var(--foreground-color);
+  --table-body-background: white;
+  --table-body-foreground: var(--foreground-color);
+  --table-border-radius: 10px;
+  --table-row-border-radius: 4px;
 
   // Root
-  --button-background-color: rgba(0, 0, 0, 0.1);
-  --button-background-color-hover: rgba(0, 0, 0, 0.125);
-  --button-background-color-active: rgba(0, 0, 0, 0.15);
-  --button-foreground-color: black;
+  --button-background-color: hsl(255, 13%, 90%);
+  --button-background-color-hover: hsl(255, 13%, 80%);
+  --button-background-color-active: hsl(255, 13%, 72%);
+  --button-foreground-color: var(--foreground-color);
   --button-foreground-color-hover: black;
   --button-foreground-color-active: black;
 
@@ -25,45 +33,47 @@
   --link-color-active: #032746;
 
   // Nav bar
-  --nav-background-color: #1e1e1e;
-  --nav-foreground-color: white;
-  --nav-item-hover: rgba(white, 0.075);
-  --nav-item-active: rgba(white, 0.075);
-  --nav-item-selected: rgba(white, 1.075);
+  --nav-background-color: hsl(255, 13%, 15%);
+  --nav-foreground-color: hsl(255, 13%, 95%);
+  --nav-item-hover: hsl(255, 13%, 25%);
+  --nav-item-active: hsl(255, 13%, 35%);
+  --nav-item-selected: hsl(255, 13%, 30%);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --accent-color: blue;
-    --background-color: #252525;
-    --background-color-overlay: #373737;
+    --accent-color: hsl(220, 100%, 70%);
+    --background-color: hsl(240, 13%, 6%);
 
-    --foreground-color: white;
+    --foreground-color: hsl(240, 13%, 90%);
 
     --border-color: rgba(255, 255, 255, 0.1);
 
+    --overlap-color: #14141A;
+
+    // Card
+    --card-background: var(--overlap-color);
+
     // Table
-    --table-even-row-background-color: #3a3a3a;
+    --table-background-color: var(--overlap-color);
+    --table-body-background: #111116;
 
     // Root
-    --button-background-color: rgba(255, 255, 255, 0.1);
-    --button-background-color-hover: rgba(255, 255, 255, 0.15);
-    --button-background-color-active: rgba(255, 255, 255, 0.2);
-    --button-foreground-color: white;
-    --button-foreground-color-hover: white;
-    --button-foreground-color-active: white;
+    --button-background-color: var(--overlap-color);
+    --button-background-color-hover: hsl(240, 13%, 20%);
+    --button-background-color-active: hsl(240, 13%, 20%);
 
     // Link
-    --link-color: #3784ff;
+    --link-color: var(--accent-color);
     --link-color-hover: #2165d2;
     --link-color-active: #12489d;
 
     // Nav bar
-    --nav-background-color: #1e1e1e;
-    --nav-foreground-color: white;
-    --nav-item-hover: rgba(255, 255, 255, 0.075);
-    --nav-item-active: rgba(255, 255, 255, 0.075);
-    --nav-item-selected: rgba(255, 255, 255, 0.1);
+    --nav-background-color: hsl(240, 13%, 8%);
+    --nav-foreground-color: var(--foreground-color);
+    --nav-item-hover: hsl(240, 13%, 12%);
+    --nav-item-active: hsl(240, 13%, 18%);
+    --nav-item-selected: hsl(240, 13%, 15%);
   }
 }
 
@@ -83,15 +93,18 @@
 @import "components/panels/_theme-switcher";
 
 @import "pages/_build";
+@import "pages/_dashboard";
 @import "pages/_project";
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-  'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-  sans-serif;
+  // font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  // 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  // sans-serif;
+  font-family: 'Inter', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  letter-spacing: -.01em;
   font-size: 14px;
   font-weight: 500;
   color: var(--foreground-color);
@@ -172,6 +185,10 @@ body {
         height: 20px;
         fill: var(--nav-foreground-color) !important;
         color: var(--nav-foreground-color)!important;
+
+        * {
+          stroke-width: 40px;
+        }
       }
     }
 
@@ -215,7 +232,8 @@ body {
 }
 
 h1 {
-  font-family: "Georgia";
+  font-size: 26px;
+  font-weight: 700;
   margin: 0;
 }
 
