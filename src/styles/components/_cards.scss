@@ -26,6 +26,13 @@
     background: var(--card-background);
     overflow: hidden;
     box-shadow: 0 2px 0 rgba(black, 0.02);
+    min-height: 400px;
+
+    &:hover {
+      .jenkins-cards__item__title__actions {
+        opacity: 1;
+      }
+    }
 
     &--wide {
       grid-column: span 2;
@@ -35,7 +42,7 @@
   &__item__title {
     display: flex;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: space-between;
     margin: 0 0 20px 0;
     padding: 0;
     font-weight: 600;
@@ -58,8 +65,16 @@
     left: 0;
     right: 0;
     padding: 20px 20px 0 20px;
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(20px);
     z-index: 1;
     border-radius: 10px 10px 0 0;
   }
+}
+
+.jenkins-cards__item__title__actions {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  opacity: 0.5;
+  transition: 0.3s ease;
 }

@@ -7,7 +7,7 @@
   background: var(--button-background-color);
   color: var(--button-foreground-color);
   padding: 10px 15px;
-  border-radius: 8px;
+  border-radius: 10px;
   cursor: pointer;
   text-shadow: 0 1px 0 var(--background-color);
   text-decoration: none;
@@ -25,19 +25,6 @@
     width: 18px!important;
     height: 18px!important;
     color: currentColor!important;
-  }
-
-  &::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    border-radius: inherit;
-    color: inherit;
-    //border-bottom: 2px solid var(--button-foreground-color);
-    opacity: 0.05;
   }
 
   &:hover {

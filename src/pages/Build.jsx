@@ -1,39 +1,25 @@
-import {ReactComponent as Sun} from "../sun.svg";
-import {ReactComponent as Cloud} from "../cloud.svg";
 import TerminalText from "../terminal";
 import {Link} from "react-router-dom";
-import {EllipsisHorizontalOutline, PlayOutline} from "react-ionicons";
+import {CopyOutline, DownloadOutline, EllipsisHorizontalOutline, PlayOutline, ResizeOutline} from "react-ionicons";
+import Tippy from "@tippyjs/react";
+import Stageview from "../components/Stageview";
 
 function Dashboard() {
-
-  const items = [
-    {
-      state: "",
-      weather: <Sun/>,
-      name: "Scalemate",
-      lastSuccess: "16 hours ago",
-      lastFailure: "One day ago",
-      lastDuration: "30 seconds"
-    },
-    {
-      state: "",
-      weather: <Cloud/>,
-      name: "Paleta",
-      lastSuccess: "10 hours ago",
-      lastFailure: "Two days ago",
-      lastDuration: "1 minute and 15 seconds"
-    }
-  ]
-
   return (
     <div className="jenkins-body">
       <div className={"jenkins-breadcrumbs"}>
         <Link to={"/"} className={"jenkins-breadcrumb"}>Dashboard</Link>
-        <Link to={"/project"} className={"jenkins-breadcrumb"}>Scalemate</Link>
+        <Link to={"/"} className={"jenkins-breadcrumb"}>Core</Link>
+        <Link to={"/"} className={"jenkins-breadcrumb"}>Jenkins</Link>
+        <Link to={"/"} className={"jenkins-breadcrumb"}>master</Link>
+        <Link to={"/"} className={"jenkins-breadcrumb"}>Build 374</Link>
       </div>
       <div className="jenkins-app-bar">
         <div className={"jenkins-app-bar__content"}>
-          <h1>Build 374</h1>
+          <h1 className={"jenkins-project-heading"}>
+            <span className={"jenkins-passing-icon"}></span>
+            Build 374
+          </h1>
         </div>
         <div className={"jenkins-app-bar__controls"}>
           <a className={"jenkins-button jenkins-button--green"}>
@@ -49,20 +35,59 @@ function Dashboard() {
       <div className={"jenkins-cards"}>
         <div className={"jenkins-cards__item jenkins-cards__item--wide jenkins-build__terminal-card"}>
           <div className="jenkins-cards__item__title-float">
-            <p className="jenkins-cards__item__title">Console output</p>
+            <p className="jenkins-cards__item__title">
+              Console output
+              <div className="jenkins-cards__item__title__actions">
+                <Tippy content="Copy">
+                  <a href="#">
+                    <CopyOutline />
+                  </a>
+                </Tippy>
+                <Tippy content="Download">
+                  <a href="#">
+                    <DownloadOutline />
+                  </a>
+                </Tippy>
+                <Tippy content="Fullscreen">
+                  <a href="#">
+                    <ResizeOutline />
+                  </a>
+                </Tippy>
+              </div>
+            </p>
           </div>
           <code>
             {TerminalText}
           </code>
         </div>
         <div className={"jenkins-cards__item"}><p className="jenkins-cards__item__title">Details</p>
-          Started 5 mo 15 days ago
-          Took 3 min 2 sec
-          Started by user Jan Faracik
-          Build parameters
+          <p>Started by user Jan Faracik</p>
+          <p>Started 5 mo 15 days ago</p>
+          <p>Took 3 min 2 sec</p>
         </div>
-        <div className={"jenkins-cards__item"}><p className="jenkins-cards__item__title">Links</p></div>
-        <div className={"jenkins-cards__item jenkins-cards__item--wide"}><p className="jenkins-cards__item__title">Cucumber</p></div>
+        <div className={"jenkins-cards__item"}>
+          <p className="jenkins-cards__item__title">Artifacts</p>
+          <a className={"jenkins-card-big-link"} href="#">jenkins-bom-2.365-rc32749.fc4dc4e55f29.pom</a>
+          <a className={"jenkins-card-big-link"} href="#">jenkins-bom-2.365-rc32749.fc4dc4e55f29.pom</a>
+          <a className={"jenkins-card-big-link"} href="#">jenkins-bom-2.365-rc32749.fc4dc4e55f29.pom</a>
+          <a className={"jenkins-card-big-link"} href="#">jenkins-bom-2.365-rc32749.fc4dc4e55f29.pom</a>
+          <a className={"jenkins-card-big-link"} href="#">jenkins-bom-2.365-rc32749.fc4dc4e55f29.pom</a>
+          <a className={"jenkins-card-big-link"} href="#">jenkins-bom-2.365-rc32749.fc4dc4e55f29.pom</a>
+          <a className={"jenkins-card-big-link"} href="#">jenkins-bom-2.365-rc32749.fc4dc4e55f29.pom</a>
+        </div>
+        <div className={"jenkins-cards__item jenkins-cards__item--wide"}>
+          <p className="jenkins-cards__item__title">
+            Stage view
+            <div className="jenkins-cards__item__title__actions">
+              <Tippy content="Fullscreen">
+                <a href="#">
+                  <ResizeOutline />
+                </a>
+              </Tippy>
+            </div>
+          </p>
+          <Stageview />
+        </div>
       </div>
     </div>
   );

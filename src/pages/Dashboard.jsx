@@ -179,12 +179,13 @@ function Dashboard() {
 
   return (
     <div className="jenkins-body">
-      <div className={"jenkins-breadcrumbs"} style={{opacity: 0}}>
-        <Link to={"/"} className={"jenkins-breadcrumb"}>Dashboard</Link>
-      </div>
       <div className="jenkins-app-bar">
         <div className={"jenkins-app-bar__content"}>
-          <h1>Morning Jan</h1>
+          <div className="rotating-title">
+            <p>Morning Jan</p>
+            <p>Jenkins</p>
+          </div>
+          <h1>Dashboard</h1>
         </div>
         <div className={"jenkins-app-bar__controls"}>
           <a className={"jenkins-button"}>

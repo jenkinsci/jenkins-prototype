@@ -13,6 +13,13 @@
     overflow: scroll;
     white-space: pre-line;
     padding: 56px 20px 20px 20px;
-    line-height: 1.4;
+    line-height: 1.8;
   }
+}
+
+.jenkins-card-big-link {
+  display: flex;
+  color: var(--link-color);
+  margin-bottom: 15px;
+  font-weight: 600 !important;
 }

@@ -49,3 +49,49 @@
     }
   }
 }
+
+.rotating-title {
+  position: relative;
+  height: 0.925rem;
+  margin: 0 0 0.6rem 0;
+
+  p {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    font-weight: 600;
+    font-size: 0.925rem;
+    margin: 0;
+    user-select: none;
+    pointer-events: none;
+    opacity: 0.6;
+    width: 100%;
+    white-space: nowrap;
+
+    &:first-of-type {
+      animation: rotate-title-1 0.5s both 4s;
+    }
+
+    &:last-of-type {
+      font-family: "Georgia";
+      font-weight: bold;
+      animation: rotate-title-2 0.5s both 4s;
+    }
+  }
+}
+
+@keyframes rotate-title-1 {
+  to {
+    transform: translateY(-0.5rem);
+    opacity: 0;
+  }
+}
+
+
+@keyframes rotate-title-2 {
+  from {
+    transform: translateY(0.5rem);
+    opacity: 0;
+  }
+}

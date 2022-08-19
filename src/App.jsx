@@ -1,7 +1,7 @@
 import './styles/App.scss';
 import Settings from "./pages/Settings";
 import {
-  ColorFillOutline,
+  ColorFillOutline, HomeOutline,
   PeopleOutline,
   PieChartOutline,
   SearchOutline,
@@ -65,11 +65,8 @@ function App() {
       <div className="App">
         <div className="jenkins-nav">
           <Tippy content="Dashboard" placement="right">
-            <NavLink to={"/"} className="jenkins-nav__item jenkins-nav__item--logo" activeClassName="jenkins-nav__item--selected" exact>
-              <div className="jenkins-nav__item__icon">
-                <span>
-                </span>
-              </div>
+            <NavLink to={"/"} className="jenkins-nav__item" activeClassName="jenkins-nav__item--selected" exact>
+              <div className="jenkins-nav__item__icon"><HomeOutline /></div>
             </NavLink>
           </Tippy>
           {controlBar.map(e => controlBarItems.find(i => i.id === e)).map((result) => {
