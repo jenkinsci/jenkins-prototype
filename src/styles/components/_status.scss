@@ -1,0 +1,25 @@
+.jenkins-project-heading {
+  display: flex;
+  align-items: center;
+}
+
+.jenkins-passing-icon {
+  position: relative;
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  background-color: rgba(14, 187, 67, 0.2);
+  border-radius: 100px;
+  margin-right: 10px;
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: rgba(14, 187, 67, 1);
+    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' class='ionicon' viewBox='0 0 512 512'%3E%3Ctitle%3ECheckmark%3C/title%3E%3Cpath fill='none' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='60' d='M416 128L192 384l-96-96'/%3E%3C/svg%3E");
+    mask-size: 18px;
+    mask-position: center;
+    mask-repeat: no-repeat;
+  }
+}

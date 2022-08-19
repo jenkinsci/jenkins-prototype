@@ -68,8 +68,6 @@ function App() {
             <NavLink to={"/"} className="jenkins-nav__item jenkins-nav__item--logo" activeClassName="jenkins-nav__item--selected" exact>
               <div className="jenkins-nav__item__icon">
                 <span>
-                  <JenkinsLogoOutline/>
-                  <JenkinsLogo/>
                 </span>
               </div>
             </NavLink>

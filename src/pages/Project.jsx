@@ -31,10 +31,16 @@ function Dashboard() {
     <div className="jenkins-body">
       <div className={"jenkins-breadcrumbs"}>
         <Link to={"/"} className={"jenkins-breadcrumb"}>Dashboard</Link>
+        <Link to={"/"} className={"jenkins-breadcrumb"}>Core</Link>
+        <Link to={"/"} className={"jenkins-breadcrumb"}>Jenkins</Link>
+        <Link to={"/"} className={"jenkins-breadcrumb"}>master</Link>
       </div>
       <div className="jenkins-app-bar">
         <div className={"jenkins-app-bar__content"}>
-          <h1>Scalemate</h1>
+          <h1 className={"jenkins-project-heading"}>
+            <span className={"jenkins-passing-icon"}></span>
+            master
+          </h1>
         </div>
         <div className={"jenkins-app-bar__controls"}>
           <a className={"jenkins-button jenkins-button--green"}>
@@ -48,7 +54,6 @@ function Dashboard() {
         </div>
       </div>
       <div className={"jenkins-cards"}>
-        <div className={"jenkins-cards__item"}><p className="jenkins-cards__item__title">Links</p></div>
         <div className={"jenkins-cards__item jenkins-cards__item--wide"}>
           <p className="jenkins-cards__item__title">
             Stage view
