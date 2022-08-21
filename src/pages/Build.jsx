@@ -1,6 +1,13 @@
 import TerminalText from "../terminal";
 import {Link} from "react-router-dom";
-import {CopyOutline, DownloadOutline, EllipsisHorizontalOutline, PlayOutline, ResizeOutline} from "react-ionicons";
+import {
+  CopyOutline,
+  DownloadOutline,
+  EllipsisHorizontalOutline, PersonOutline,
+  PlayOutline,
+  ResizeOutline,
+  TimeOutline, TimerOutline
+} from "react-ionicons";
 import Tippy from "@tippyjs/react";
 import Stageview from "../components/Stageview";
 
@@ -61,9 +68,18 @@ function Dashboard() {
           </code>
         </div>
         <div className={"jenkins-cards__item"}><p className="jenkins-cards__item__title">Details</p>
-          <p>Started by user Jan Faracik</p>
-          <p>Started 5 mo 15 days ago</p>
-          <p>Took 3 min 2 sec</p>
+          <p className={"app-details__item"}>
+            <PersonOutline />
+            Started by user Jan Faracik
+          </p>
+          <p className={"app-details__item"}>
+            <TimeOutline />
+            Started 5 mo 15 days ago
+          </p>
+          <p className={"app-details__item"}>
+            <TimerOutline />
+            Took 3 min 2 sec
+          </p>
         </div>
         <div className={"jenkins-cards__item"}>
           <p className="jenkins-cards__item__title">Artifacts</p>

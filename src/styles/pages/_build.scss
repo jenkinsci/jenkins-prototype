@@ -9,11 +9,17 @@
     left: 0;
     right: 0;
     bottom: 0;
-    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+    font-family: ui-monospace, source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
     overflow: scroll;
     white-space: pre-line;
     padding: 56px 20px 20px 20px;
     line-height: 1.8;
+  }
+
+  .jenkins-cards__item__title__actions {
+    svg {
+      color: white !important;
+    }
   }
 }
 
@@ -22,4 +28,21 @@
   color: var(--link-color);
   margin-bottom: 15px;
   font-weight: 600 !important;
+}
+
+.app-details__item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 15px;
+
+  span {
+    display: contents;
+  }
+
+  svg {
+    color: currentColor !important;
+    width: 16px;
+    height: 16px;
+  }
 }

@@ -21,7 +21,7 @@
 
   &__item {
     position: relative;
-    border-radius: 10px;
+    border-radius: 15px;
     padding: 20px;
     background: var(--card-background);
     overflow: hidden;
@@ -65,9 +65,19 @@
     left: 0;
     right: 0;
     padding: 20px 20px 0 20px;
-    backdrop-filter: blur(20px);
     z-index: 1;
-    border-radius: 10px 10px 0 0;
+
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      bottom: -20px;
+      backdrop-filter: blur(20px);
+      z-index: -1;
+      border-radius: 15px 15px 0 0;
+      mask-image: linear-gradient(white 25%, transparent);
+      pointer-events: none;
+    }
   }
 }
 
