@@ -1,15 +1,10 @@
 import Sun from "../sun.svg";
-import Cloud from "../cloud.svg";
 import Green from "../green.svg";
 import {Link} from "react-router-dom";
 import Tippy from "@tippyjs/react";
 import {
-  AccessibilityOutline,
   AddOutline,
-  AlbumsOutline,
-  EllipsisHorizontalOutline, ExtensionPuzzleOutline,
-  PlayOutline,
-  SearchOutline
+  EllipsisHorizontalOutline, PlayOutline
 } from "react-ionicons";
 
 function Dashboard() {
@@ -18,164 +13,23 @@ function Dashboard() {
     {
       state: Green,
       weather: Sun,
-      name: "Scalemate",
+      name: "Jenkins",
       lastSuccess: "16 hours ago",
       lastFailure: "One day ago",
       lastDuration: "30 seconds"
-    },
-    {
-      state: Green,
-      weather: Cloud,
-      name: "Paleta",
-      lastSuccess: "10 hours ago",
-      lastFailure: "Two days ago",
-      lastDuration: "1 minute and 15 seconds"
-    },
-    {
-      state: Green,
-      weather: Sun,
-      name: "Scalemate",
-      lastSuccess: "16 hours ago",
-      lastFailure: "One day ago",
-      lastDuration: "30 seconds"
-    },
-    {
-      state: Green,
-      weather: Cloud,
-      name: "Paleta",
-      lastSuccess: "10 hours ago",
-      lastFailure: "Two days ago",
-      lastDuration: "1 minute and 15 seconds"
-    },
-    {
-      state: Green,
-      weather: Sun,
-      name: "Scalemate",
-      lastSuccess: "16 hours ago",
-      lastFailure: "One day ago",
-      lastDuration: "30 seconds"
-    },
-    {
-      state: Green,
-      weather: Cloud,
-      name: "Paleta",
-      lastSuccess: "10 hours ago",
-      lastFailure: "Two days ago",
-      lastDuration: "1 minute and 15 seconds"
-    },
-    {
-      state: Green,
-      weather: Sun,
-      name: "Scalemate",
-      lastSuccess: "16 hours ago",
-      lastFailure: "One day ago",
-      lastDuration: "30 seconds"
-    },
-    {
-      state: Green,
-      weather: Cloud,
-      name: "Paleta",
-      lastSuccess: "10 hours ago",
-      lastFailure: "Two days ago",
-      lastDuration: "1 minute and 15 seconds"
-    },
-    {
-      state: Green,
-      weather: Sun,
-      name: "Scalemate",
-      lastSuccess: "16 hours ago",
-      lastFailure: "One day ago",
-      lastDuration: "30 seconds"
-    },
-    {
-      state: Green,
-      weather: Cloud,
-      name: "Paleta",
-      lastSuccess: "10 hours ago",
-      lastFailure: "Two days ago",
-      lastDuration: "1 minute and 15 seconds"
-    },
-    {
-      state: Green,
-      weather: Sun,
-      name: "Scalemate",
-      lastSuccess: "16 hours ago",
-      lastFailure: "One day ago",
-      lastDuration: "30 seconds"
-    },
-    {
-      state: Green,
-      weather: Cloud,
-      name: "Paleta",
-      lastSuccess: "10 hours ago",
-      lastFailure: "Two days ago",
-      lastDuration: "1 minute and 15 seconds"
-    },
-    {
-      state: Green,
-      weather: Sun,
-      name: "Scalemate",
-      lastSuccess: "16 hours ago",
-      lastFailure: "One day ago",
-      lastDuration: "30 seconds"
-    },
-    {
-      state: Green,
-      weather: Cloud,
-      name: "Paleta",
-      lastSuccess: "10 hours ago",
-      lastFailure: "Two days ago",
-      lastDuration: "1 minute and 15 seconds"
-    },
-    {
-      state: Green,
-      weather: Sun,
-      name: "Scalemate",
-      lastSuccess: "16 hours ago",
-      lastFailure: "One day ago",
-      lastDuration: "30 seconds"
-    },
-    {
-      state: Green,
-      weather: Cloud,
-      name: "Paleta",
-      lastSuccess: "10 hours ago",
-      lastFailure: "Two days ago",
-      lastDuration: "1 minute and 15 seconds"
-    },
-    {
-      state: Green,
-      weather: Sun,
-      name: "Scalemate",
-      lastSuccess: "16 hours ago",
-      lastFailure: "One day ago",
-      lastDuration: "30 seconds"
-    },
-    {
-      state: Green,
-      weather: Cloud,
-      name: "Paleta",
-      lastSuccess: "10 hours ago",
-      lastFailure: "Two days ago",
-      lastDuration: "1 minute and 15 seconds"
-    },
-    {
-      state: Green,
-      weather: Sun,
-      name: "Scalemate",
-      lastSuccess: "16 hours ago",
-      lastFailure: "One day ago",
-      lastDuration: "30 seconds"
-    },
-    {
-      state: Green,
-      weather: Cloud,
-      name: "Paleta",
-      lastSuccess: "10 hours ago",
-      lastFailure: "Two days ago",
-      lastDuration: "1 minute and 15 seconds"
-    },
+    }
   ]
+
+  for (let i = 0; i < 30; i++) {
+    items.push({
+      state: Green,
+      weather: Sun,
+      name: "Jenkins",
+      lastSuccess: "16 hours ago",
+      lastFailure: "One day ago",
+      lastDuration: "30 seconds"
+    })
+  }
 
   return (
     <div className="jenkins-body">
@@ -188,58 +42,18 @@ function Dashboard() {
           <h1>Dashboard</h1>
         </div>
         <div className={"jenkins-app-bar__controls"}>
-          <a className={"jenkins-button"}>
+          <a href={"#"} className={"jenkins-button"}>
             <AddOutline/>
             New item
           </a>
-          <a className={"jenkins-button jenkins-button--icon"}>
+          <a href={"#"} className={"jenkins-button jenkins-button--icon"}>
             <EllipsisHorizontalOutline/>
           </a>
         </div>
       </div>
-      <div class="iamsidebar">
-        <div class="squalorVictoria">
-          <div className="jenkins-sidebar">
-            <h1 style={{"margin": "30px"}}>Dashboard</h1>
-            <br/>
-            <a className="jenkins-sidebar__item jenkins-sidebar__item--selected">
-              <div className="jenkins-sidebar__item__icon">
-                <AlbumsOutline />
-              </div>
-              System
-            </a>
-            <a className="jenkins-sidebar__item">
-              <div className="jenkins-sidebar__item__icon">
-                <AccessibilityOutline />
-              </div>
-              Tool configuration
-            </a>
-            <a className="jenkins-sidebar__item">
-              <div className="jenkins-sidebar__item__icon">
-                <ExtensionPuzzleOutline />
-              </div>
-              Plugins
-            </a>
-            <a className="jenkins-sidebar__item">
-              <div className="jenkins-sidebar__item__icon">
-                <AlbumsOutline />
-              </div>
-              Nodes and cloud
-            </a>
-            <h2 className="jenkins-sidebar__heading">Hello</h2>
-            <a className="jenkins-sidebar__item">
-              <div className="jenkins-sidebar__item__icon">
-                <AccessibilityOutline />
-              </div>
-              Security
-            </a>
-            <a className={"jenkins-button"}>
-              <AddOutline/>
-              New view
-            </a>
-          </div>
-        </div>
-        <div class="sidebar-item">
+
+      <div className="iamsidebar">
+        <div className="sidebar-item">
           <div className={"jenkins-cards__item"}>
             <p className="jenkins-cards__item__title" style={{margin: 0, lineHeight: 1.66}}>
               This instance hosts several GitHub Organization folders organized by subject area.
