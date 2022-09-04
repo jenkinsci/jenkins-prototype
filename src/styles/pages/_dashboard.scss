@@ -35,6 +35,10 @@ iframe {
     gap: 0.5rem;
     text-decoration: none;
 
+    span {
+      flex-shrink: 0;
+    }
+
     div {
       display: flex;
       flex-direction: column;
