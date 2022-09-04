@@ -153,7 +153,7 @@ body {
   align-items: center;
   justify-content: space-between;
   background: var(--nav-background-color);
-  padding: 1rem 2rem;
+  padding: 1.25rem 1rem;
 
   @media screen and (min-width: 1001px) {
     display: none;
@@ -161,7 +161,7 @@ body {
 
   p {
     font-family: "Georgia", "sans-serif";
-    font-size: 1.1rem;
+    font-size: 1.25rem;
     font-weight: 600;
     margin: 0;
     color: var(--nav-foreground-color);
@@ -375,7 +375,7 @@ h1 {
   padding: 4rem 2rem 2rem 2rem;
 
   @media screen and (max-width: 1000px) {
-    padding-top: 2rem;
+    padding: 1rem;
   }
 
   &--sidebar {
