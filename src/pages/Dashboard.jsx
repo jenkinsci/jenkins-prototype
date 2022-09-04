@@ -35,7 +35,7 @@ function Dashboard() {
     <div className="jenkins-body">
       <div className="jenkins-app-bar">
         <div className={"jenkins-app-bar__content"}>
-          <div className="rotating-title">
+          <div className="rotating-title jenkins-mobile-hide">
             <p>Morning Jan</p>
             <p>Jenkins</p>
           </div>

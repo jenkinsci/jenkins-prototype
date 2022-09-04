@@ -114,11 +114,13 @@ html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 500;
+  background: var(--background-color);
 }
 
 body {
   margin: 0;
   color: var(--foreground-color);
+  background: var(--background-color);
 }
 
 * {
@@ -135,6 +137,8 @@ body {
   
   @media screen and (max-width: 1000px) {
     display: block;
+    width: unset;
+    height: unset;
   }
 }
 
@@ -160,6 +164,7 @@ body {
     font-size: 1.1rem;
     font-weight: 600;
     margin: 0;
+    color: var(--nav-foreground-color);
   }
 
   span {
@@ -276,12 +281,21 @@ body {
   height: 100vh;
   overflow-x: hidden;
   overflow-y: scroll;
+
+  @media screen and (max-width: 1000px) {
+    height: unset;
+    overflow: unset;
+  }
 }
 
 h1 {
   font-size: 1.8rem;
   font-weight: 800;
   margin: 0;
+
+  @media screen and (max-width: 1000px) {
+    font-size: 1.5rem;
+  }
 }
 
 .jenkins-sidebar {
@@ -359,6 +373,10 @@ h1 {
 
 .jenkins-body {
   padding: 4rem 2rem 2rem 2rem;
+
+  @media screen and (max-width: 1000px) {
+    padding-top: 2rem;
+  }
 
   &--sidebar {
     display: grid;
