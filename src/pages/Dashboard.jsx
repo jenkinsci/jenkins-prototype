@@ -42,7 +42,7 @@ function Dashboard() {
           <h1>Dashboard</h1>
         </div>
         <div className={"jenkins-app-bar__controls"}>
-          <Link to={"/new"} className={"jenkins-button jenkins-button--primary"}>
+          <Link to={"/new"} className={"jenkins-button"}>
             <AddOutline/>
             New project
           </Link>
