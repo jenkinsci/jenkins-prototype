@@ -1,0 +1,76 @@
+.app-plugin-manager {
+  .big-search-bar {
+    position: relative;
+    display: flex;
+    gap: 15px;
+    border-radius: 10px;
+    z-index: 0;
+    padding: 15px 15px;
+    font-size: 0.9rem;
+    margin-top: 10px;
+    max-width: 70%;
+    margin-bottom: 30px;
+
+    span, svg {
+      width: 1.1rem;
+      height: 1.1rem;
+      color: currentColor;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: var(--table-background-color);
+      z-index: -1;
+      border-radius: inherit;
+    }
+  }
+
+  table {
+    width: 100%;
+  }
+
+  .app-plugin {
+    display: flex;
+    flex-direction: column;
+    margin: -8px 0 -8px -20px;
+    padding: 15px 20px;
+    gap: 10px;
+
+    & > * {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+
+    .description {
+      color: var(--color-secondary);
+    }
+  }
+
+  .app-tags {
+    display: flex;
+    gap: 10px;
+    margin-left: -5px;
+
+    div {
+      position: relative;
+      display: flex;
+      border-radius: 100px;
+      z-index: 0;
+      padding: 5px 10px;
+      font-size: 0.8rem;
+      color: var(--link-color);
+
+      &::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: currentColor;
+        opacity: 0.05;
+        z-index: -1;
+        border-radius: inherit;
+      }
+    }
+  }
+}

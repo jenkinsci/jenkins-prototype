@@ -1,15 +1,13 @@
 import './styles/App.scss';
 import Settings from "./pages/Settings";
 import {
-  ColorFillOutline, HomeOutline,
+  ColorFillOutline, HomeOutline, MenuOutline,
   PeopleOutline,
   PieChartOutline,
   SearchOutline,
   SettingsOutline,
   StarOutline
 } from "react-ionicons";
-import {ReactComponent as JenkinsLogoOutline} from "./jenkins-flat.svg";
-import {ReactComponent as JenkinsLogo} from "./jenkins.svg";
 import {BrowserRouter as Router, NavLink, Route, Switch} from "react-router-dom";
 import Dashboard from "./pages/Dashboard";
 import Users from "./pages/Users";
@@ -23,6 +21,8 @@ import Search from "./components/panels/Search";
 import Project from "./pages/Project";
 import ProjectSettings from "./pages/ProjectSettings";
 import Build from "./pages/Build";
+import PluginManager from "./pages/PluginManager";
+import NewProject from "./pages/NewProject";
 
 function App() {
   const [searchVisible, setSearchVisible] = useState(false)
@@ -63,6 +63,13 @@ function App() {
   return (
     <Router>
       <div className="App">
+        <div className={"jenkins-mobile-nav"}>
+          <MenuOutline />
+          <p>
+            Jenkins
+          </p>
+          <SearchOutline />
+        </div>
         <div className="jenkins-nav">
           <Tippy content="Dashboard" placement="right">
             <NavLink to={"/"} className="jenkins-nav__item" activeClassName="jenkins-nav__item--selected" exact>
@@ -102,6 +109,12 @@ function App() {
         </div>
         <div className="jenkins-container">
           <Switch>
+            <Route path="/new">
+              <NewProject/>
+            </Route>
+            <Route path="/plugins">
+              <PluginManager/>
+            </Route>
             <Route path="/settings">
               <Settings/>
             </Route>

@@ -25,7 +25,7 @@
     padding: 20px;
     background: var(--card-background);
     overflow: hidden;
-    box-shadow: 0 2px 0 rgba(black, 0.02);
+    box-shadow: 0 0 1px rgba(black, 0.06);
     min-height: 400px;
 
     &:hover {
@@ -46,7 +46,7 @@
     margin: 0 0 20px 0;
     padding: 0;
     font-weight: 600;
-    font-size: 14px;
+    font-size: 1rem;
 
     a {
       margin-left: auto;

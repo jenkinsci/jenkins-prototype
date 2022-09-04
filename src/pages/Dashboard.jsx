@@ -4,7 +4,7 @@ import {Link} from "react-router-dom";
 import Tippy from "@tippyjs/react";
 import {
   AddOutline,
-  EllipsisHorizontalOutline, PlayOutline
+  EllipsisHorizontalOutline, PlayOutline, SunnyOutline
 } from "react-ionicons";
 
 function Dashboard() {
@@ -42,10 +42,10 @@ function Dashboard() {
           <h1>Dashboard</h1>
         </div>
         <div className={"jenkins-app-bar__controls"}>
-          <a href={"#"} className={"jenkins-button"}>
+          <Link to={"/new"} className={"jenkins-button"}>
             <AddOutline/>
-            New item
-          </a>
+            New project
+          </Link>
           <a href={"#"} className={"jenkins-button jenkins-button--icon"}>
             <EllipsisHorizontalOutline/>
           </a>
@@ -53,7 +53,7 @@ function Dashboard() {
       </div>
 
       <div className="iamsidebar">
-        <div className="sidebar-item">
+        <div className="sidebar-item jenkins-mobile-hide">
           <div className={"jenkins-cards__item"}>
             <p className="jenkins-cards__item__title" style={{margin: 0, lineHeight: 1.66}}>
               This instance hosts several GitHub Organization folders organized by subject area.
@@ -79,7 +79,7 @@ function Dashboard() {
               {Array.from(Array(10), (e, i) => {
                 return (
                   <div className={"jenkins-build-history__item"}>
-                    <img src={Green}/>
+                    <span className={"jenkins-passing-icon"}></span>
                     <Link to={"/project/build"} className={"jenkins-link"}>Build {374 - i}</Link>
                   </div>
                 )
@@ -87,7 +87,7 @@ function Dashboard() {
             </div>
           </div>
         </div>
-        <table className={"jenkins-table"}>
+        <table className={"jenkins-table jenkins-mobile-hide"}>
           <thead>
             <tr>
               <th className="jenkins-table-icon-host">S</th>
@@ -105,16 +105,16 @@ function Dashboard() {
                 <tr key={item.name}>
                   <td className="jenkins-table-icon-host">
                     <Tippy content="This build passed">
-                      <div className="jenkins-table-icon">
-                        <img src={item.state}/>
-                      </div>
+                      <a className={"jenkins-button jenkins-button--transparent jenkins-button--icon jenkins-button--green"}>
+                        <span className={"jenkins-passing-icon"}></span>
+                      </a>
                     </Tippy>
                   </td>
                   <td className="jenkins-table-icon-host">
                     <Tippy content="Build stability: 5 out of the last 5 builds passed.">
-                      <div className="jenkins-table-icon">
-                        <img src={item.weather}/>
-                      </div>
+                      <a className={"jenkins-button jenkins-button--transparent jenkins-button--icon jenkins-button--orange"}>
+                        <SunnyOutline/>
+                      </a>
                     </Tippy>
                   </td>
                   <td>
@@ -124,7 +124,7 @@ function Dashboard() {
                   <td>{item.lastFailure}</td>
                   <td>{item.lastDuration}</td>
                   <td className="jenkins-table-icon-host">
-                    <a className={"jenkins-button jenkins-button--icon jenkins-button--green"}>
+                    <a className={"jenkins-button jenkins-button--transparent jenkins-button--icon jenkins-button--green"}>
                       <PlayOutline/>
                     </a>
                   </td>
@@ -132,6 +132,18 @@ function Dashboard() {
               )})}
           </tbody>
         </table>
+        <div className={"jenkins-mobile-projects"}>
+          {items.map((item) => {
+            return (
+              <Link to={"/project"} className={"jenkins-mobile-projects__item"}>
+                <span className={"jenkins-passing-icon"}></span>
+                <div>
+                  <p className={"title"}>{item.name}</p>
+                  <p>{item.lastSuccess} by Jan Faracik - Duration {item.lastDuration}</p>
+                </div>
+              </Link>
+          )})}
+        </div>
       </div>
     </div>
   );

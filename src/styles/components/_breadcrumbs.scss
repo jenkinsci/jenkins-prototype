@@ -8,12 +8,9 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  // text-transform: uppercase;
-  // letter-spacing: 2px;
-  font-size: 14px;
-  opacity: 0.6;
+  font-size: 1rem;
   font-weight: 600;
-  color: var(--foreground-color);
+  color: var(--color-secondary);
   text-decoration: none;
   transition: opacity 0.2s ease;
 

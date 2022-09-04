@@ -1,69 +1,73 @@
 :root {
-  --accent-color: blue;
+  --accent-color: hsl(212, 100%, 42%);
 
-  --background-color: hsl(245, 20%, 95%);
+  --background-color: hsl(212, 20%, 99.5%);
 
-  --foreground-color: hsl(255, 13%, 20%);
+  --foreground-color: hsl(212, 100%, 5%);
+
+  --color-secondary: hsl(212, 20%, 50%);
 
   --border-color: rgba(0, 0, 0, 0.1);
 
   // Card
-  --card-background: white;
-  --card-gap: 10px;
+  --card-background: var(--table-background-color);
+  --card-gap: 1rem;
 
   // Table
-  --table-background-color: white;
+  --table-background-color: hsl(212, 30%, 96%);
+  --table-body-background: var(--background-color);
+
   --table-header-foreground: var(--foreground-color);
-  --table-body-background: white;
   --table-body-foreground: var(--foreground-color);
   --table-border-radius: 10px;
   --table-row-border-radius: 4px;
 
   // Root
-  --button-background-color: hsl(255, 13%, 90%);
-  --button-background-color-hover: hsl(255, 13%, 80%);
-  --button-background-color-active: hsl(255, 13%, 72%);
+  --button-background-color: hsl(212, 13%, 90%);
+  --button-background-color-hover: hsl(212, 13%, 80%);
+  --button-background-color-active: hsl(212, 13%, 72%);
   --button-foreground-color: var(--foreground-color);
   --button-foreground-color-hover: black;
   --button-foreground-color-active: black;
 
   // Link
-  --link-color: #105591;
-  --link-color-hover: #083a65;
-  --link-color-active: #032746;
+  --link-color: hsl(212, 100%, 42%);
+  --link-color-hover: hsl(212, 100%, 30%);
+  --link-color-active: hsl(212, 100%, 20%);
 
   // Nav bar
-  --nav-background-color: hsl(255, 13%, 15%);
-  --nav-foreground-color: hsl(255, 13%, 95%);
-  --nav-item-hover: hsl(255, 13%, 25%);
-  --nav-item-active: hsl(255, 13%, 35%);
-  --nav-item-selected: hsl(255, 13%, 30%);
+  --nav-background-color: hsl(212, 20%, 5%);
+  --nav-foreground-color: hsl(255, 20%, 95%);
+  --nav-item-hover: hsl(212, 20%, 15%);
+  --nav-item-active: hsl(212, 20%, 20%);
+  --nav-item-selected: hsl(212, 20%, 15%);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     color-scheme: dark;
 
-    --accent-color: hsl(220, 100%, 70%);
-    --background-color: hsl(240, 13%, 6%);
+    $hue: 0;
 
-    --foreground-color: hsl(240, 13%, 90%);
+    --accent-color: hsl(225, 100%, 70%);
+    --background-color: hsl(230, 15%, 5%);
 
-    --border-color: rgba(255, 255, 255, 0.1);
+    --foreground-color: hsl(230, 15%, 90%);
+    --color-secondary: hsl(230, 15%, 55%);
 
-    --overlap-color: #14141A;
+    --overlap-color: hsl(230, 15%, 7%);
 
     // Card
     --card-background: var(--overlap-color);
 
     // Table
     --table-background-color: var(--overlap-color);
-    --table-body-background: #111116;
+    --table-body-background: var(--background-color);
 
     // Root
     --button-background-color: var(--overlap-color);
-    --button-background-color-hover: hsl(240, 13%, 20%);
-    --button-background-color-active: hsl(240, 13%, 20%);
+    --button-background-color-hover: hsl(230, 13%, 20%);
+    --button-background-color-active: hsl(230, 13%, 20%);
 
     // Link
     --link-color: var(--accent-color);
@@ -71,11 +75,11 @@
     --link-color-active: #12489d;
 
     // Nav bar
-    --nav-background-color: hsl(240, 13%, 8%);
+    --nav-background-color: var(--overlap-color);
     --nav-foreground-color: var(--foreground-color);
-    --nav-item-hover: hsl(240, 13%, 12%);
-    --nav-item-active: hsl(240, 13%, 18%);
-    --nav-item-selected: hsl(240, 13%, 15%);
+    --nav-item-hover: hsl(230, 15%, 16%);
+    --nav-item-active: hsl(230, 15%, 18%);
+    --nav-item-selected: hsl(230, 15%, 12%);
   }
 }
 
@@ -97,19 +101,23 @@
 
 @import "pages/_build";
 @import "pages/_dashboard";
+@import "pages/_new-project";
+@import "pages/_plugin-manager";
 @import "pages/_project";
+
+html {
+  font-size: 15px;
+  letter-spacing: -.016em;
+  font-family: system-ui, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 500;
+}
 
 body {
   margin: 0;
-  // font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-  // 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-  // sans-serif;
-  font-family: 'Inter', sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  letter-spacing: -.01em;
-  font-size: 14px;
-  font-weight: 500;
   color: var(--foreground-color);
 }
 
@@ -124,6 +132,54 @@ body {
   height: 100vh;
   overflow: hidden;
   background: var(--background-color);
+  
+  @media screen and (max-width: 1000px) {
+    display: block;
+  }
+}
+
+.jenkins-mobile-hide {
+  @media screen and (max-width: 1000px) {
+    display: none;
+  }
+}
+
+.jenkins-mobile-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--nav-background-color);
+  padding: 1rem 2rem;
+
+  @media screen and (min-width: 1001px) {
+    display: none;
+  }
+
+  p {
+    font-family: "Georgia", "sans-serif";
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 0;
+  }
+
+  span {
+    display: contents;
+  }
+
+  span:first-of-type svg {
+    width: 1.5rem !important;
+    height: 1.5rem !important;
+  }
+
+  span, svg {
+    width: 1.2rem !important;
+    height: 1.2rem !important;
+    color: var(--nav-foreground-color) !important;
+
+    * {
+      stroke-width: 40px;
+    }
+  }
 }
 
 .jenkins-nav {
@@ -131,7 +187,12 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 10px;
   background: var(--nav-background-color);
+
+  @media screen and (max-width: 1000px) {
+    display: none;
+  }
 
   &__item {
     position: relative;
@@ -139,9 +200,7 @@ body {
     appearance: none;
     border: none;
     background: none;
-    width: 42px;
-    height: 42px;
-    margin: 10px 20px;
+    margin: 0 1rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -149,33 +208,13 @@ body {
     z-index: 0;
     cursor: pointer;
     transition: 0.2s ease;
-    padding: 0;
-
-    &--logo {
-      svg:last-of-type {
-        display: none;
-      }
-      span, svg {
-        width: 32px!important;
-        height: 32px!important;
-        margin-left: 0.5px;
-      }
-    }
-    &--logo.jenkins-nav__item--selected {
-      svg:first-of-type {
-        display: none;
-      }
-      svg:last-of-type {
-        display: flex;
-      }
-    }
+    opacity: 0.85;
+    padding: 1rem;
 
     &__icon {
       display: flex;
       align-items: center;
       justify-content: center;
-      width: 36px;
-      height: 36px;
 
       span {
         display: flex;
@@ -184,26 +223,19 @@ body {
       }
 
       span, svg {
-        width: 20px;
-        height: 20px;
+        width: 1.2rem;
+        height: 1.2rem;
         fill: var(--nav-foreground-color) !important;
         color: var(--nav-foreground-color)!important;
-
-        * {
-          stroke-width: 40px;
-        }
       }
     }
 
     &::before {
       content: "";
       position: absolute;
-      top: -5px;
-      left: -5px;
-      right: -5px;
-      bottom: -5px;
+      inset: 0;
       background: transparent;
-      border-radius: 100px;
+      border-radius: 14px;
       pointer-events: none;
       z-index: -1;
       transition: 0.2s ease;
@@ -221,8 +253,20 @@ body {
       }
     }
 
-    &--selected::before {
-      background: var(--nav-item-selected);
+    &--selected {
+      opacity: 1;
+
+      * {
+        stroke-width: 42px;
+      }
+
+      &::before {
+        inset: -2px;
+      }
+
+      &::before {
+        background: var(--nav-item-selected);
+      }
     }
   }
 }
@@ -235,8 +279,8 @@ body {
 }
 
 h1 {
-  font-size: 26px;
-  font-weight: 700;
+  font-size: 1.8rem;
+  font-weight: 800;
   margin: 0;
 }
 
@@ -259,22 +303,17 @@ h1 {
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    margin: 0 20px 15px 20px;
-    padding: 0 10px;
-    font-weight: 600;
+    gap: 0.75rem;
+    margin: 0 20px 0.75rem 20px;
+    padding: 0.45rem 0.65rem;
+    font-weight: 550;
+    font-size: 0.9rem;
     z-index: 0;
     cursor: pointer;
     transition: 0.2s ease;
 
     &__icon {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 36px;
-      height: 36px;
-      border-radius: 100px;
-      margin-right: 15px;
-      background: var(--button-background-color);
+      display: contents;
 
       span {
         display: flex;
@@ -283,24 +322,23 @@ h1 {
       }
 
       span, svg {
-        width: 20px;
-        height: 20px;
+        width: 1.3rem;
+        height: 1.3rem;
         color: var(--button-foreground-color) !important;
+        fill: var(--button-foreground-color) !important;
       }
     }
 
     &::before {
       content: "";
       position: absolute;
-      top: -7.5px;
-      left: 2.5px;
-      right: 2.5px;
-      bottom: -7.5px;
+      inset: -0.3rem -0.2rem;
       background: transparent;
       border-radius: 10px;
       pointer-events: none;
       z-index: -1;
       transition: 0.2s ease;
+      opacity: 0.25;
     }
 
     &:hover::before {
@@ -308,26 +346,24 @@ h1 {
     }
 
     &:active {
-      transform: scale(0.975);
-
       &::before {
         background: var(--button-background-color-active);
       }
     }
 
     &--selected::before {
-      background: var(--button-background-color-hover);
+      background: var(--button-background-color-active);
     }
   }
 }
 
 .jenkins-body {
-  padding: 60px 30px 30px 30px;
+  padding: 4rem 2rem 2rem 2rem;
 
   &--sidebar {
     display: grid;
     grid-template-columns: 350px 1fr;
-    padding: 30px 0 0 0;
+    padding: 2rem 0 0 0;
   }
 
   &--inner {

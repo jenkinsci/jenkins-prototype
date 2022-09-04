@@ -7,6 +7,7 @@
   border-bottom-width: 3px;
   border-spacing: 0 2px;
   margin-bottom: var(--section-padding);
+  width: 100%;
 
   * {
     -webkit-border-horizontal-spacing: 0;
@@ -22,7 +23,7 @@
         padding-bottom: calc((var(--table-padding) * 1.7) - 2.5px);
         padding-left: var(--table-padding);
         font-weight: 600;
-        font-size: 0.85rem;
+        font-size: 0.9rem;
 
         &[align="center"] {
           text-align: center;
@@ -262,4 +263,27 @@
       right: -8px;
     }
   }
+}
+
+.jenkins-table-icon-host {
+  width: 30px;
+  text-align: center !important;
+}
+
+td.jenkins-table-icon-host {
+  padding: 0 !important;
+
+  span {
+    width: 1.6rem !important;
+    height: 1.6rem !important;
+  }
+
+  svg {
+    width: 1.4rem !important;
+    height: 1.4rem !important;
+  }
+}
+
+th.jenkins-table-icon-host {
+  padding-left: 0 !important;
 }

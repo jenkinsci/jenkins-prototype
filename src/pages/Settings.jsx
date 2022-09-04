@@ -1,4 +1,5 @@
 import {AccessibilityOutline, AlbumsOutline, ExtensionPuzzleOutline} from 'react-ionicons'
+import {Link} from "react-router-dom";
 
 function Settings() {
   return (
@@ -18,12 +19,12 @@ function Settings() {
             </div>
             Tool configuration
           </a>
-          <a className="jenkins-sidebar__item">
+          <Link to={"plugins"} className="jenkins-sidebar__item">
             <div className="jenkins-sidebar__item__icon">
               <ExtensionPuzzleOutline />
             </div>
             Plugins
-          </a>
+          </Link>
           <a className="jenkins-sidebar__item">
             <div className="jenkins-sidebar__item__icon">
               <AlbumsOutline />

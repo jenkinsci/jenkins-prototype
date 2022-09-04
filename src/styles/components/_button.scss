@@ -15,14 +15,14 @@
   transition: 0.2s ease;
 
   span {
-    width: 18px!important;
-    height: 18px!important;
+    width: 20px!important;
+    height: 20px!important;
     margin-right: 6px;
   }
 
   svg {
-    width: 18px!important;
-    height: 18px!important;
+    width: 20px!important;
+    height: 20px!important;
     color: currentColor!important;
   }
 
@@ -43,6 +43,14 @@
     span {
       margin-right: 0;
     }
+  }
+
+  &--transparent {
+    background: transparent !important;
+  }
+
+  &--orange {
+    color: orange;
   }
 
   &--green {

@@ -1,36 +1,9 @@
 .jenkins-app-bar {
-  //position: sticky;
-  //top: 60px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 30px;
+  margin-bottom: 2rem;
   z-index: 10;
-
-  //&::before,
-  //&::after {
-  //  content: "";
-  //  position: absolute;
-  //  top: -60px;
-  //  left: -30px;
-  //  bottom: -30px;
-  //  right: -30px;
-  //  z-index: -1;
-  //  pointer-events: none;
-  //}
-  //
-  //&::before {
-  //  background: var(--background-color);
-  //  mask-image: linear-gradient(black, transparent);
-  //  filter: blur(15px);
-  //  opacity: 0.95;
-  //}
-  //
-  //&::after {
-  //  backdrop-filter: blur(15px);
-  //  filter: blur(15px);
-  //  mask-image: linear-gradient(black 50%, transparent);
-  //}
 
   &__content {
     display: flex;
@@ -53,7 +26,7 @@
 .rotating-title {
   position: relative;
   height: 0.925rem;
-  margin: 0 0 0.6rem 0;
+  margin: 0 0 0.75rem 0;
 
   p {
     position: absolute;
@@ -61,21 +34,22 @@
     left: 0;
     right: 0;
     font-weight: 600;
-    font-size: 0.925rem;
-    margin: 0;
+    font-size: 1.1rem;
     user-select: none;
     pointer-events: none;
-    opacity: 0.6;
+    color: var(--color-secondary);
     width: 100%;
     white-space: nowrap;
+    margin: 0;
 
     &:first-of-type {
       animation: rotate-title-1 0.5s both 4s;
     }
 
     &:last-of-type {
-      font-family: "Georgia";
-      font-weight: bold;
+      font-family: "Georgia", serif;
+      font-weight: 600;
+      letter-spacing: unset !important;
       animation: rotate-title-2 0.5s both 4s;
     }
   }

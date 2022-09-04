@@ -1,0 +1,39 @@
+.app-new-project__items {
+  display: flex;
+  gap: 1.5rem;
+  flex-direction: column;
+}
+
+.app-new-project__item {
+  display: flex;
+  gap: 1rem;
+  text-decoration: none;
+
+  div {
+    display: flex;
+    gap: 0.5rem;
+    flex-direction: column;
+
+    p {
+      margin: 0;
+
+      &:first-of-type {
+        color: var(--foreground-color);
+      }
+
+      &:last-of-type {
+        color: var(--color-secondary);
+      }
+    }
+  }
+
+  span, svg {
+    width: 2rem !important;
+    height: 2rem !important;
+
+    * {
+      fill: var(--foreground-color);
+      color: var(--foreground-color);
+    }
+  }
+}
