@@ -8,7 +8,7 @@ import {
   SettingsOutline,
   StarOutline
 } from "react-ionicons";
-import {BrowserRouter as Router, NavLink, Route, Switch} from "react-router-dom";
+import {BrowserRouter as Router, Link, NavLink, Route, Switch} from "react-router-dom";
 import Dashboard from "./pages/Dashboard";
 import Users from "./pages/Users";
 import Tippy from "@tippyjs/react";
@@ -65,9 +65,9 @@ function App() {
       <div className="App">
         <div className={"jenkins-mobile-nav"}>
           <MenuOutline />
-          <p>
+          <Link to={"/"}>
             Jenkins
-          </p>
+          </Link>
           <SearchOutline />
         </div>
         <div className="jenkins-nav">

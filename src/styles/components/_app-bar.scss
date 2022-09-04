@@ -7,6 +7,9 @@
 
   @media screen and (max-width: 1000px) {
     margin-bottom: 1rem;
+    align-items: stretch;
+    flex-direction: column;
+    gap: 1rem;
   }
 
   &__content {
@@ -20,9 +23,14 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 1rem;
 
-    a, button {
-      margin-left: 15px;
+    @media screen and (max-width: 1000px) {
+      flex-direction: column;
+
+      .jenkins-button {
+        width: 100%;
+      }
     }
   }
 }

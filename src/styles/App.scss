@@ -139,6 +139,7 @@ body {
     display: block;
     width: unset;
     height: unset;
+    overflow: unset;
   }
 }
 
@@ -149,22 +150,25 @@ body {
 }
 
 .jenkins-mobile-nav {
+  position: sticky;
+  top: 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
   background: var(--nav-background-color);
-  padding: 1.25rem 1rem;
+  padding: 1.15rem 1.5rem;
 
   @media screen and (min-width: 1001px) {
     display: none;
   }
 
-  p {
+  a {
     font-family: "Georgia", "sans-serif";
     font-size: 1.25rem;
     font-weight: 600;
     margin: 0;
     color: var(--nav-foreground-color);
+    text-decoration: none;
   }
 
   span {
