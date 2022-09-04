@@ -150,13 +150,17 @@ body {
 }
 
 .jenkins-mobile-nav {
-  position: sticky;
-  top: 0;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  right: 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
   background: var(--nav-background-color);
   padding: 1.15rem 1.5rem;
+  z-index: 1;
+  box-shadow: 0 -1px 5px rgba(black, 0.3);
 
   @media screen and (min-width: 1001px) {
     display: none;
@@ -379,7 +383,7 @@ h1 {
   padding: 4rem 2rem 2rem 2rem;
 
   @media screen and (max-width: 1000px) {
-    padding: 1rem;
+    padding: 3rem 1rem 6.5rem 1rem;
   }
 
   &--sidebar {

@@ -64,11 +64,16 @@ function App() {
     <Router>
       <div className="App">
         <div className={"jenkins-mobile-nav"}>
-          <MenuOutline />
-          <Link to={"/"}>
-            Jenkins
-          </Link>
-          <SearchOutline />
+          <NavLink to={"/"} className="jenkins-nav__item" activeClassName="jenkins-nav__item--selected" exact>
+            <div className="jenkins-nav__item__icon"><HomeOutline /></div>
+          </NavLink>
+          {controlBar.map(e => controlBarItems.find(i => i.id === e)).map((result) => {
+            return (
+              <div className="jenkins-nav__item" activeClassName="jenkins-nav__item--selected">
+                <div className="jenkins-nav__item__icon">{result.icon}</div>
+              </div>
+            )
+          })}
         </div>
         <div className="jenkins-nav">
           <Tippy content="Dashboard" placement="right">
