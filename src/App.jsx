@@ -1,6 +1,7 @@
 import './styles/App.scss';
 import Settings from "./pages/Settings";
 import {
+  ArrowUpOutline,
   ColorFillOutline, HomeOutline, MenuOutline,
   PeopleOutline,
   PieChartOutline,
@@ -13,7 +14,7 @@ import Dashboard from "./pages/Dashboard";
 import Users from "./pages/Users";
 import Tippy from "@tippyjs/react";
 import 'tippy.js/dist/tippy.css';
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import BuildMonitor from "./pages/BuildMonitor";
 import ThemeSwitcher from "./components/panels/ThemeSwitcher";
 import Favorites from "./components/panels/Favorites";
@@ -25,6 +26,20 @@ import PluginManager from "./pages/PluginManager";
 import NewProject from "./pages/NewProject";
 
 function App() {
+
+  const [showScrollToTopButton, setShowScrollToTopButton] = useState(false)
+
+  useEffect(() => {
+    const element = document.querySelector("#app-layer")
+
+    const onScroll = e => {
+      setShowScrollToTopButton(element.scrollTop > 250)
+    };
+    element.addEventListener("scroll", onScroll);
+
+    return () => element.removeEventListener("scroll", onScroll);
+  }, [showScrollToTopButton]);
+
   const [searchVisible, setSearchVisible] = useState(false)
   const controlBarItems = [
     {
@@ -111,8 +126,14 @@ function App() {
               <div className="jenkins-nav__item__icon"><SettingsOutline/></div>
             </NavLink>
           </Tippy>
+
+          <Tippy content="Scroll to top" placement="right">
+            <button onClick={() => document.querySelector("#app-layer").scroll({top:0,behavior:'smooth'})} className={`jenkins-nav__item jenkins-nav__item--bottom ${showScrollToTopButton && 'jenkins-nav__item--bottom--visible'}`}>
+              <div className="jenkins-nav__item__icon"><ArrowUpOutline/></div>
+            </button>
+          </Tippy>
         </div>
-        <div className="jenkins-container">
+        <div id="app-layer" className="jenkins-container">
           <Switch>
             <Route path="/new">
               <NewProject/>

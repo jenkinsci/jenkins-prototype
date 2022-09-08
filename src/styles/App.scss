@@ -396,3 +396,19 @@ h1 {
     padding: 0 30px 30px 30px;
   }
 }
+
+.jenkins-nav__item--bottom {
+  position: absolute;
+  bottom: 1rem;
+  left: 0;
+  opacity: 0;
+  scale: 0;
+  translate: 0 20px;
+  transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.jenkins-nav__item--bottom--visible {
+  scale: 1;
+  opacity: 1;
+  translate: 0;
+}
