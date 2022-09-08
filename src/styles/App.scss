@@ -13,6 +13,9 @@
   --card-background: var(--table-background-color);
   --card-gap: 1rem;
 
+  // Color
+  --white: #fff;
+
   // Table
   --table-background-color: hsl(212, 30%, 96%);
   --table-body-background: var(--background-color);
@@ -30,6 +33,9 @@
   --button-foreground-color-hover: black;
   --button-foreground-color-active: black;
 
+  // Branding
+  --focus-input-border: #063f61;
+
   // Link
   --link-color: hsl(212, 100%, 42%);
   --link-color-hover: hsl(212, 100%, 30%);
@@ -41,6 +47,20 @@
   --nav-item-hover: hsl(212, 20%, 15%);
   --nav-item-active: hsl(212, 20%, 20%);
   --nav-item-selected: hsl(212, 20%, 15%);
+
+  // Form
+  --section-padding: 1.85rem;
+  --form-item-max-width: "min(65vw, 1600px)";
+  --input-color: var(--white);
+  --input-border: #c3ccd1;
+  --input-border-hover: #5c7889;
+  --form-input-padding: 0.5rem;
+  --form-input-border-radius: 6px;
+  --form-input-glow: 0 0 0 10px transparent;
+  --form-input-glow--focus: 0 0 0 5px var(--focus-input-glow);
+
+  // Animations
+  --standard-transition: 0.3s ease;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -57,8 +77,18 @@
 
     --overlap-color: hsl(230, 15%, 7%);
 
+    // Branding
+    --focus-input-border: #4bbeff;
+
     // Card
     --card-background: var(--overlap-color);
+
+    // Color
+    --white: hsl(230, 13%, 20%);
+
+    // Form
+    --input-border: hsl(230, 13%, 20%);
+    --focus-input-glow: rgba(43, 116, 160, 0.4);
 
     // Table
     --table-background-color: var(--overlap-color);
@@ -88,6 +118,8 @@
 @import "components/_breadcrumbs";
 @import "components/_build-history";
 @import "components/_cards";
+@import "components/input";
+@import "components/layout";
 @import "components/_link";
 @import "components/_search";
 @import "components/_stageview";
