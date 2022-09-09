@@ -45,4 +45,12 @@
     width: 16px;
     height: 16px;
   }
+
+  &--link {
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
 }
