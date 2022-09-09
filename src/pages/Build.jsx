@@ -3,7 +3,7 @@ import {Link} from "react-router-dom";
 import {
   CopyOutline,
   DownloadOutline,
-  EllipsisHorizontalOutline, PersonOutline,
+  EllipsisHorizontalOutline, GitCommitOutline, GitPullRequestOutline, HourglassOutline, PersonOutline,
   PlayOutline,
   ResizeOutline,
   TimeOutline, TimerOutline
@@ -39,6 +39,7 @@ function Dashboard() {
           </a>
         </div>
       </div>
+      <h2 style={{"margin": "0 0 0 10px"}}>Add updates count badge to Updates sidebar item</h2>
       <div className={"jenkins-cards"}>
         <div className={"jenkins-cards__item jenkins-cards__item--wide jenkins-build__terminal-card"}>
           <div className="jenkins-cards__item__title-float">
@@ -77,8 +78,20 @@ function Dashboard() {
             Started 5 mo 15 days ago
           </p>
           <p className={"app-details__item"}>
+            <HourglassOutline />
+            Queued 10 sec
+          </p>
+          <p className={"app-details__item"}>
             <TimerOutline />
             Took 3 min 2 sec
+          </p>
+          <p className={"app-details__item"}>
+            <GitPullRequestOutline />
+            <a className={"app-details__item--link"} href="https://github.com/jenkinsci/jenkins/pull/7084">#7084</a>
+          </p>
+          <p className={"app-details__item"}>
+            <GitCommitOutline />
+            <a className={"app-details__item--link"} href="https://github.com/jenkinsci/jenkins/commit/82df2555089391a0dd1a33813c6609e882021d43">82df255</a>
           </p>
         </div>
         <div className={"jenkins-cards__item"}>
