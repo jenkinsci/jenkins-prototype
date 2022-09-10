@@ -13,6 +13,7 @@
   outline: none;
   border: none;
   transition: 0.2s ease;
+  font-size: 14px;
 
   @media screen and (max-width: 1000px) {
     height: unset;
@@ -35,7 +36,7 @@
 
   &--primary {
     background: var(--link-color);
-    color: black;
+    color: var(--background-color);
     font-weight: 550;
   }
 

@@ -40,8 +40,8 @@ function PluginManager() {
     <div className="jenkins-body jenkins-body--sidebar app-plugin-manager">
       <div className="jenkins-sidebar">
         <div className={"jenkins-breadcrumbs"} style={{"margin": "30px 30px 0 30px"}}>
-          <Link to={"/"} className={"jenkins-breadcrumb"}>Settings</Link>
-          <Link to={"/project"} className={"jenkins-breadcrumb"}>Plugins</Link>
+          <Link to={"/settings"} className={"jenkins-breadcrumb"}>Settings</Link>
+          <Link to={"/settings/plugins"} className={"jenkins-breadcrumb"}>Plugins</Link>
         </div>
         <h1 style={{"margin": "15px 30px 45px 30px"}}>Plugins</h1>
         <a className="jenkins-sidebar__item jenkins-sidebar__item--selected">

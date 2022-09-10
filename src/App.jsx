@@ -138,7 +138,7 @@ function App() {
             <Route path="/new">
               <NewProject/>
             </Route>
-            <Route path="/plugins">
+            <Route path="/settings/plugins">
               <PluginManager/>
             </Route>
             <Route path="/settings">
