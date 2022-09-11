@@ -3,9 +3,9 @@
 
   --background-color: hsl(212, 20%, 99.5%);
 
-  --foreground-color: hsl(212, 100%, 5%);
+  --foreground-color: hsl(212, 100%, 10%);
 
-  --color-secondary: hsl(212, 20%, 50%);
+  --color-secondary: hsl(212, 25%, 50%);
 
   --border-color: rgba(0, 0, 0, 0.1);
 
@@ -26,9 +26,9 @@
   --table-row-border-radius: 4px;
 
   // Root
-  --button-background-color: hsl(212, 13%, 90%);
-  --button-background-color-hover: hsl(212, 13%, 80%);
-  --button-background-color-active: hsl(212, 13%, 72%);
+  --button-background-color: hsl(212, 25%, 92.5%);
+  --button-background-color-hover: hsl(212, 25%, 82.5%);
+  --button-background-color-active: hsl(212, 25%, 72.5%);
   --button-foreground-color: var(--foreground-color);
   --button-foreground-color-hover: black;
   --button-foreground-color-active: black;
@@ -60,7 +60,15 @@
   --form-input-glow--focus: 0 0 0 5px var(--focus-input-glow);
 
   // Animations
-  --standard-transition: 0.3s ease;
+  --standard-transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+  // Fonts
+  --font-1: 1.6rem;
+  --font-2: 1.4rem;
+  --font-3: 1.3rem;
+  --font-4: 1.2rem;
+  --font-5: 1.1rem;
+  --font-6: 1rem;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -131,6 +139,7 @@
 @import "components/panels/_search";
 @import "components/panels/_theme-switcher";
 
+@import "pages/_appearance";
 @import "pages/_build";
 @import "pages/_dashboard";
 @import "pages/_new-project";
@@ -145,7 +154,6 @@ html {
   sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-weight: 500;
   background: var(--background-color);
 }
 
@@ -322,6 +330,11 @@ body {
   overflow-x: hidden;
   overflow-y: scroll;
 
+  & > .jenkins-body {
+    max-width: min(92vw, 2000px);
+    margin: 0 auto;
+  }
+
   @media screen and (max-width: 1000px) {
     height: unset;
     overflow: unset;
@@ -329,9 +342,10 @@ body {
 }
 
 h1 {
-  font-size: 1.8rem;
-  font-weight: 800;
+  font-size: var(--font-1);
+  font-weight: 650;
   margin: 0;
+  letter-spacing: unset;
 
   @media screen and (max-width: 1000px) {
     font-size: 1.5rem;
@@ -340,14 +354,13 @@ h1 {
 
 .jenkins-sidebar {
   position: relative;
-  max-width: 360px;
   height: 100vh;
 
   &__heading {
-    font-size: 15px;
+    font-size: var(--font-6);
     font-weight: 600;
-    margin: 40px 30px 15px 30px;
-    opacity: 0.6;
+    margin: 30px 30px 15px 30px;
+    color: var(--color-secondary);
   }
 
   &__item {
@@ -355,10 +368,11 @@ h1 {
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    gap: 0.75rem;
-    margin: 0 0 0.75rem 20px;
-    padding: 0.45rem 0.65rem;
-    font-weight: 550;
+    gap: 0.6rem;
+    margin: 0 0 2px 20px;
+    padding: 0.675rem 0.65rem;
+    font-weight: 450;
+    -webkit-font-smoothing: subpixel-antialiased;
     font-size: 0.9rem;
     z-index: 0;
     cursor: pointer;
@@ -376,27 +390,37 @@ h1 {
       }
 
       span, svg {
-        width: 1.3rem;
-        height: 1.3rem;
-        color: var(--button-foreground-color) !important;
-        fill: var(--button-foreground-color) !important;
+        width: 1.2666666667rem;
+        height: 1.2666666667rem;
+        color: inherit !important;
+        fill: currentColor !important;
+      }
+    }
+
+    .external {
+      span, svg {
+        margin-left: auto;
+        width: 1rem;
+        height: 1rem;
+        color: var(--color-secondary) !important;
+        fill: currentColor !important;
       }
     }
 
     &::before {
       content: "";
       position: absolute;
-      inset: -0.3rem -0.2rem;
+      inset: 0 -0.3rem;
       background: transparent;
       border-radius: 10px;
       pointer-events: none;
       z-index: -1;
       transition: 0.2s ease;
-      opacity: 0.25;
+      opacity: 0.15;
     }
 
     &:hover::before {
-      background: var(--button-background-color-hover);
+      background: var(--color-secondary);
     }
 
     &:active {
@@ -406,7 +430,7 @@ h1 {
     }
 
     &--selected::before {
-      background: var(--button-background-color-active);
+      background: var(--color-secondary);
     }
   }
 }
@@ -420,12 +444,12 @@ h1 {
 
   &--sidebar {
     display: grid;
-    grid-template-columns: 350px 1fr;
+    grid-template-columns: 300px 1fr;
     padding: 2rem 0 0 0;
   }
 
   &--inner {
-    padding: 0 30px 30px 30px;
+    padding: 0 2rem 2rem 3rem;
   }
 }
 

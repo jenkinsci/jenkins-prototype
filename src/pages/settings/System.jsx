@@ -13,8 +13,6 @@ export default function System() {
         <label htmlFor="numExecutors" className={"jenkins-form-label"}>Number of executors</label>
         <input type="number" defaultValue="0" id="numExecutors" className={"jenkins-input"}/>
       </div>
-
-      <button className={"jenkins-button jenkins-button--primary"} type="submit">Save</button>
     </>
   );
 }
