@@ -164,9 +164,9 @@ function App() {
             </Route>
           </Switch>
         </div>
-        {searchVisible ? (
+        {searchVisible && (
           <Search hook={setSearchVisible}/>
-        ) : null}
+        )}
       </div>
     </Router>
   );
