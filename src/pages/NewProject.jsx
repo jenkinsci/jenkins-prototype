@@ -1,45 +1,41 @@
-import {Link} from "react-router-dom";
+import {Link, NavLink, Route, Switch} from "react-router-dom";
 import {
-  AccessibilityOutline,
-  AlbumsOutline,
-  DuplicateOutline,
-  ExtensionPuzzleOutline,
-  LogoGithub, LogoGitlab
+  DuplicateOutline, LayersOutline,
+  LogoGithub, LogoGitlab, OpenOutline
 } from "react-ionicons";
-import Green from "../green.svg";
-import Sun from "../sun.svg";
+import System from "./settings/System";
+import Appearance from "./settings/Appearance";
+import NotImplemented from "./settings/NotImplemented";
+import ProjectTypes from "./new/ProjectTypes";
+import GitHub from "./new/GitHub";
 
 function NewProject() {
   const items = [
     {
-      icon: <LogoGithub/>,
-      title: "Jenkins",
-      description: "16 hours ago"
+      items: [
+        {
+          icon: <LayersOutline />,
+          name: "Project types",
+          link: ""
+        },
+        {
+          icon: <DuplicateOutline />,
+          name: "Duplicate an existing project"
+        }
+      ]
     },
     {
-      icon: <LogoGithub/>,
-      title: "Jenkins",
-      description: "16 hours ago"
-    },
-    {
-      icon: <LogoGithub/>,
-      title: "Jenkins",
-      description: "16 hours ago"
-    },
-    {
-      icon: <LogoGithub/>,
-      title: "Jenkins",
-      description: "16 hours ago"
-    },
-    {
-      icon: <LogoGithub/>,
-      title: "Jenkins",
-      description: "16 hours ago"
-    },
-    {
-      icon: <LogoGithub/>,
-      title: "Jenkins",
-      description: "16 hours ago"
+      name: "Integrate with",
+      items: [
+        {
+          icon: <LogoGithub />,
+          name: "GitHub"
+        },
+        {
+          icon: <LogoGitlab />,
+          name: "GitLab"
+        }
+      ]
     }
   ]
 
@@ -51,50 +47,47 @@ function NewProject() {
           <Link to={"/project"} className={"jenkins-breadcrumb"}>New project</Link>
         </div>
         <h1 style={{"margin": "15px 30px 30px 30px"}}>New project</h1>
-        <p style={{"margin": "15px 30px 30px 30px", "opacity": 0.75}}>Lorem ipsum dollar</p>
-        <a className="jenkins-sidebar__item jenkins-sidebar__item--selected">
-          <div className="jenkins-sidebar__item__icon">
-            <AlbumsOutline />
-          </div>
-          Project types
-        </a>
-        <a className="jenkins-sidebar__item">
-          <div className="jenkins-sidebar__item__icon">
-            <DuplicateOutline />
-          </div>
-          Duplicate an existing project
-        </a>
-        <p style={{"margin": "45px 30px 25px 30px", "opacity": 0.75}}>Integrate with</p>
-        <a className="jenkins-sidebar__item">
-          <div className="jenkins-sidebar__item__icon">
-            <LogoGithub />
-          </div>
-          GitHub
-        </a>
-        <a className="jenkins-sidebar__item">
-          <div className="jenkins-sidebar__item__icon">
-            <LogoGitlab />
-          </div>
-          GitLab
-        </a>
+
+        {items.map(category => {
+          return (
+            <>
+              <h2 className="jenkins-sidebar__heading">{category.name}</h2>
+              {category.items.map(item => {
+                return (
+                  <NavLink to={`../new/${item.link === "" ? item.link : item.name.toLowerCase().replaceAll(" ", "-")}`} className="jenkins-sidebar__item" activeClassName="jenkins-sidebar__item--selected" exact>
+                    <div className="jenkins-sidebar__item__icon">
+                      {item.icon}
+                    </div>
+                    {item.name}
+                    {item.external === true &&
+                      <div className="jenkins-sidebar__item__icon external">
+                        <OpenOutline />
+                      </div>
+                    }
+                  </NavLink>
+                )
+              })}
+            </>
+          )
+        })}
+
       </div>
       <div className="jenkins-body jenkins-body--inner">
-        <h2>
-          Project types
-        </h2>
-        <div className={"app-new-project__items"}>
-          {items.map((item) => {
-            return (
-              <Link to={"#"} className={"app-new-project__item"}>
-                {item.icon}
-                <div>
-                  <p>{item.title}</p>
-                  <p>{item.description}</p>
-                </div>
-              </Link>
-            )
-          })}
+        <div className={"jenkins-breadcrumbs"} style={{"margin": "15px 30px 0 0", "opacity": "0"}}>
+          <Link to={"/"} className={"jenkins-breadcrumb"}>Dashboard</Link>
+          <Link to={"/project"} className={"jenkins-breadcrumb"}>New project</Link>
         </div>
+        <Switch>
+          <Route path="/new" exact="true">
+            <ProjectTypes />
+          </Route>
+          <Route path="/new/github">
+            <GitHub />
+          </Route>
+          <Route>
+            <NotImplemented />
+          </Route>
+        </Switch>
       </div>
     </div>
   );
