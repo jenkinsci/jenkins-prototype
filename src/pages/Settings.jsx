@@ -1,13 +1,28 @@
 import {
-  AlbumsOutline, BrushOutline,
-  ExtensionPuzzleOutline, HelpCircleOutline, HelpOutline, LockClosedOutline, OpenOutline,
+  AlbumsOutline,
+  AnalyticsOutline,
+  BrushOutline, CloudOutline,
+  CodeWorkingOutline,
+  CubeOutline,
+  ExtensionPuzzleOutline,
+  FileTrayFullOutline,
+  HammerOutline,
+  HelpCircleOutline,
+  HelpOutline,
+  LockClosedOutline,
+  OpenOutline,
   PeopleOutline,
-  SettingsOutline
+  PowerOutline,
+  ReloadOutline,
+  ServerOutline,
+  SettingsOutline,
+  TerminalOutline
 } from 'react-ionicons'
 import {NavLink, Route, Switch} from "react-router-dom";
 import System from "./settings/System";
 import Tools from "./settings/Tools";
 import Appearance from "./settings/Appearance";
+import NotImplemented from "./settings/NotImplemented";
 
 function Settings() {
 
@@ -22,23 +37,19 @@ function Settings() {
         },
         {
           icon: <BrushOutline />,
-          name: "Appearance",
-          link: "appearance"
+          name: "Appearance"
         },
         {
-          icon: <AlbumsOutline />,
-          name: "Tools",
-          link: "tools"
+          icon: <HammerOutline />,
+          name: "Tools"
         },
         {
-          icon: <AlbumsOutline />,
-          name: "Nodes and clouds",
-          link: "nodes"
+          icon: <CloudOutline />,
+          name: "Nodes and clouds"
         },
         {
           icon: <ExtensionPuzzleOutline />,
           name: "Plugins",
-          link: "plugins",
           external: true
         }
       ]
@@ -48,13 +59,41 @@ function Settings() {
       items: [
         {
           icon: <LockClosedOutline />,
-          name: "Global security",
-          link: "global-security"
+          name: "Global security"
         },
         {
           icon: <PeopleOutline />,
-          name: "Users",
-          link: "users"
+          name: "Users"
+        }
+      ]
+    },
+    {
+      name: "Troubleshooting",
+      items: [
+        {
+          icon: <CubeOutline />,
+          name: "Manage old data"
+        }
+      ]
+    },
+    {
+      name: "Actions",
+      items: [
+        {
+          icon: <ReloadOutline />,
+          name: "Reload Jenkins"
+        },
+        {
+          icon: <TerminalOutline />,
+          name: "Jenkins CLI"
+        },
+        {
+          icon: <CodeWorkingOutline />,
+          name: "Script console"
+        },
+        {
+          icon: <PowerOutline />,
+          name: "Shutdown Jenkins"
         }
       ]
     },
@@ -62,13 +101,18 @@ function Settings() {
       name: "Other",
       items: [
         {
-          icon: <AlbumsOutline />,
-          name: "Example",
+          icon: <ServerOutline />,
+          name: "System information",
           link: "idk"
         },
         {
-          icon: <AlbumsOutline />,
-          name: "Example",
+          icon: <FileTrayFullOutline />,
+          name: "System log",
+          link: "idk"
+        },
+        {
+          icon: <AnalyticsOutline />,
+          name: "Load statistics",
           link: "idk"
         },
         {
@@ -91,7 +135,7 @@ function Settings() {
               <h2 className="jenkins-sidebar__heading">{category.name}</h2>
               {category.items.map(item => {
                 return (
-                  <NavLink to={`../settings/${item.link}`} className="jenkins-sidebar__item" activeClassName="jenkins-sidebar__item--selected" exact>
+                  <NavLink to={`../settings/${item.link === "" ? item.link : item.name.toLowerCase().replaceAll(" ", "-")}`} className="jenkins-sidebar__item" activeClassName="jenkins-sidebar__item--selected" exact>
                     <div className="jenkins-sidebar__item__icon">
                       {item.icon}
                     </div>
@@ -118,6 +162,9 @@ function Settings() {
           </Route>
           <Route path="/settings/appearance">
             <Appearance />
+          </Route>
+          <Route>
+            <NotImplemented />
           </Route>
         </Switch>
         <button style={{"padding": "0.75rem 1.8rem", "height": "unset"}} className={"jenkins-button jenkins-button--primary"} type="submit">Save</button>

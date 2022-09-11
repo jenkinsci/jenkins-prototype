@@ -51,11 +51,11 @@
   // Form
   --section-padding: 1.85rem;
   --form-item-max-width: "min(65vw, 1600px)";
-  --input-color: var(--white);
-  --input-border: #c3ccd1;
-  --input-border-hover: #5c7889;
-  --form-input-padding: 0.5rem;
-  --form-input-border-radius: 6px;
+  --input-color: hsl(212, 30%, 97.5%);
+  --input-border: hsl(212, 30%, 90%);
+  --input-border-hover: hsl(212, 30%, 80%);
+  --form-input-padding: 0.65rem;
+  --form-input-border-radius: 10px;
   --form-input-glow: 0 0 0 10px transparent;
   --form-input-glow--focus: 0 0 0 5px var(--focus-input-glow);
 
@@ -354,7 +354,8 @@ h1 {
 
 .jenkins-sidebar {
   position: relative;
-  height: 100vh;
+  min-height: 100vh;
+  margin-bottom: 2rem;
 
   &__heading {
     font-size: var(--font-6);
