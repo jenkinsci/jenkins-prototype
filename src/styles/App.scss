@@ -95,7 +95,6 @@
     --white: hsl(230, 13%, 20%);
 
     // Form
-    --input-border: hsl(230, 13%, 20%);
     --focus-input-glow: rgba(43, 116, 160, 0.4);
 
     // Table
@@ -106,6 +105,13 @@
     --button-background-color: var(--overlap-color);
     --button-background-color-hover: hsl(230, 13%, 20%);
     --button-background-color-active: hsl(230, 13%, 20%);
+
+    // Form
+    --input-color: hsl(230, 13%, 10%);
+    --input-border: hsl(230, 13%, 20%);
+    --input-border-hover: hsl(230, 13%, 30%);
+    --form-input-glow: 0 0 0 10px transparent;
+    --form-input-glow--focus: 0 0 0 5px var(--focus-input-glow);
 
     // Link
     --link-color: var(--accent-color);
