@@ -58,9 +58,9 @@ function Dashboard() {
           <p className="jenkins-cards__item__title">
             Stage view
             <Tippy content="Fullscreen">
-              <a href="#">
+              <Link to={"/project/stageview"}>
                 <ResizeOutline />
-              </a>
+              </Link>
             </Tippy>
           </p>
           <Stageview/>

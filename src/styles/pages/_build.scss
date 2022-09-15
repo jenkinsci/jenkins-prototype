@@ -23,6 +23,27 @@
   }
 }
 
+.console-code {
+  font-size: 1rem;
+  font-family: ui-monospace, source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+  overflow: scroll;
+  white-space: pre-line;
+  line-height: 1.8;
+  color: white;
+
+  p {
+    display: grid;
+    grid-template-columns: 2ch 1fr;
+    margin: 0;
+    gap: 2ch;
+
+    span {
+      text-align: right;
+      color: var(--color-secondary);
+    }
+  }
+}
+
 .jenkins-card-big-link {
   display: flex;
   color: var(--link-color);

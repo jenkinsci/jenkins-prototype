@@ -16,6 +16,14 @@
   // Color
   --white: #fff;
 
+  --green: #31c048;
+  --green-subtle: hsla(130, 59%, 47%, 15%);
+
+  --orange: #fe820a;
+
+  --red: #fc2125;
+  --red-subtle: hsla(359, 97%, 56%, 15%);
+
   // Table
   --table-background-color: hsl(212, 30%, 96%);
   --table-body-background: var(--background-color);
@@ -77,7 +85,7 @@
 
     $hue: 0;
 
-    --accent-color: hsl(225, 100%, 70%);
+    --accent-color: hsl(220, 100%, 65%);
     --background-color: hsl(230, 15%, 5%);
 
     --foreground-color: hsl(230, 15%, 90%);
@@ -93,6 +101,14 @@
 
     // Color
     --white: hsl(230, 13%, 20%);
+
+    --green: #2fcc47;
+    --green-subtle: hsla(129, 63%, 49%, 15%);
+
+    --orange: #fe8d0f;
+
+    --red: #fc2d2d;
+    --red-subtle: hsla(0, 97%, 58%, 15%);
 
     // Form
     --focus-input-glow: rgba(43, 116, 160, 0.4);
@@ -128,6 +144,7 @@
 }
 
 @import "components/_app-bar";
+@import "components/back-link";
 @import "components/_button";
 @import "components/_breadcrumbs";
 @import "components/_build-history";
@@ -147,6 +164,7 @@
 
 @import "pages/_appearance";
 @import "pages/_build";
+@import "pages/build/console";
 @import "pages/_dashboard";
 @import "pages/_new-project";
 @import "pages/_plugin-manager";
@@ -195,62 +213,27 @@ body {
   }
 }
 
-.jenkins-mobile-nav {
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background: var(--nav-background-color);
-  padding: 1.15rem 1.5rem;
-  z-index: 1;
-  box-shadow: 0 -1px 5px rgba(black, 0.3);
-
-  @media screen and (min-width: 1001px) {
-    display: none;
-  }
-
-  a {
-    font-family: "Georgia", "sans-serif";
-    font-size: 1.25rem;
-    font-weight: 600;
-    margin: 0;
-    color: var(--nav-foreground-color);
-    text-decoration: none;
-  }
-
-  span {
-    display: contents;
-  }
-
-  span:first-of-type svg {
-    width: 1.5rem !important;
-    height: 1.5rem !important;
-  }
-
-  span, svg {
-    width: 1.2rem !important;
-    height: 1.2rem !important;
-    color: var(--nav-foreground-color) !important;
-
-    * {
-      stroke-width: 40px;
-    }
-  }
-}
-
 .jenkins-nav {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 10px;
+  gap: 0.6666666667rem;
+  padding: 0 0.9rem;
   background: var(--nav-background-color);
 
   @media screen and (max-width: 1000px) {
-    display: none;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    flex-direction: row;
+    padding: 1rem 1rem;
+    z-index: 1;
+
+    &_item {
+      margin: 0;
+    }
   }
 
   &__item {
@@ -259,7 +242,6 @@ body {
     appearance: none;
     border: none;
     background: none;
-    margin: 0 1rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -463,7 +445,7 @@ h1 {
 .jenkins-nav__item--bottom {
   position: absolute;
   bottom: 1rem;
-  left: 0;
+  left: 0.9rem;
   opacity: 0;
   scale: 0;
   translate: 0 20px;

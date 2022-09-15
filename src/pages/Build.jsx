@@ -57,9 +57,9 @@ function Dashboard() {
                   </a>
                 </Tippy>
                 <Tippy content="Fullscreen">
-                  <a href="#">
+                  <Link to="/project/build/console">
                     <ResizeOutline />
-                  </a>
+                  </Link>
                 </Tippy>
               </div>
             </p>

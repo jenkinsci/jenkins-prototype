@@ -1,0 +1,15 @@
+.app-console-page {
+  background: black;
+  color: white !important;
+  --color-secondary: #aaa;
+
+  &__inner {
+    max-width: min(92vw, 2000px);
+    padding: 4rem 2rem 2rem 2rem;
+    margin: 0 auto;
+  }
+
+  @media screen and (max-width: 1000px) {
+    padding: 3rem 1rem 6.5rem 1rem;
+  }
+}

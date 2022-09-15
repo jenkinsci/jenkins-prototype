@@ -13,7 +13,7 @@ import {
   OpenOutline,
   PeopleOutline,
   PowerOutline,
-  ReloadOutline,
+  ReloadOutline, SearchOutline,
   ServerOutline,
   SettingsOutline,
   TerminalOutline
@@ -128,6 +128,11 @@ function Settings() {
     <div className="jenkins-body jenkins-body--sidebar">
       <div className="jenkins-sidebar">
         <h1 style={{"margin": "30px 30px 0px 30px"}}>Settings</h1>
+
+        <div className={"app-search-bar"} style={{"margin": "20px 0 0 20px"}}>
+          <SearchOutline />
+          <input type="search" placeholder={"Search"} />
+        </div>
 
         {items.map(category => {
           return (

@@ -13,8 +13,10 @@
   outline: none;
   border: none;
   transition: 0.2s ease;
-  font-size: 14px;
+  font-size: 0.9333333333rem;
+  font-weight: 500;
   margin: 0 !important;
+  gap: 1ch;
 
   @media screen and (max-width: 1000px) {
     height: unset;
@@ -24,14 +26,13 @@
   }
 
   span {
-    width: 20px!important;
-    height: 20px!important;
-    margin-right: 6px;
+    width: 1.2rem!important;
+    height: 1.2rem!important;
   }
 
   svg {
-    width: 20px!important;
-    height: 20px!important;
+    width: 1.2rem!important;
+    height: 1.2rem!important;
     color: currentColor!important;
   }
 
@@ -62,41 +63,36 @@
   }
 
   &--orange {
-    color: orange;
+    color: var(--orange);
   }
 
   &--green {
-    background: rgba(#0ebb43, 0.16);
-    color: #0ebb43;
+    background: var(--green-subtle);
+    color: var(--green) !important;
 
     &:hover {
       background: rgba(#0ebb43, 0.24);
-      color: #0ebb43;
     }
 
     &:active {
       background: rgba(#0ebb43, 0.28);
-      color: #0ebb43;
     }
 
     &::after {
-      border-bottom: 2px solid #0ebb43;
       opacity: 0.1;
     }
   }
 
   &--red {
-    background: rgba(red, 0.16);
-    color: red;
+    background: var(--red-subtle);
+    color: var(--red) !important;
 
     &:hover {
       background: rgba(red, 0.22);
-      color: red;
     }
 
     &:active {
       background: rgba(red, 0.28);
-      color: red;
     }
 
     &::after {

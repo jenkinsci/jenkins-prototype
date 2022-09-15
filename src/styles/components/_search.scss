@@ -24,3 +24,38 @@
     }
   }
 }
+
+.app-search-bar {
+  position: relative;
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+  background: var(--button-background-color);
+  height: 37px;
+
+  input {
+    appearance: none;
+    outline: none;
+    border: none;
+    font-size: 14px;
+    background: transparent;
+
+    &::placeholder {
+      color: var(--color-secondary);
+    }
+  }
+
+  span {
+    width: 37px;
+    height: 37px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    svg {
+      width: 1.1rem !important;
+      height: 1.1rem !important;
+      color: currentColor;
+    }
+  }
+}

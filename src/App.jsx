@@ -2,7 +2,7 @@ import './styles/App.scss';
 import Settings from "./pages/Settings";
 import {
   ArrowUpOutline,
-  ColorFillOutline, HomeOutline, MenuOutline,
+  ColorFillOutline, HomeOutline,
   PeopleOutline,
   PieChartOutline,
   SearchOutline,
@@ -24,6 +24,8 @@ import ProjectSettings from "./pages/ProjectSettings";
 import Build from "./pages/Build";
 import PluginManager from "./pages/PluginManager";
 import NewProject from "./pages/NewProject";
+import StageviewPage from "./pages/project/StageviewPage";
+import ConsolePage from "./pages/project/ConsolePage";
 
 function App() {
 
@@ -51,7 +53,7 @@ function App() {
     {
       id: "search",
       name: "Search",
-      onClick: e => setSearchVisible(true),
+      onClick: () => setSearchVisible(true),
       icon: <SearchOutline/>
     },
     {
@@ -78,18 +80,6 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <div className={"jenkins-mobile-nav"}>
-          <NavLink to={"/"} className="jenkins-nav__item" activeClassName="jenkins-nav__item--selected" exact>
-            <div className="jenkins-nav__item__icon"><HomeOutline /></div>
-          </NavLink>
-          {controlBar.map(e => controlBarItems.find(i => i.id === e)).map((result) => {
-            return (
-              <div className="jenkins-nav__item" activeClassName="jenkins-nav__item--selected">
-                <div className="jenkins-nav__item__icon">{result.icon}</div>
-              </div>
-            )
-          })}
-        </div>
         <div className="jenkins-nav">
           <Tippy content="Dashboard" placement="right">
             <NavLink to={"/"} className="jenkins-nav__item" activeClassName="jenkins-nav__item--selected" exact>
@@ -153,8 +143,14 @@ function App() {
             <Route path="/project/configure">
               <ProjectSettings/>
             </Route>
+            <Route path="/project/build/console">
+              <ConsolePage/>
+            </Route>
             <Route path="/project/build">
               <Build/>
+            </Route>
+            <Route path="/project/stageview">
+              <StageviewPage />
             </Route>
             <Route path="/project">
               <Project/>
