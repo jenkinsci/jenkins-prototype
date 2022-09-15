@@ -16,10 +16,10 @@ function Dashboard() {
     <div className="jenkins-body">
       <div className={"jenkins-breadcrumbs"}>
         <Link to={"/"} className={"jenkins-breadcrumb"}>Dashboard</Link>
-        <Link to={"/"} className={"jenkins-breadcrumb"}>Core</Link>
-        <Link to={"/"} className={"jenkins-breadcrumb"}>Jenkins</Link>
-        <Link to={"/"} className={"jenkins-breadcrumb"}>master</Link>
-        <Link to={"/"} className={"jenkins-breadcrumb"}>Build 374</Link>
+        <Link to={"/project"} className={"jenkins-breadcrumb"}>Core</Link>
+        <Link to={"/project"} className={"jenkins-breadcrumb"}>Jenkins</Link>
+        <Link to={"/project"} className={"jenkins-breadcrumb"}>master</Link>
+        <Link to={"/project/build"} className={"jenkins-breadcrumb"}>Build 374</Link>
       </div>
       <div className="jenkins-app-bar">
         <div className={"jenkins-app-bar__content"}>
@@ -64,8 +64,12 @@ function Dashboard() {
               </div>
             </p>
           </div>
-          <code>
-            {TerminalText}
+          <code className={"console-code"}>
+            {TerminalText.split("\n").map((line, index) => {
+              return (
+                <p><span>{index + 1}</span>{ line }</p>
+              )
+            })}
           </code>
         </div>
         <div className={"jenkins-cards__item"}><p className="jenkins-cards__item__title">Details</p>

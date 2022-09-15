@@ -57,19 +57,21 @@ function Dashboard() {
         <div className={"jenkins-cards__item jenkins-cards__item--wide"}>
           <p className="jenkins-cards__item__title">
             Stage view
-            <Tippy content="Fullscreen">
-              <Link to={"/project/stageview"}>
-                <ResizeOutline />
-              </Link>
-            </Tippy>
+            <div className="jenkins-cards__item__title__actions">
+              <Tippy content="Fullscreen">
+                <Link to={"/project/stageview"}>
+                  <ResizeOutline />
+                </Link>
+              </Tippy>
+            </div>
           </p>
           <Stageview/>
         </div>
         <div className={"jenkins-cards__item"}>
           <p className="jenkins-cards__item__title">Build history</p>
-          <div className={"jenkins-search"}>
-            <input placeholder={"Search builds..."}/>
-            <SearchOutline/>
+          <div className={"app-search-bar"} style={{"margin": "20px 0"}}>
+            <SearchOutline />
+            <input type="search" placeholder={"Search"} />
           </div>
           <div className={"jenkins-build-history"}>
             {Array.from(Array(10), (e, i) => {
@@ -90,11 +92,13 @@ function Dashboard() {
         <div className={"jenkins-cards__item jenkins-cards__item--wide"}>
           <p className="jenkins-cards__item__title">
             Stages
-            <Tippy content="Fullscreen">
-              <a href="#">
-                <ResizeOutline />
-              </a>
-            </Tippy>
+            <div className="jenkins-cards__item__title__actions">
+              <Tippy content="Fullscreen">
+                <a href="#">
+                  <ResizeOutline />
+                </a>
+              </Tippy>
+            </div>
           </p>
           <img src="/assets/img_1.png" alt="" width={"100%"}/>
         </div>
