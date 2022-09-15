@@ -5,11 +5,11 @@ import {
   DownloadOutline,
   EllipsisHorizontalOutline, GitCommitOutline, GitPullRequestOutline, HourglassOutline, PersonOutline,
   PlayOutline,
-  ResizeOutline,
   TimeOutline, TimerOutline
 } from "react-ionicons";
 import Tippy from "@tippyjs/react";
 import Stageview from "../components/Stageview";
+import ResizeOutline from "../components/icons/ResizeOutline";
 
 function Dashboard() {
   return (

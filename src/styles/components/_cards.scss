@@ -51,11 +51,24 @@
 
     a {
       margin-left: auto;
+      transition: 0.3s ease;
+
+      span {
+        display: contents;
+      }
 
       svg {
-        width: 18px;
-        height: 18px;
+        width: 1.2rem;
+        height: 1.2rem;
         color: var(--foreground-color) !important;
+      }
+
+      &:hover {
+        opacity: 0.6;
+      }
+
+      &:active, &:focus {
+        opacity: 0.3;
       }
     }
   }

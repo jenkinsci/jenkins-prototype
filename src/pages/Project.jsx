@@ -2,9 +2,10 @@ import {ReactComponent as Sun} from "../sun.svg";
 import {ReactComponent as Cloud} from "../cloud.svg";
 import Green from "../green.svg";
 import {Link} from "react-router-dom";
-import {EllipsisHorizontalOutline, PlayOutline, ResizeOutline, SearchOutline} from "react-ionicons";
+import {EllipsisHorizontalOutline, PlayOutline, SearchOutline} from "react-ionicons";
 import Stageview from "../components/Stageview";
 import Tippy from "@tippyjs/react";
+import ResizeOutline from "../components/icons/ResizeOutline";
 
 function Dashboard() {
 
