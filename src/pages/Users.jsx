@@ -1,4 +1,6 @@
 import {SearchOutline} from "react-ionicons";
+import { faker } from '@faker-js/faker';
+import {Link} from "react-router-dom";
 
 export default function Users() {
   const colors = [
@@ -13,16 +15,15 @@ export default function Users() {
     {
       name: "Tim Jacomb",
       username: "timja"
-    },
-    {
-      name: "Rhea McLaughlin",
-      username: "marcberge"
-    },
-    {
-      name: "Brian Mueller",
-      username: "bmueller"
     }
   ]
+
+  for(let i = 0; i < Math.random() * 100; i++) {
+    people.push({
+      name: faker.name.fullName(),
+      username: faker.internet.userName()
+    })
+  }
 
   function randomAngle() {
     return Math.random() * 360;
@@ -74,17 +75,18 @@ export default function Users() {
 
           return (
             <li className={"app-people__item"}>
-              <div style={{"background": `linear-gradient(${angle}deg, var(--${color1}), var(--${color2}))`}}>
+              <Link to={`/people/${person.username}`}>
+                <div style={{"background": `linear-gradient(${angle}deg, var(--${color1}), var(--${color2}))`}}>
                 <span style={{"background": `linear-gradient(${angle}deg, var(--${color1}), var(--${color2}))`, "-webkit-background-clip": "text"}}>
                   {person.name.split(" ")[0][0]}{person.name.split(" ")[1][0]}
                 </span>
-              </div>
-              <p>
-                {person.name}
-                <br/>
-                <span style={{"display": "block", "marginTop": "0.4rem", "color": "var(--color-secondary)"}}>{person.username}</span>
-              </p>
-
+                </div>
+                <p>
+                  {person.name}
+                  <br/>
+                  <span style={{"display": "block", "marginTop": "0.4rem", "color": "var(--color-secondary)"}}>{person.username}</span>
+                </p>
+              </Link>
             </li>
           )
         })}
