@@ -1,6 +1,6 @@
 .app-people {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 1rem;
   list-style-type: none;
   padding: 0;
@@ -20,6 +20,7 @@
       mask-border-slice: 49% fill;
       color: var(--foreground-color);
       text-decoration: none !important;
+      overflow: hidden;
 
       div {
         position: relative;
@@ -32,6 +33,7 @@
         border-radius: 100vmax;
         font-weight: 600;
         font-size: 1.1rem;
+        flex-shrink: 0;
 
         &::before,
         &::after {
@@ -63,6 +65,7 @@
         margin: 0;
         font-weight: 600;
         font-size: 1rem;
+        word-wrap: break-word;
       }
 
       &:hover {
