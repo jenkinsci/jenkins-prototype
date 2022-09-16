@@ -38,7 +38,9 @@ export default function Users() {
         <div className={"jenkins-app-bar__content"}>
           <h1>
             People
-            <span style={{"marginLeft": "1rem", "color": "var(--color-secondary)"}}>21</span>
+            <span style={{"marginLeft": "1rem", "color": "var(--color-secondary)"}}>
+              { people.length }
+            </span>
           </h1>
         </div>
         <div className={"jenkins-app-bar__controls"}>
