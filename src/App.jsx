@@ -70,7 +70,7 @@ function App() {
     },
     {
       id: "users",
-      name: "Users",
+      name: "People",
       link: "/users",
       icon: <PeopleOutline/>
     }

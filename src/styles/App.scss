@@ -16,6 +16,17 @@
   // Color
   --white: #fff;
 
+  --blue: #007aff;
+  --brown: #a2845e;
+  --cyan: #32ade6;
+  --green: #1ea64b;
+  --indigo: #5856d6;
+  --orange: #fe820a;
+  --pink: #fb0f45;
+  --purple: #af52de;
+  --red: #e6001f;
+  --yellow: #fc0;
+
   --green: #31c048;
   --green-subtle: hsla(130, 59%, 47%, 15%);
 
@@ -167,6 +178,7 @@
 @import "pages/build/console";
 @import "pages/_dashboard";
 @import "pages/_new-project";
+@import "pages/people";
 @import "pages/_plugin-manager";
 @import "pages/_project";
 

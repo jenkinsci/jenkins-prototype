@@ -63,7 +63,7 @@ function Settings() {
         },
         {
           icon: <PeopleOutline />,
-          name: "Users"
+          name: "People"
         }
       ]
     },
