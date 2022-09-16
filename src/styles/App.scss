@@ -25,7 +25,7 @@
   --red-subtle: hsla(359, 97%, 56%, 15%);
 
   // Table
-  --table-background-color: hsl(212, 30%, 96%);
+  --table-background-color: hsl(212, 40%, 97%);
   --table-body-background: var(--background-color);
 
   --table-header-foreground: var(--foreground-color);
@@ -91,7 +91,7 @@
     --foreground-color: hsl(230, 15%, 90%);
     --color-secondary: hsl(230, 15%, 55%);
 
-    --overlap-color: hsl(230, 15%, 7%);
+    --overlap-color: hsl(230, 15%, 8%);
 
     // Branding
     --focus-input-border: #4bbeff;
@@ -334,6 +334,7 @@ h1 {
   font-weight: 650;
   margin: 0;
   letter-spacing: unset;
+  color: var(--foreground-color);
 
   @media screen and (max-width: 1000px) {
     font-size: 1.5rem;

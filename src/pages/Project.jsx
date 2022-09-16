@@ -1,5 +1,3 @@
-import {ReactComponent as Sun} from "../sun.svg";
-import {ReactComponent as Cloud} from "../cloud.svg";
 import Green from "../green.svg";
 import {Link} from "react-router-dom";
 import {EllipsisHorizontalOutline, PlayOutline, SearchOutline} from "react-ionicons";
@@ -7,27 +5,7 @@ import Stageview from "../components/Stageview";
 import Tippy from "@tippyjs/react";
 import ResizeOutline from "../components/icons/ResizeOutline";
 
-function Dashboard() {
-
-  const items = [
-    {
-      state: "",
-      weather: <Sun/>,
-      name: "Scalemate",
-      lastSuccess: "16 hours ago",
-      lastFailure: "One day ago",
-      lastDuration: "30 seconds"
-    },
-    {
-      state: "",
-      weather: <Cloud/>,
-      name: "Paleta",
-      lastSuccess: "10 hours ago",
-      lastFailure: "Two days ago",
-      lastDuration: "1 minute and 15 seconds"
-    }
-  ]
-
+export default function Project() {
   return (
     <div className="jenkins-body">
       <div className={"jenkins-breadcrumbs"}>
@@ -59,7 +37,7 @@ function Dashboard() {
           <p className="jenkins-cards__item__title">
             Stage view
             <div className="jenkins-cards__item__title__actions">
-              <Tippy content="Fullscreen">
+              <Tippy content="Expand">
                 <Link to={"/project/stageview"}>
                   <ResizeOutline />
                 </Link>
@@ -94,7 +72,7 @@ function Dashboard() {
           <p className="jenkins-cards__item__title">
             Stages
             <div className="jenkins-cards__item__title__actions">
-              <Tippy content="Fullscreen">
+              <Tippy content="Expand">
                 <a href="#">
                   <ResizeOutline />
                 </a>
@@ -109,5 +87,3 @@ function Dashboard() {
     </div>
   );
 }
-
-export default Dashboard;

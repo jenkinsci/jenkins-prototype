@@ -31,7 +31,9 @@
 
     &:hover {
       .jenkins-cards__item__title__actions {
-        opacity: 1;
+        a {
+          color: var(--foreground-color);
+        }
       }
     }
 
@@ -60,7 +62,7 @@
       svg {
         width: 1.2rem;
         height: 1.2rem;
-        color: var(--foreground-color) !important;
+        color: currentColor !important;
       }
 
       &:hover {
@@ -99,6 +101,9 @@
   display: flex;
   align-items: center;
   gap: 15px;
-  opacity: 0.5;
   transition: 0.3s ease;
+
+  a {
+    color: var(--color-secondary);
+  }
 }

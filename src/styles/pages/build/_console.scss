@@ -1,7 +1,5 @@
 .app-console-page {
   background: black;
-  color: white !important;
-  --color-secondary: #aaa;
 
   &__inner {
     max-width: min(92vw, 2000px);
@@ -12,4 +10,14 @@
   @media screen and (max-width: 1000px) {
     padding: 3rem 1rem 6.5rem 1rem;
   }
+}
+
+.app-console-colors {
+  --white: #fff !important;
+  --background-color: black;
+  --color-secondary: hsl(230, 10%, 50%);
+  --overlap-color: hsl(230, 15%, 7%);
+  --foreground-color: hsl(230, 15%, 90%) !important;
+  --button-foreground-color: var(--foreground-color);
+  --button-background-color: var(--overlap-color);
 }

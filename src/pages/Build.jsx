@@ -41,7 +41,7 @@ function Dashboard() {
       </div>
       <h2 style={{"margin": "0 0 0 10px"}}>Add updates count badge to Updates sidebar item</h2>
       <div className={"jenkins-cards"}>
-        <div className={"jenkins-cards__item jenkins-cards__item--wide jenkins-build__terminal-card"}>
+        <div className={"jenkins-cards__item jenkins-cards__item--wide jenkins-build__terminal-card app-console-colors"}>
           <div className="jenkins-cards__item__title-float">
             <p className="jenkins-cards__item__title">
               Console output
@@ -56,7 +56,7 @@ function Dashboard() {
                     <DownloadOutline />
                   </a>
                 </Tippy>
-                <Tippy content="Fullscreen">
+                <Tippy content="Expand">
                   <Link to="/project/build/console">
                     <ResizeOutline />
                   </Link>
@@ -64,7 +64,7 @@ function Dashboard() {
               </div>
             </p>
           </div>
-          <code className={"console-code"}>
+          <code className={"console-code "}>
             {TerminalText.split("\n").map((line, index) => {
               return (
                 <p><span>{index + 1}</span>{ line }</p>
@@ -112,7 +112,7 @@ function Dashboard() {
           <p className="jenkins-cards__item__title">
             Stage view
             <div className="jenkins-cards__item__title__actions">
-              <Tippy content="Fullscreen">
+              <Tippy content="Expand">
                 <a href="#">
                   <ResizeOutline />
                 </a>

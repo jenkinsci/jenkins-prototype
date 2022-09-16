@@ -1,7 +1,7 @@
 .jenkins-build__terminal-card {
   max-height: 400px;
   background: black;
-  color: white;
+  color: var(--white);
   color-scheme: light;
 
   code {
@@ -16,12 +16,6 @@
     padding: 56px 20px 20px 20px;
     line-height: 1.8;
   }
-
-  .jenkins-cards__item__title__actions {
-    svg {
-      color: white !important;
-    }
-  }
 }
 
 .console-code {
@@ -30,7 +24,7 @@
   overflow: scroll;
   white-space: pre-line;
   line-height: 1.8;
-  color: white;
+  color: var(--white);
 
   p {
     display: grid;

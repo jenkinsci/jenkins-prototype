@@ -4,10 +4,10 @@ import TerminalText from "../../terminal";
 
 export default function ConsolePage() {
   return (
-    <div className={"app-console-page"}>
+    <div className={"app-console-page app-console-colors"}>
       <div className={"app-console-page__inner"}>
         <Link className={"app-back-link"} to={"/project/build"}>Back to Build 374</Link>
-        <div className="jenkins-app-bar">
+        <div className="jenkins-app-bar jenkins-app-bar--sticky">
           <div className={"jenkins-app-bar__content"}>
             <h1 className={"jenkins-project-heading"}>
               Console output
