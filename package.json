@@ -2,8 +2,8 @@
   "name": "jenkins-2",
   "version": "0.1.0",
   "engines": {
-    "node": "17.x",
-    "npm": "8.x"
+    "node": "17.8.0",
+    "npm": "8.5.5"
   },
   "private": true,
   "dependencies": {
