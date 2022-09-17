@@ -2,7 +2,7 @@
   "name": "jenkins-2",
   "version": "0.1.0",
   "engines": {
-    "node": "17.x >="
+    "node": ">=17.x"
   },
   "private": true,
   "dependencies": {
