@@ -3,13 +3,21 @@ import {Link} from "react-router-dom";
 import {
   CopyOutline,
   DownloadOutline,
-  EllipsisHorizontalOutline, GitCommitOutline, GitPullRequestOutline, HourglassOutline, PersonOutline,
+  EllipsisHorizontalOutline,
+  FingerPrintOutline,
+  GitCommitOutline,
+  GitPullRequestOutline,
+  HourglassOutline,
+  PersonOutline,
   PlayOutline,
-  TimeOutline, TimerOutline
+  ShieldOutline,
+  TimeOutline,
+  TimerOutline
 } from "react-ionicons";
 import Tippy from "@tippyjs/react";
 import Stageview from "../components/Stageview";
 import ResizeOutline from "../components/icons/ResizeOutline";
+import Overflow from "../components/Overflow";
 
 function Dashboard() {
   return (
@@ -34,9 +42,17 @@ function Dashboard() {
             Rebuild
           </a>
           <a className={"jenkins-button"}>Configure</a>
-          <a className={"jenkins-button jenkins-button--icon"}>
-            <EllipsisHorizontalOutline/>
-          </a>
+          <Overflow>
+            <a>
+              <FingerPrintOutline />
+              Fingerprints
+            </a>
+            <hr/>
+            <a>
+              <ShieldOutline />
+              Embeddable Build Status
+            </a>
+          </Overflow>
         </div>
       </div>
       <h2 style={{"margin": "0 0 0 10px"}}>Add updates count badge to Updates sidebar item</h2>

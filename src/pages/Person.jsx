@@ -1,4 +1,11 @@
-import {PlayOutline, SearchOutline, SunnyOutline} from "react-ionicons";
+import {
+  AccessibilityOutline,
+  AlbumsOutline,
+  ExtensionPuzzleOutline,
+  PlayOutline,
+  SearchOutline,
+  SunnyOutline
+} from "react-ionicons";
 import { faker } from '@faker-js/faker';
 import {Link} from "react-router-dom";
 import Tippy from "@tippyjs/react";
@@ -10,6 +17,13 @@ export default function Person() {
     "orange",
     "red", "green", "blue", "pink", "brown", "cyan", "indigo", "yellow", "purple"
   ]
+
+  const color1 = randomColor()
+  let color2 = null;
+  while (color2 === null || color2 === color1) {
+    color2 = randomColor()
+  }
+  const angle = randomAngle()
 
   const items = [
     {
@@ -45,7 +59,10 @@ export default function Person() {
     <div className="jenkins-body">
       <div className="jenkins-app-bar">
         <div className={"jenkins-app-bar__content"}>
-          <h1>
+          <h1 className={"jenkins-project-heading"}>
+            <div className={"avatar"} style={{"background": `linear-gradient(${angle}deg, var(--${color1}), var(--${color2}))`}}>
+              <span style={{"background": `linear-gradient(${angle}deg, var(--${color1}), var(--${color2}))`, "-webkit-background-clip": "text"}}>JF</span>
+            </div>
             Jan Faracik
           </h1>
         </div>
@@ -56,8 +73,25 @@ export default function Person() {
         </div>
       </div>
       <div className={"person-profile"}>
-        <div className={"user-card"} style={{"background": `linear-gradient(${randomAngle()}deg, var(--${randomColor()}), var(--${randomColor()}))`}}>
-
+        <div className={"user-card"}>
+          <a className="jenkins-sidebar__item jenkins-sidebar__item--selected">
+            <div className="jenkins-sidebar__item__icon">
+              <AlbumsOutline />
+            </div>
+            Available plugins
+          </a>
+          <a className="jenkins-sidebar__item">
+            <div className="jenkins-sidebar__item__icon">
+              <AccessibilityOutline />
+            </div>
+            Updates and installed plugins
+          </a>
+          <a className="jenkins-sidebar__item">
+            <div className="jenkins-sidebar__item__icon">
+              <ExtensionPuzzleOutline />
+            </div>
+            Advanced settings
+          </a>
         </div>
         <table className={"jenkins-table jenkins-mobile-hide"}>
           <thead>

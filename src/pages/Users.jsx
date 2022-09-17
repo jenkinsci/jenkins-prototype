@@ -1,4 +1,4 @@
-import {SearchOutline} from "react-ionicons";
+import {EllipsisHorizontalOutline, MenuOutline, SearchOutline} from "react-ionicons";
 import { faker } from '@faker-js/faker';
 import {Link} from "react-router-dom";
 
@@ -95,8 +95,11 @@ export default function Users() {
                 <p>
                   {person.name}
                   <br/>
-                  <span style={{"display": "block", "marginTop": "0.4rem", "color": "var(--color-secondary)"}}>{person.username}</span>
+                  <span style={{"display": "block", "marginTop": "0.3rem", "color": "var(--color-secondary)"}}>{person.username}</span>
                 </p>
+                <button>
+                  <EllipsisHorizontalOutline />
+                </button>
               </Link>
             </li>
           )

@@ -4,8 +4,9 @@ import {Link} from "react-router-dom";
 import Tippy from "@tippyjs/react";
 import {
   AddOutline,
-  EllipsisHorizontalOutline, PlayOutline, SunnyOutline
+  EllipsisHorizontalOutline, FingerPrintOutline, LogoRss, PlayOutline, ScanCircleOutline, SunnyOutline
 } from "react-ionicons";
+import Overflow from "../components/Overflow";
 
 function Dashboard() {
 
@@ -46,9 +47,25 @@ function Dashboard() {
             <AddOutline/>
             New project
           </Link>
-          <a href={"#"} className={"jenkins-button jenkins-button--icon"}>
-            <EllipsisHorizontalOutline/>
-          </a>
+          <Overflow>
+            <a>
+              <ScanCircleOutline />
+              Project relationship
+            </a>
+            <a>
+              <FingerPrintOutline />
+              Check file fingerprint
+            </a>
+            <hr/>
+            <a>
+              <SunnyOutline />
+              Icon legend
+            </a>
+            <a>
+              <LogoRss />
+              RSS
+            </a>
+          </Overflow>
         </div>
       </div>
 

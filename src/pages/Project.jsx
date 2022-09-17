@@ -1,11 +1,25 @@
 import Green from "../green.svg";
 import {Link} from "react-router-dom";
-import {EllipsisHorizontalOutline, PlayOutline, SearchOutline} from "react-ionicons";
+import {
+  EllipsisHorizontalOutline,
+  FingerPrintOutline, LogoRss,
+  PlayOutline,
+  ScanCircleOutline,
+  SearchOutline, ShieldOutline, SunnyOutline
+} from "react-ionicons";
 import Stageview from "../components/Stageview";
 import Tippy from "@tippyjs/react";
 import ResizeOutline from "../components/icons/ResizeOutline";
+import { LineChart, Line, CartesianGrid, XAxis, YAxis, Tooltip } from 'recharts';
+import Overflow from "../components/Overflow";
 
 export default function Project() {
+  const data = [{name: 'Page A', uv: 400},
+    {name: 'Page A', uv: 200},
+    {name: 'Page A', uv: 700},
+    {name: 'Page A', uv: 300},
+    {name: 'Page A', uv: 100}];
+
   return (
     <div className="jenkins-body">
       <div className={"jenkins-breadcrumbs"}>
@@ -27,9 +41,12 @@ export default function Project() {
             Build with parameters
           </a>
           <Link to={"/project/configure"} className={"jenkins-button"}>Configure</Link>
-          <a className={"jenkins-button jenkins-button--icon"}>
-            <EllipsisHorizontalOutline/>
-          </a>
+          <Overflow>
+            <a>
+              <ShieldOutline />
+              Embeddable Build Status
+            </a>
+          </Overflow>
         </div>
       </div>
       <div className={"jenkins-cards"}>
@@ -65,7 +82,13 @@ export default function Project() {
         </div>
         <div className={"jenkins-cards__item jenkins-cards__item--wide"}>
           <p className="jenkins-cards__item__title">Test result trend</p>
-          <img src="/assets/img.png" alt="" width={"100%"}/>
+          <LineChart width={800} height={300} data={data} margin={{ top: 5, right: 20, bottom: 5, left: 0 }}>
+            <Line type="monotone" dataKey="uv" stroke="var(--green)" />
+            <CartesianGrid stroke="var(--color-secondary)" strokeDasharray="5 5" />
+            <XAxis dataKey="name" />
+            <YAxis />
+            <Tooltip />
+          </LineChart>
         </div>
         <div className={"jenkins-cards__item"}><p className="jenkins-cards__item__title">Stuff</p></div>
         <div className={"jenkins-cards__item jenkins-cards__item--wide"}>
