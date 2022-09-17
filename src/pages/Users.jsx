@@ -10,20 +10,31 @@ export default function Users() {
   const people = [
     {
       name: "Jan Faracik",
-      username: "janfaracik"
+      username: "janfaracik",
+      color1: randomColor(),
+      color2: randomColor(),
+      angle: randomAngle()
     },
     {
       name: "Tim Jacomb",
-      username: "timja"
+      username: "timja",
+      color1: randomColor(),
+      color2: randomColor(),
+      angle: randomAngle()
     }
   ]
 
   for(let i = 0; i < Math.random() * 100; i++) {
     people.push({
       name: faker.name.fullName(),
-      username: faker.internet.userName()
+      username: faker.internet.userName(),
+      color1: randomColor(),
+      color2: randomColor(),
+      angle: randomAngle()
     })
+    console.log(JSON.stringify(people))
   }
+
 
   function randomAngle() {
     return Math.random() * 360;
@@ -76,8 +87,8 @@ export default function Users() {
           return (
             <li className={"app-people__item"}>
               <Link to={`/people/${person.username}`}>
-                <div style={{"background": `linear-gradient(${angle}deg, var(--${color1}), var(--${color2}))`}}>
-                <span style={{"background": `linear-gradient(${angle}deg, var(--${color1}), var(--${color2}))`, "-webkit-background-clip": "text"}}>
+                <div style={{"background": `linear-gradient(${person.angle}deg, var(--${person.color1}), var(--${person.color2}))`}}>
+                <span style={{"background": `linear-gradient(${person.angle}deg, var(--${person.color1}), var(--${person.color2}))`, "-webkit-background-clip": "text"}}>
                   {person.name.split(" ")[0][0]}{person.name.split(" ")[1][0]}
                 </span>
                 </div>

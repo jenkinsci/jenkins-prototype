@@ -26,6 +26,7 @@ import PluginManager from "./pages/PluginManager";
 import NewProject from "./pages/NewProject";
 import StageviewPage from "./pages/project/StageviewPage";
 import ConsolePage from "./pages/project/ConsolePage";
+import Person from "./pages/Person";
 
 function App() {
 
@@ -71,7 +72,7 @@ function App() {
     {
       id: "users",
       name: "People",
-      link: "/users",
+      link: "/people",
       icon: <PeopleOutline/>
     }
   ]
@@ -134,7 +135,10 @@ function App() {
             <Route path="/settings">
               <Settings/>
             </Route>
-            <Route path="/users">
+            <Route path="/people/:username">
+              <Person />
+            </Route>
+            <Route path="/people">
               <Users/>
             </Route>
             <Route path="/build-monitor">
