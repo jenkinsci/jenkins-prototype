@@ -13,7 +13,7 @@ export default function Overflow(props) {
       interactive="true"
       placement="bottom-start"
       theme="menu"
-      animation="tooltip"
+      animation="menu"
       appendTo={() => document.querySelector('#root')}
       onShow={() => setIcon(<EllipsisHorizontal />)}
       onHidden={() => setIcon(<EllipsisHorizontalOutline />)}

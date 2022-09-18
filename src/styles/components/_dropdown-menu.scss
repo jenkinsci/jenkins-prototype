@@ -55,20 +55,21 @@
 
   @media screen and (max-width: 1000px) {
     a {
-      padding: 0.8rem 1rem;
+      padding: 0.7rem 0.9rem;
       font-size: 1rem;
       font-weight: 500;
       gap: 1rem;
-      min-width: 50vw;
+      min-width: 60vw;
+      border-radius: 0.65rem;
 
       span, svg {
-        width: 1.6rem;
-        height: 1.6rem;
+        width: 1.4666666667rem;
+        height: 1.4666666667rem;
       }
     }
 
     hr {
-      margin: 0.5rem -0.5rem;
+      margin: 0.4rem -0.4rem;
     }
   }
 }

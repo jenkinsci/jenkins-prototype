@@ -77,6 +77,7 @@
   white-space: pre-line;
   z-index: 0;
   background: transparent;
+  max-width: unset !important;
 
   // The @supports can be removed when Firefox supports backdrop-filter
   @supports (backdrop-filter: blur(15px)) {
@@ -126,5 +127,17 @@
   &[data-placement^="right"] {
     transform-origin: bottom;
     transform: translateX(-10px) scale(0.9);
+  }
+}
+
+.tippy-box[data-animation~="menu"] {
+  transform-origin: top;
+}
+
+.tippy-box[data-animation~="menu"][data-state="hidden"] {
+  opacity: 0;
+
+  &[data-placement^="bottom"] {
+    transform: scale(0.9);
   }
 }

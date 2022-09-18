@@ -3,7 +3,7 @@ import Green from "../green.svg";
 import {Link} from "react-router-dom";
 import Tippy from "@tippyjs/react";
 import {
-  AddOutline, FingerPrintOutline, LogoRss, PlayOutline, ScanCircleOutline, SunnyOutline
+  AddOutline, FingerPrintOutline, LogoRss, NewspaperOutline, PlayOutline, ScanCircleOutline, SunnyOutline
 } from "react-ionicons";
 import Overflow from "../components/Overflow";
 import {useEffect, useState} from "react";
@@ -66,8 +66,8 @@ function Dashboard() {
               Icon legend
             </a>
             <a>
-              <LogoRss />
-              RSS
+              <NewspaperOutline />
+              Atom feed
             </a>
           </Overflow>
         </div>
