@@ -3,7 +3,6 @@ import {Link} from "react-router-dom";
 import {
   CopyOutline,
   DownloadOutline,
-  EllipsisHorizontalOutline,
   FingerPrintOutline,
   GitCommitOutline,
   GitPullRequestOutline,
@@ -18,6 +17,7 @@ import Tippy from "@tippyjs/react";
 import Stageview from "../components/Stageview";
 import ResizeOutline from "../components/icons/ResizeOutline";
 import Overflow from "../components/Overflow";
+import tippyProps from "../data/tooltips";
 
 function Dashboard() {
   return (
@@ -62,17 +62,17 @@ function Dashboard() {
             <p className="jenkins-cards__item__title">
               Console output
               <div className="jenkins-cards__item__title__actions">
-                <Tippy content="Copy">
+                <Tippy content="Copy" {...tippyProps}>
                   <a href="#">
                     <CopyOutline />
                   </a>
                 </Tippy>
-                <Tippy content="Download">
+                <Tippy content="Download" {...tippyProps}>
                   <a href="#">
                     <DownloadOutline />
                   </a>
                 </Tippy>
-                <Tippy content="Expand">
+                <Tippy content="Expand" {...tippyProps}>
                   <Link to="/project/build/console">
                     <ResizeOutline />
                   </Link>
@@ -128,7 +128,7 @@ function Dashboard() {
           <p className="jenkins-cards__item__title">
             Stage view
             <div className="jenkins-cards__item__title__actions">
-              <Tippy content="Expand">
+              <Tippy content="Expand" {...tippyProps}>
                 <a href="#">
                   <ResizeOutline />
                 </a>

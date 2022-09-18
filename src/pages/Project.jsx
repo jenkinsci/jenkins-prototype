@@ -1,17 +1,15 @@
 import Green from "../green.svg";
 import {Link} from "react-router-dom";
 import {
-  EllipsisHorizontalOutline,
-  FingerPrintOutline, LogoRss,
   PlayOutline,
-  ScanCircleOutline,
-  SearchOutline, ShieldOutline, SunnyOutline
+  SearchOutline, ShieldOutline
 } from "react-ionicons";
 import Stageview from "../components/Stageview";
 import Tippy from "@tippyjs/react";
 import ResizeOutline from "../components/icons/ResizeOutline";
 import { LineChart, Line, CartesianGrid, XAxis, YAxis, Tooltip } from 'recharts';
 import Overflow from "../components/Overflow";
+import tippyProps from "../data/tooltips";
 
 export default function Project() {
   const data = [{name: 'Page A', uv: 400},
@@ -54,7 +52,7 @@ export default function Project() {
           <p className="jenkins-cards__item__title">
             Stage view
             <div className="jenkins-cards__item__title__actions">
-              <Tippy content="Expand">
+              <Tippy content="Expand" {...tippyProps}>
                 <Link to={"/project/stageview"}>
                   <ResizeOutline />
                 </Link>
@@ -95,7 +93,7 @@ export default function Project() {
           <p className="jenkins-cards__item__title">
             Stages
             <div className="jenkins-cards__item__title__actions">
-              <Tippy content="Expand">
+              <Tippy content="Expand" {...tippyProps}>
                 <a href="#">
                   <ResizeOutline />
                 </a>

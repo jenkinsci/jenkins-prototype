@@ -12,7 +12,7 @@ import {
 import {BrowserRouter as Router, NavLink, Route, Routes} from "react-router-dom";
 import Dashboard from "./pages/Dashboard";
 import People from "./pages/People";
-import Tippy, {useSingleton} from "@tippyjs/react";
+import Tippy from "@tippyjs/react";
 import 'tippy.js/dist/tippy.css';
 import {useEffect, useState} from "react";
 import BuildMonitor from "./pages/BuildMonitor";
@@ -30,7 +30,6 @@ import Person from "./pages/Person";
 
 function App() {
 
-  const [source, target] = useSingleton({});
   const [showScrollToTopButton, setShowScrollToTopButton] = useState(false)
 
   useEffect(() => {
@@ -71,21 +70,26 @@ function App() {
       icon: <PieChartOutline/>
     },
     {
-      id: "users",
+      id: "people",
       name: "People",
       link: "/people",
       icon: <PeopleOutline/>
     }
   ]
-  const [controlBar] = useState(["search", "build-monitor", "favorites", "users", "theme-switcher"])
+  const [controlBar] = useState(["search",  "people", "build-monitor", "favorites",  "theme-switcher"])
+
+  const tippyProps = {
+    touch: "hold",
+    theme: "tooltip-nav",
+    animation: "tooltip-nav",
+    arrow: false
+  }
 
   return (
     <Router>
       <div className="App">
-        {/* This is the tippy that gets used as the singleton */}
-        <Tippy singleton={source} touch="hold" />
         <div className="jenkins-nav">
-          <Tippy singleton={target} content="Dashboard" placement="right">
+          <Tippy content="Dashboard" placement="right" {...tippyProps}>
             <NavLink to={"/"} className={({ isActive }) => "jenkins-nav__item" + (isActive ? " jenkins-nav__item--selected" : "")} end>
               <div className="jenkins-nav__item__icon"><HomeOutline /></div>
             </NavLink>
@@ -93,20 +97,20 @@ function App() {
           {controlBar.map(e => controlBarItems.find(i => i.id === e)).map((result) => {
             return (
               result.link != null ? (
-                <Tippy key={result.name} content={result.name} placement="right">
+                <Tippy key={result.name} content={result.name} placement="right" {...tippyProps}>
                   <NavLink to={result.link} className={({ isActive }) => "jenkins-nav__item" + (isActive ? " jenkins-nav__item--selected" : "")}>
                     <div className="jenkins-nav__item__icon">{result.icon}</div>
                   </NavLink>
                 </Tippy>
               ) : (
                   result.panel != null ? (
-                    <Tippy key={result.name} content={result.panel} placement="right" interactive="true">
+                    <Tippy key={result.name} content={result.panel} placement="right" interactive="true" {...tippyProps}>
                       <button className="jenkins-nav__item">
                         <div className="jenkins-nav__item__icon">{result.icon}</div>
                       </button>
                     </Tippy>
                   ) : (
-                    <Tippy key={result.name} content={result.name} placement="right">
+                    <Tippy key={result.name} content={result.name} placement="right" {...tippyProps}>
                       <button className="jenkins-nav__item" onClick={() => result.onClick()}>
                         <div className="jenkins-nav__item__icon">{result.icon}</div>
                       </button>
@@ -115,13 +119,13 @@ function App() {
               )
             )
           })}
-          <Tippy singleton={target} content="Settings" placement="right">
+          <Tippy content="Settings" placement="right" {...tippyProps}>
             <NavLink to={"/settings"} className={({ isActive }) => "jenkins-nav__item" + (isActive ? " jenkins-nav__item--selected" : "")}>
               <div className="jenkins-nav__item__icon"><SettingsOutline/></div>
             </NavLink>
           </Tippy>
 
-          <Tippy singleton={target} content="Scroll to top" placement="right">
+          <Tippy content="Scroll to top" placement="right" {...tippyProps}>
             <button onClick={() => document.querySelector("#app-layer").scroll({top:0,behavior:'smooth'})} className={`jenkins-nav__item jenkins-nav__item--bottom ${showScrollToTopButton && 'jenkins-nav__item--bottom--visible'}`}>
               <div className="jenkins-nav__item__icon"><ArrowUpOutline/></div>
             </button>

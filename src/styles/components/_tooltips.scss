@@ -1,4 +1,72 @@
-.tippy-box[data-theme~="tooltip"] {
+.tippy-box[data-theme^="tooltip"] {
+  --tooltip-box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.05), 0 0 8px 2px rgba(0, 0, 30, 0.05), 0 0 1px 1px rgba(0, 0, 20, 0.025), 0 10px 20px rgba(0, 0, 20, 0.15);
+
+  color: var(--tooltip-color);
+  padding: 0.55rem 0.75rem;
+  border-radius: 0.75rem;
+  box-shadow: var(--tooltip-box-shadow);
+  font-weight: 500;
+  font-size: 0.85rem;
+  white-space: pre-line;
+  z-index: 0;
+  background: transparent;
+
+  // The @supports can be removed when Firefox supports backdrop-filter
+  @supports (backdrop-filter: blur(15px)) {
+    backdrop-filter: saturate(2) blur(15px);
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: var(--table-background-color);
+    z-index: -1;
+    border-radius: inherit;
+
+    @supports (backdrop-filter: blur(15px)) {
+      opacity: 0.65;
+    }
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border: 1px solid black;
+    z-index: 0;
+    border-radius: inherit;
+    opacity: 0.05;
+
+    @media (prefers-color-scheme: dark) {
+      border: 1px solid white;
+      opacity: 0.025;
+    }
+  }
+
+  .tippy-content {
+    padding: 0;
+  }
+}
+
+.tippy-box[data-theme~="tooltip-nav"] {
+  color: white;
+
+  &::before {
+    background: transparent;
+    backdrop-filter: contrast(2) saturate(2) brightness(0.4) blur(15px);
+
+    @media (prefers-color-scheme: dark) {
+      backdrop-filter: contrast(0.6) saturate(4) brightness(0.4) blur(15px) !important;
+    }
+
+    @supports (backdrop-filter: blur(15px)) {
+      opacity: 1;
+    }
+  }
+}
+
+.tippy-box[data-theme~="menu"] {
   --tooltip-box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.05), 0 0 8px 2px rgba(0, 0, 30, 0.05), 0 0 1px 1px rgba(0, 0, 20, 0.025), 0 10px 20px rgba(0, 0, 20, 0.15);
 
   color: var(--tooltip-color);
@@ -34,7 +102,7 @@
   }
 }
 
-.tippy-box[data-animation="tooltip"][data-state="hidden"] {
+.tippy-box[data-animation^="tooltip"][data-state="hidden"] {
   opacity: 0;
   transform: scale(0.995);
 
@@ -46,5 +114,14 @@
   &[data-placement^="bottom"] {
     transform-origin: top;
     transform: translateY(-2px) scale(0.995);
+  }
+}
+
+.tippy-box[data-animation~="tooltip-nav"][data-state="hidden"] {
+  opacity: 0;
+
+  &[data-placement^="right"] {
+    transform-origin: bottom;
+    transform: translateX(-10px) scale(0.9);
   }
 }

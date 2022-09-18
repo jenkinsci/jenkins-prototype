@@ -12,7 +12,7 @@ export default function Overflow(props) {
       trigger="click"
       interactive="true"
       placement="bottom-start"
-      theme="tooltip"
+      theme="menu"
       animation="tooltip"
       appendTo={() => document.querySelector('#root')}
       onShow={() => setIcon(<EllipsisHorizontal />)}
