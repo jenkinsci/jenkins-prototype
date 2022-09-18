@@ -349,7 +349,7 @@ h1 {
 
 .jenkins-body {
   padding-top: calc(env(safe-area-inset-top) + 4rem);
-  padding-left: calc(env(safe-area-inset-left) + 2rem);
+  padding-left: 2rem;
   padding-right: calc(env(safe-area-inset-right) + 2rem);
   padding-bottom: calc(env(safe-area-inset-bottom) + 2rem);
 

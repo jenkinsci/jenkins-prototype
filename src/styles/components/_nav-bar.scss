@@ -9,7 +9,7 @@
 
   padding-top: env(safe-area-inset-top);
   padding-left: calc(env(safe-area-inset-left) + 0.9rem);
-  padding-right: calc(env(safe-area-inset-right) + 0.9rem);
+  padding-right: 0.9rem;
   padding-bottom: env(safe-area-inset-bottom);
 
   &::before {
