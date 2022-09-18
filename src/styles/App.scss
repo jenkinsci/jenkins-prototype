@@ -229,13 +229,22 @@ body {
 }
 
 .jenkins-nav {
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 0.6666666667rem;
-  background: var(--nav-background-color);
   padding: 0 0.9rem;
+  z-index: 0;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: var(--nav-background-color);
+    z-index: -1;
+  }
 
   @media screen and (max-width: 1000px) {
     position: fixed;
@@ -244,12 +253,20 @@ body {
     right: 0;
     flex-direction: row;
     z-index: 1;
-    justify-content: space-between;
+    gap: 1rem;
+    justify-content: stretch;
 
     padding-top: 1rem;
-    padding-left: calc(env(safe-area-inset-left) + 1rem);
-    padding-right: calc(env(safe-area-inset-right) + 1rem);
+    padding-left: calc(env(safe-area-inset-left) + 1.5rem);
+    padding-right: calc(env(safe-area-inset-right) + 1.5rem);
     padding-bottom: calc(env(safe-area-inset-bottom) + 1rem);
+
+    backdrop-filter: blur(20px);
+
+    &::before {
+      background: black;
+      opacity: 0.9;
+    }
 
     &_item {
       margin: 0;
@@ -271,6 +288,7 @@ body {
     transition: 0.2s ease;
     opacity: 0.85;
     padding: 1rem;
+    width: 100%;
 
     &__icon {
       display: flex;
@@ -346,6 +364,11 @@ body {
   @media screen and (max-width: 1000px) {
     height: unset;
     overflow: unset;
+
+    & > .jenkins-body {
+      max-width: unset;
+      margin: 0 auto;
+    }
   }
 }
 
@@ -449,7 +472,7 @@ h1 {
   padding: 4rem 2rem 2rem 2rem;
 
   @media screen and (max-width: 1000px) {
-    padding: 3rem 1rem 6.5rem 1rem;
+    padding: calc(2rem + env(safe-area-inset-top)) 1.5rem calc(1.5rem + env(safe-area-inset-top)) 1.5rem;
   }
 
   &--sidebar {
@@ -465,8 +488,10 @@ h1 {
 
 .jenkins-nav__item--bottom {
   position: absolute;
-  bottom: 1rem;
+  bottom: 0.9rem;
   left: 0.9rem;
+  right: 0.9rem;
+  width: calc(100% - 1.8rem);
   opacity: 0;
   scale: 0;
   translate: 0 20px;
