@@ -4,7 +4,6 @@
   align-items: center;
   border-radius: 10px;
   background: var(--button-background-color);
-  height: 37px;
 
   input {
     appearance: none;
@@ -36,6 +35,12 @@
       width: 1.1rem !important;
       height: 1.1rem !important;
       color: var(--foreground-color);
+    }
+
+    @media screen and (max-width: 768px) {
+      width: 44px;
+      height: 44px;
+      border-radius: 15px;
     }
   }
 }
