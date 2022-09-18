@@ -15,10 +15,6 @@
     font-size: 0.9rem;
     min-width: 200px;
 
-    @media screen and (max-width: 1000px) {
-      font-size: 1.1rem;
-    }
-
     span, svg {
       width: 1.2666666667rem;
       height: 1.2666666667rem;
@@ -55,5 +51,24 @@
     border: none;
     height: 1px;
     background: var(--color-secondary);
+  }
+
+  @media screen and (max-width: 1000px) {
+    a {
+      padding: 0.8rem 1rem;
+      font-size: 1rem;
+      font-weight: 500;
+      gap: 1rem;
+      min-width: 50vw;
+
+      span, svg {
+        width: 1.6rem;
+        height: 1.6rem;
+      }
+    }
+
+    hr {
+      margin: 0.5rem -0.5rem;
+    }
   }
 }

@@ -74,7 +74,6 @@
   border-radius: 0.66rem;
   box-shadow: var(--tooltip-box-shadow);
   font-weight: 550;
-  //max-width: ~"min(50vw, 1000px)" !important;
   white-space: pre-line;
   z-index: 0;
   background: transparent;
@@ -99,6 +98,10 @@
 
   .tippy-content {
     padding: 0;
+  }
+
+  @media screen and (max-width: 1000px) {
+    border-radius: 1rem;
   }
 }
 

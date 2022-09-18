@@ -85,7 +85,8 @@
 
     button {
       position: absolute;
-      top: 19px;
+      top: 50%;
+      translate: 0 -50%;
       right: 5px;
       z-index: 1;
       background: transparent !important;

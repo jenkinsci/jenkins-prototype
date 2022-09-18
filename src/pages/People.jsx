@@ -30,7 +30,7 @@ export default function People() {
         angle: randomAngle()
       }
     ]
-    for (let i = 0; i < Math.random() * 100; i++) {
+    for (let i = 0; i < (20 + Math.random() * 40); i++) {
       peopleToAdd.push({
         name: faker.name.fullName(),
         username: faker.internet.userName(),
