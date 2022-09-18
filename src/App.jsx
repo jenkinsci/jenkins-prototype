@@ -27,6 +27,7 @@ import NewProject from "./pages/NewProject";
 import StageviewPage from "./pages/project/StageviewPage";
 import ConsolePage from "./pages/project/ConsolePage";
 import Person from "./pages/Person";
+import {default as props} from "./data/tooltips";
 
 function App() {
 
@@ -79,10 +80,9 @@ function App() {
   const [controlBar] = useState(["search",  "people", "build-monitor", "favorites",  "theme-switcher"])
 
   const tippyProps = {
-    touch: "hold",
+    ...props,
     theme: "tooltip-nav",
-    animation: "tooltip-nav",
-    arrow: false
+    animation: "tooltip-nav"
   }
 
   return (
@@ -105,7 +105,7 @@ function App() {
               ) : (
                   result.panel != null ? (
                     <Tippy key={result.name} content={result.panel} placement="right" interactive="true" {...tippyProps}>
-                      <button className="jenkins-nav__item">
+                      <button className="jenkins-nav__item jenkins-mobile-hide">
                         <div className="jenkins-nav__item__icon">{result.icon}</div>
                       </button>
                     </Tippy>

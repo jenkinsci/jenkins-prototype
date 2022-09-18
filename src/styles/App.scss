@@ -224,7 +224,7 @@ body {
 
 .jenkins-mobile-hide {
   @media screen and (max-width: 1000px) {
-    display: none;
+    display: none !important;
   }
 }
 
@@ -234,8 +234,8 @@ body {
   justify-content: center;
   align-items: center;
   gap: 0.6666666667rem;
-  padding: 0 0.9rem;
   background: var(--nav-background-color);
+  padding: 0 0.9rem;
 
   @media screen and (max-width: 1000px) {
     position: fixed;
@@ -243,8 +243,13 @@ body {
     bottom: 0;
     right: 0;
     flex-direction: row;
-    padding: 1rem 1rem;
     z-index: 1;
+    justify-content: space-between;
+
+    padding-top: 1rem;
+    padding-left: calc(env(safe-area-inset-left) + 1rem);
+    padding-right: calc(env(safe-area-inset-right) + 1rem);
+    padding-bottom: calc(env(safe-area-inset-bottom) + 1rem);
 
     &_item {
       margin: 0;
