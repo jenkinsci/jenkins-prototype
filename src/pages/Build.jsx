@@ -29,7 +29,7 @@ function Dashboard() {
         <Link to={"/project"} className={"jenkins-breadcrumb"}>master</Link>
         <Link to={"/project/build"} className={"jenkins-breadcrumb"}>Build 374</Link>
       </div>
-      <div className="jenkins-app-bar">
+      <div className="jenkins-app-bar jenkins-app-bar--responsive">
         <div className={"jenkins-app-bar__content"}>
           <h1 className={"jenkins-project-heading"}>
             <span className={"jenkins-passing-icon"}></span>

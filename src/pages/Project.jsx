@@ -26,7 +26,7 @@ export default function Project() {
         <Link to={"/"} className={"jenkins-breadcrumb"}>Jenkins</Link>
         <Link to={"/"} className={"jenkins-breadcrumb"}>master</Link>
       </div>
-      <div className="jenkins-app-bar">
+      <div className="jenkins-app-bar jenkins-app-bar--responsive">
         <div className={"jenkins-app-bar__content"}>
           <h1 className={"jenkins-project-heading"}>
             <span className={"jenkins-passing-icon"}></span>

@@ -1,3 +1,5 @@
+import {Link} from "react-router-dom";
+
 function Stageview() {
   return (
     <table className={"jenkins-stageview"}>
@@ -28,7 +30,7 @@ function Stageview() {
         </tr>
         <tr className={"jenkins-stageview__build"}>
           <td>
-            <button className={"jenkins-button jenkins-button--green"}>Build 374</button>
+            <Link to={"/project/build"} className={"jenkins-button jenkins-button--green"}>Build 374</Link>
           </td>
           <td>
             <button className={"jenkins-button jenkins-button--green"}>6s</button>
@@ -50,7 +52,7 @@ function Stageview() {
           return (
             <tr className={"jenkins-stageview__build"}>
               <td>
-                <button className={"jenkins-button jenkins-button--red"}>Build {373 - i}</button>
+                <Link to={"/project/build"} className={"jenkins-button jenkins-button--red"}>Build {373 - i}</Link>
               </td>
               <td>
                 <button className={"jenkins-button jenkins-button--green"}>6s</button>

@@ -6,13 +6,21 @@
   z-index: 10;
 
   @media screen and (max-width: 768px) {
-    &:has(.app-search-bar) {
+    &--responsive, &:has(.app-search-bar) {
       margin-bottom: 1rem;
       align-items: stretch;
       flex-direction: column;
       gap: 1rem;
 
       .app-search-bar {
+        width: 100%;
+      }
+
+      .jenkins-app-bar__controls {
+        display: contents;
+      }
+
+      .jenkins-button {
         width: 100%;
       }
     }
