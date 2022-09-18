@@ -61,3 +61,22 @@ iframe {
     }
   }
 }
+
+.app-tag {
+  position: relative;
+  margin-left: 1rem;
+  border-radius: 100vmax;
+  font-size: 0.85rem;
+  text-decoration: none;
+  color: var(--link-color);
+  font-weight: 500;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: -0.2rem -0.5rem;
+    background: currentColor;
+    opacity: 0.1;
+    border-radius: inherit;
+  }
+}

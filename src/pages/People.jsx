@@ -39,7 +39,7 @@ export default function People() {
         angle: randomAngle()
       })
     }
-    setPeople([...people, ...peopleToAdd])
+    setPeople([...peopleToAdd])
   }, []);
 
   function randomAngle() {

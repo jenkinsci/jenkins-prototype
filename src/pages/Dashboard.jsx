@@ -6,30 +6,35 @@ import {
   AddOutline, FingerPrintOutline, LogoRss, PlayOutline, ScanCircleOutline, SunnyOutline
 } from "react-ionicons";
 import Overflow from "../components/Overflow";
+import {useEffect, useState} from "react";
+import {faker} from "@faker-js/faker";
 
 function Dashboard() {
 
-  const items = [
-    {
-      state: Green,
-      weather: Sun,
-      name: "Jenkins",
-      lastSuccess: "16 hours ago",
-      lastFailure: "One day ago",
-      lastDuration: "30 seconds"
+  const [projects, setProjects] = useState([])
+  useEffect(() => {
+    const projectsToAdd = [
+      {
+        state: Green,
+        weather: Sun,
+        name: "Jenkins",
+        lastSuccess: "16 hours ago",
+        lastFailure: "One day ago",
+        lastDuration: "30 seconds"
+      }
+    ]
+    for (let i = 0; i < 20; i++) {
+      projectsToAdd.push({
+        state: Green,
+        weather: Sun,
+        name: faker.word.noun(),
+        lastSuccess: "16 hours ago",
+        lastFailure: "One day ago",
+        lastDuration: "30 seconds"
+      })
     }
-  ]
-
-  for (let i = 0; i < 30; i++) {
-    items.push({
-      state: Green,
-      weather: Sun,
-      name: "Jenkins",
-      lastSuccess: "16 hours ago",
-      lastFailure: "One day ago",
-      lastDuration: "30 seconds"
-    })
-  }
+    setProjects([...projectsToAdd])
+  }, []);
 
   return (
     <div className="jenkins-body">
@@ -116,7 +121,7 @@ function Dashboard() {
             </tr>
           </thead>
           <tbody>
-            {items.map((item, index) => {
+            {projects.map((item, index) => {
               return (
                 <tr key={index}>
                   <td className="jenkins-table-icon-host">
@@ -133,12 +138,18 @@ function Dashboard() {
                       </a>
                     </Tippy>
                   </td>
-                  <td>
+                  <td width="20%">
                     <Link className={"jenkins-link"} to={"/project"}>{item.name}</Link>
                   </td>
-                  <td>{item.lastSuccess}</td>
-                  <td>{item.lastFailure}</td>
-                  <td>{item.lastDuration}</td>
+                  <td width="20%">
+                    {item.lastSuccess}
+                    <Link to={"/project/build"} className={"app-tag"}>#1337</Link>
+                  </td>
+                  <td width="20%">
+                    {item.lastFailure}
+                    <Link to={"/project/build"} className={"app-tag"}>#1336</Link>
+                  </td>
+                  <td width="20%">{item.lastDuration}</td>
                   <td className="jenkins-table-icon-host">
                     <a className={"jenkins-button jenkins-button--transparent jenkins-button--icon jenkins-button--green"}>
                       <PlayOutline/>
@@ -149,7 +160,7 @@ function Dashboard() {
           </tbody>
         </table>
         <div className={"jenkins-mobile-projects"}>
-          {items.map((item, index) => {
+          {projects.map((item, index) => {
             return (
               <Link key={index} to={"/project"} className={"jenkins-mobile-projects__item"}>
                 <span className={"jenkins-passing-icon"}></span>
