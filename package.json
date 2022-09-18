@@ -14,12 +14,11 @@
     "react-scripts": "5.0.1",
     "recharts": "^2.1.14",
     "sass": "^1.42.1",
-    "web-vitals": "^2.1.4",
-    "webpack-dev-middleware": "^5.3.3"
+    "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "node --max_old_space_size=2560 node_modules/.bin/react-scripts start",
-    "build": "node --max_old_space_size=2560 node_modules/.bin/react-scripts build",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
