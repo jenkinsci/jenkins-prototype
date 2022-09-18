@@ -1,40 +1,46 @@
-import {EllipsisHorizontalOutline, MenuOutline, SearchOutline} from "react-ionicons";
+import {CloseCircleOutline, LogoGithub, SearchOutline, SettingsOutline} from "react-ionicons";
 import { faker } from '@faker-js/faker';
 import {Link} from "react-router-dom";
+import Overflow from "../components/Overflow";
+import {useEffect, useState} from "react";
 
-export default function Users() {
+export default function People() {
+  const [people, setPeople] = useState([])
+  const [filter, setFilter] = useState("");
+
   const colors = [
     "orange",
     "red", "green", "blue", "pink", "brown", "cyan", "indigo", "yellow", "purple"
   ]
-  const people = [
-    {
-      name: "Jan Faracik",
-      username: "janfaracik",
-      color1: randomColor(),
-      color2: randomColor(),
-      angle: randomAngle()
-    },
-    {
-      name: "Tim Jacomb",
-      username: "timja",
-      color1: randomColor(),
-      color2: randomColor(),
-      angle: randomAngle()
+
+  useEffect(() => {
+    const peopleToAdd = [
+      {
+        name: "Jan Faracik",
+        username: "janfaracik",
+        color1: randomColor(),
+        color2: randomColor(),
+        angle: randomAngle()
+      },
+      {
+        name: "Tim Jacomb",
+        username: "timja",
+        color1: randomColor(),
+        color2: randomColor(),
+        angle: randomAngle()
+      }
+    ]
+    for (let i = 0; i < Math.random() * 100; i++) {
+      peopleToAdd.push({
+        name: faker.name.fullName(),
+        username: faker.internet.userName(),
+        color1: randomColor(),
+        color2: randomColor(),
+        angle: randomAngle()
+      })
     }
-  ]
-
-  for(let i = 0; i < Math.random() * 100; i++) {
-    people.push({
-      name: faker.name.fullName(),
-      username: faker.internet.userName(),
-      color1: randomColor(),
-      color2: randomColor(),
-      angle: randomAngle()
-    })
-    console.log(JSON.stringify(people))
-  }
-
+    setPeople([...people, ...peopleToAdd])
+  }, []);
 
   function randomAngle() {
     return Math.random() * 360;
@@ -58,12 +64,14 @@ export default function Users() {
         <div className={"jenkins-app-bar__controls"}>
           <div className={"app-search-bar"}>
             <SearchOutline />
-            <input type="search" placeholder={"Search"} />
+            <input type="search" placeholder={"Search"} autoFocus={true} onChange={element => setFilter(element.target.value)} />
           </div>
         </div>
       </div>
       <ol className={"app-people"}>
-        {people.sort(((a, b) => {
+        {people
+          .filter(person => person.username.toLowerCase().includes(filter.toLowerCase()) || person.name.toLowerCase().includes(filter.toLowerCase()))
+          .sort(((a, b) => {
           const nameA = a.name.toUpperCase(); // ignore upper and lowercase
           const nameB = b.name.toUpperCase(); // ignore upper and lowercase
           if (nameA < nameB) {
@@ -76,14 +84,6 @@ export default function Users() {
           // names must be equal
           return 0;
         })).map(person => {
-          let angle = randomAngle()
-          let color1 = randomColor();
-          let color2 = null;
-
-          while (color2 === null || color2 === color1) {
-            color2 = randomColor()
-          }
-
           return (
             <li className={"app-people__item"}>
               <Link to={`/people/${person.username}`}>
@@ -97,10 +97,22 @@ export default function Users() {
                   <br/>
                   <span style={{"display": "block", "marginTop": "0.3rem", "color": "var(--color-secondary)"}}>{person.username}</span>
                 </p>
-                <button>
-                  <EllipsisHorizontalOutline />
-                </button>
               </Link>
+              <Overflow>
+                <a>
+                  <LogoGithub />
+                  GitHub profile
+                </a>
+                <hr/>
+                <a>
+                  <SettingsOutline />
+                  Configure
+                </a>
+                <a>
+                  <CloseCircleOutline />
+                  Delete user
+                </a>
+              </Overflow>
             </li>
           )
         })}

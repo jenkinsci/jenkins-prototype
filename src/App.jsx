@@ -11,7 +11,7 @@ import {
 } from "react-ionicons";
 import {BrowserRouter as Router, Link, NavLink, Route, Switch} from "react-router-dom";
 import Dashboard from "./pages/Dashboard";
-import Users from "./pages/Users";
+import People from "./pages/People";
 import Tippy from "@tippyjs/react";
 import 'tippy.js/dist/tippy.css';
 import {useEffect, useState} from "react";
@@ -139,7 +139,7 @@ function App() {
               <Person />
             </Route>
             <Route path="/people">
-              <Users/>
+              <People/>
             </Route>
             <Route path="/build-monitor">
               <BuildMonitor/>

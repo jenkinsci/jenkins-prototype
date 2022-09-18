@@ -7,7 +7,7 @@
   margin: 0;
 
   &__item {
-    display: contents;
+    position: relative;
 
     a {
       display: flex;
@@ -22,6 +22,17 @@
       text-decoration: none !important;
       overflow: hidden;
       transition: 0.3s ease;
+      z-index: 0;
+
+      &::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+        background: var(--color-secondary);
+        opacity: 0;
+        transition: 0.3s ease;
+      }
 
       div {
         position: relative;
@@ -70,18 +81,34 @@
         word-wrap: break-word;
         flex-grow: 1;
       }
+    }
+
+    button {
+      position: absolute;
+      top: 19px;
+      right: 5px;
+      z-index: 1;
+      background: transparent !important;
+      color: var(--color-secondary);
+    }
+
+    &:hover {
+      a {
+        &::before {
+          opacity: 0.1;
+        }
+      }
 
       button {
-        display: contents;
-        background: transparent;
-        outline: none;
-        border: none;
-        margin-left: auto;
+        color: currentColor;
+      }
+    }
 
-        svg, span {
-          width: 1.4rem;
-          height: 1.4rem;
-          color: var(--color-secondary);
+    &:active,
+    &:focus {
+      a {
+        &::before {
+          opacity: 0.2;
         }
       }
     }

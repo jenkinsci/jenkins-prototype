@@ -101,3 +101,11 @@
     }
   }
 }
+
+.overflow-button {
+  span, svg {
+    width: 1.6rem !important;
+    height: 1.6rem !important;
+    margin: 0 -0.1rem;
+  }
+}

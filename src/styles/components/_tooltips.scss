@@ -1,0 +1,50 @@
+.tippy-box[data-theme~="tooltip"] {
+  --tooltip-box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.05), 0 0 8px 2px rgba(0, 0, 30, 0.05), 0 0 1px 1px rgba(0, 0, 20, 0.025), 0 10px 20px rgba(0, 0, 20, 0.15);
+
+  color: var(--tooltip-color);
+  padding: 0.4rem;
+  border-radius: 0.66rem;
+  box-shadow: var(--tooltip-box-shadow);
+  font-weight: 550;
+  //max-width: ~"min(50vw, 1000px)" !important;
+  white-space: pre-line;
+  z-index: 0;
+  background: transparent;
+
+  // The @supports can be removed when Firefox supports backdrop-filter
+  @supports (backdrop-filter: blur(15px)) {
+    backdrop-filter: saturate(2) blur(15px);
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: var(--table-background-color);
+    z-index: -1;
+    border-radius: inherit;
+
+    @supports (backdrop-filter: blur(15px)) {
+      opacity: 0.65;
+    }
+  }
+
+  .tippy-content {
+    padding: 0;
+  }
+}
+
+.tippy-box[data-animation="tooltip"][data-state="hidden"] {
+  opacity: 0;
+  transform: scale(0.995);
+
+  &[data-placement^="top"] {
+    transform-origin: bottom;
+    transform: translateY(2px) scale(0.995);
+  }
+
+  &[data-placement^="bottom"] {
+    transform-origin: top;
+    transform: translateY(-2px) scale(0.995);
+  }
+}
