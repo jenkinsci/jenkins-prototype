@@ -3,8 +3,7 @@ import Green from "../green.svg";
 import {Link} from "react-router-dom";
 import Tippy from "@tippyjs/react";
 import {
-  AddOutline,
-  EllipsisHorizontalOutline, FingerPrintOutline, LogoRss, PlayOutline, ScanCircleOutline, SunnyOutline
+  AddOutline, FingerPrintOutline, LogoRss, PlayOutline, ScanCircleOutline, SunnyOutline
 } from "react-ionicons";
 import Overflow from "../components/Overflow";
 
@@ -95,7 +94,7 @@ function Dashboard() {
             <div className={"jenkins-build-history"}>
               {Array.from(Array(10), (e, i) => {
                 return (
-                  <div className={"jenkins-build-history__item"}>
+                  <div key={i} className={"jenkins-build-history__item"}>
                     <span className={"jenkins-passing-icon"}></span>
                     <Link to={"/project/build"} className={"jenkins-link"}>Build {374 - i}</Link>
                   </div>
@@ -117,9 +116,9 @@ function Dashboard() {
             </tr>
           </thead>
           <tbody>
-            {items.map((item) => {
+            {items.map((item, index) => {
               return (
-                <tr key={item.name}>
+                <tr key={index}>
                   <td className="jenkins-table-icon-host">
                     <Tippy content="This build passed">
                       <a className={"jenkins-button jenkins-button--transparent jenkins-button--icon jenkins-button--green"}>
@@ -150,9 +149,9 @@ function Dashboard() {
           </tbody>
         </table>
         <div className={"jenkins-mobile-projects"}>
-          {items.map((item) => {
+          {items.map((item, index) => {
             return (
-              <Link to={"/project"} className={"jenkins-mobile-projects__item"}>
+              <Link key={index} to={"/project"} className={"jenkins-mobile-projects__item"}>
                 <span className={"jenkins-passing-icon"}></span>
                 <div>
                   <p className={"title"}>{item.name}</p>

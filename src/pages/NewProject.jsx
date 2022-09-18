@@ -1,10 +1,8 @@
-import {Link, NavLink, Route, Switch} from "react-router-dom";
+import {Link, NavLink, Route, Routes} from "react-router-dom";
 import {
   DuplicateOutline, LayersOutline,
   LogoGithub, LogoGitlab, OpenOutline
 } from "react-ionicons";
-import System from "./settings/System";
-import Appearance from "./settings/Appearance";
 import NotImplemented from "./settings/NotImplemented";
 import ProjectTypes from "./new/ProjectTypes";
 import GitHub from "./new/GitHub";
@@ -51,10 +49,10 @@ function NewProject() {
         {items.map(category => {
           return (
             <>
-              <h2 className="jenkins-sidebar__heading">{category.name}</h2>
+              <h2 key={category.name} className="jenkins-sidebar__heading">{category.name}</h2>
               {category.items.map(item => {
                 return (
-                  <NavLink to={`../new/${item.link === "" ? item.link : item.name.toLowerCase().replaceAll(" ", "-")}`} className="jenkins-sidebar__item" activeClassName="jenkins-sidebar__item--selected" exact>
+                  <NavLink key={item.name} to={`../new/${item.link === "" ? item.link : item.name.toLowerCase().replaceAll(" ", "-")}`} className={({ isActive }) => "jenkins-sidebar__item" + (isActive ? " jenkins-sidebar__item--selected" : "")} end>
                     <div className="jenkins-sidebar__item__icon">
                       {item.icon}
                     </div>
@@ -77,17 +75,11 @@ function NewProject() {
           <Link to={"/"} className={"jenkins-breadcrumb"}>Dashboard</Link>
           <Link to={"/project"} className={"jenkins-breadcrumb"}>New project</Link>
         </div>
-        <Switch>
-          <Route path="/new" exact="true">
-            <ProjectTypes />
-          </Route>
-          <Route path="/new/github">
-            <GitHub />
-          </Route>
-          <Route>
-            <NotImplemented />
-          </Route>
-        </Switch>
+        <Routes>
+          <Route path="/" element={<ProjectTypes />} />
+          <Route path="/github" element={<GitHub />} />
+          <Route path="*" element={<NotImplemented />} />
+        </Routes>
       </div>
     </div>
   );

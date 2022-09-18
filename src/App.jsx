@@ -9,7 +9,7 @@ import {
   SettingsOutline,
   StarOutline
 } from "react-ionicons";
-import {BrowserRouter as Router, Link, NavLink, Route, Switch} from "react-router-dom";
+import {BrowserRouter as Router, NavLink, Route, Routes} from "react-router-dom";
 import Dashboard from "./pages/Dashboard";
 import People from "./pages/People";
 import Tippy from "@tippyjs/react";
@@ -35,7 +35,7 @@ function App() {
   useEffect(() => {
     const element = document.querySelector("#app-layer")
 
-    const onScroll = e => {
+    const onScroll = () => {
       setShowScrollToTopButton(element.scrollTop > 250)
     };
     element.addEventListener("scroll", onScroll);
@@ -76,14 +76,14 @@ function App() {
       icon: <PeopleOutline/>
     }
   ]
-  const [controlBar, setControlBar] = useState(["search", "build-monitor", "favorites", "users", "theme-switcher"])
+  const [controlBar] = useState(["search", "build-monitor", "favorites", "users", "theme-switcher"])
 
   return (
     <Router>
       <div className="App">
         <div className="jenkins-nav">
           <Tippy content="Dashboard" placement="right">
-            <NavLink to={"/"} className="jenkins-nav__item" activeClassName="jenkins-nav__item--selected" exact>
+            <NavLink to={"/"} className={({ isActive }) => "jenkins-nav__item" + (isActive ? " jenkins-nav__item--selected" : "")} end>
               <div className="jenkins-nav__item__icon"><HomeOutline /></div>
             </NavLink>
           </Tippy>
@@ -91,7 +91,7 @@ function App() {
             return (
               result.link != null ? (
                 <Tippy key={result.name} content={result.name} placement="right">
-                  <NavLink to={result.link} className="jenkins-nav__item" activeClassName="jenkins-nav__item--selected">
+                  <NavLink to={result.link} className={({ isActive }) => "jenkins-nav__item" + (isActive ? " jenkins-nav__item--selected" : "")}>
                     <div className="jenkins-nav__item__icon">{result.icon}</div>
                   </NavLink>
                 </Tippy>
@@ -104,7 +104,7 @@ function App() {
                     </Tippy>
                   ) : (
                     <Tippy key={result.name} content={result.name} placement="right">
-                      <button className="jenkins-nav__item" onClick={e => result.onClick()}>
+                      <button className="jenkins-nav__item" onClick={() => result.onClick()}>
                         <div className="jenkins-nav__item__icon">{result.icon}</div>
                       </button>
                     </Tippy>
@@ -113,7 +113,7 @@ function App() {
             )
           })}
           <Tippy content="Settings" placement="right">
-            <NavLink to={"/settings"} className="jenkins-nav__item" activeClassName="jenkins-nav__item--selected">
+            <NavLink to={"/settings"} className={({ isActive }) => "jenkins-nav__item" + (isActive ? " jenkins-nav__item--selected" : "")}>
               <div className="jenkins-nav__item__icon"><SettingsOutline/></div>
             </NavLink>
           </Tippy>
@@ -125,44 +125,20 @@ function App() {
           </Tippy>
         </div>
         <div id="app-layer" className="jenkins-container">
-          <Switch>
-            <Route path="/new">
-              <NewProject/>
-            </Route>
-            <Route path="/settings/plugins">
-              <PluginManager/>
-            </Route>
-            <Route path="/settings">
-              <Settings/>
-            </Route>
-            <Route path="/people/:username">
-              <Person />
-            </Route>
-            <Route path="/people">
-              <People/>
-            </Route>
-            <Route path="/build-monitor">
-              <BuildMonitor/>
-            </Route>
-            <Route path="/project/configure">
-              <ProjectSettings/>
-            </Route>
-            <Route path="/project/build/console">
-              <ConsolePage/>
-            </Route>
-            <Route path="/project/build">
-              <Build/>
-            </Route>
-            <Route path="/project/stageview">
-              <StageviewPage />
-            </Route>
-            <Route path="/project">
-              <Project/>
-            </Route>
-            <Route path="/">
-              <Dashboard/>
-            </Route>
-          </Switch>
+          <Routes>
+            <Route path="/new/*" element={<NewProject/>} />
+            <Route path="/settings/plugins" element={<PluginManager/>} />
+            <Route path="/settings/*" element={<Settings/>} />
+            <Route path="/people/:username" element={<Person />} />
+            <Route path="/people" element={<People/>} />
+            <Route path="/build-monitor" element={<BuildMonitor/>} />
+            <Route path="/project/configure" element={<ProjectSettings/>} />
+            <Route path="/project/build/console" element={<ConsolePage/>} />
+            <Route path="/project/build" element={<Build/>} />
+            <Route path="/project/stageview" element={<StageviewPage />} />
+            <Route path="/project" element={<Project/>} />
+            <Route path="/" element={<Dashboard/>} />
+          </Routes>
         </div>
         {searchVisible && (
           <Search hook={setSearchVisible}/>

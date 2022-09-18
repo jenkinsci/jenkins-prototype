@@ -1,5 +1,4 @@
 import {
-  AlbumsOutline,
   AnalyticsOutline,
   BrushOutline, CloudOutline,
   CodeWorkingOutline,
@@ -8,7 +7,6 @@ import {
   FileTrayFullOutline,
   HammerOutline,
   HelpCircleOutline,
-  HelpOutline,
   LockClosedOutline,
   OpenOutline,
   PeopleOutline,
@@ -18,7 +16,7 @@ import {
   SettingsOutline,
   TerminalOutline
 } from 'react-ionicons'
-import {NavLink, Route, Switch} from "react-router-dom";
+import {NavLink, Route, Routes} from "react-router-dom";
 import System from "./settings/System";
 import Tools from "./settings/Tools";
 import Appearance from "./settings/Appearance";
@@ -137,10 +135,10 @@ function Settings() {
         {items.map(category => {
           return (
             <>
-              <h2 className="jenkins-sidebar__heading">{category.name}</h2>
+              <h2 key={category.name} className="jenkins-sidebar__heading">{category.name}</h2>
               {category.items.map(item => {
                 return (
-                  <NavLink to={`../settings/${item.link === "" ? item.link : item.name.toLowerCase().replaceAll(" ", "-")}`} className="jenkins-sidebar__item" activeClassName="jenkins-sidebar__item--selected" exact>
+                  <NavLink key={item.name} to={`../settings/${item.link === "" ? item.link : item.name.toLowerCase().replaceAll(" ", "-")}`} className={({ isActive }) => "jenkins-sidebar__item" + (isActive ? " jenkins-sidebar__item--selected" : "")} end>
                     <div className="jenkins-sidebar__item__icon">
                       {item.icon}
                     </div>
@@ -158,20 +156,12 @@ function Settings() {
         })}
       </div>
       <div className="jenkins-body jenkins-body--inner">
-        <Switch>
-          <Route path="/settings" exact="true">
-            <System />
-          </Route>
-          <Route path="/settings/tools">
-            <Tools />
-          </Route>
-          <Route path="/settings/appearance">
-            <Appearance />
-          </Route>
-          <Route>
-            <NotImplemented />
-          </Route>
-        </Switch>
+        <Routes>
+          <Route path="/" exact="true" element={<System/>} />
+          <Route path="/tools" element={<Tools/>} />
+          <Route path="/appearance"  element={<Appearance/>} />
+          <Route path="*" element={<NotImplemented/>} />
+        </Routes>
         <button style={{"padding": "0.75rem 1.8rem", "height": "unset"}} className={"jenkins-button jenkins-button--primary"} type="submit">Save</button>
       </div>
     </div>
