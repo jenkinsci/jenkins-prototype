@@ -1,7 +1,7 @@
 import Sun from "../sun.svg";
 import Green from "../green.svg";
 import {Link} from "react-router-dom";
-import Tippy from "@tippyjs/react";
+import Tippy, {useSingleton} from "@tippyjs/react";
 import {
   AddOutline, FingerPrintOutline, LogoRss, PlayOutline, ScanCircleOutline, SunnyOutline
 } from "react-ionicons";
@@ -10,7 +10,6 @@ import {useEffect, useState} from "react";
 import {faker} from "@faker-js/faker";
 
 function Dashboard() {
-
   const [projects, setProjects] = useState([])
   useEffect(() => {
     const projectsToAdd = [
@@ -36,8 +35,12 @@ function Dashboard() {
     setProjects([...projectsToAdd])
   }, []);
 
+  const [source, target] = useSingleton({});
+
   return (
     <div className="jenkins-body">
+      {/* This is the tippy that gets used as the singleton */}
+      <Tippy singleton={source} touch="hold" />
       <div className="jenkins-app-bar">
         <div className={"jenkins-app-bar__content"}>
           <div className="rotating-title">
@@ -125,14 +128,14 @@ function Dashboard() {
               return (
                 <tr key={index}>
                   <td className="jenkins-table-icon-host">
-                    <Tippy content="This build passed">
+                    <Tippy singleton={target} content="This build passed">
                       <a className={"jenkins-button jenkins-button--transparent jenkins-button--icon jenkins-button--green"}>
                         <span className={"jenkins-passing-icon"}></span>
                       </a>
                     </Tippy>
                   </td>
                   <td className="jenkins-table-icon-host">
-                    <Tippy content="Build stability: 5 out of the last 5 builds passed.">
+                    <Tippy singleton={target} content="Build stability: 5 out of the last 5 builds passed.">
                       <a className={"jenkins-button jenkins-button--transparent jenkins-button--icon jenkins-button--orange"}>
                         <SunnyOutline/>
                       </a>

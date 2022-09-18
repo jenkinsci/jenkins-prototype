@@ -12,7 +12,7 @@ import {
 import {BrowserRouter as Router, NavLink, Route, Routes} from "react-router-dom";
 import Dashboard from "./pages/Dashboard";
 import People from "./pages/People";
-import Tippy from "@tippyjs/react";
+import Tippy, {useSingleton} from "@tippyjs/react";
 import 'tippy.js/dist/tippy.css';
 import {useEffect, useState} from "react";
 import BuildMonitor from "./pages/BuildMonitor";
@@ -30,6 +30,7 @@ import Person from "./pages/Person";
 
 function App() {
 
+  const [source, target] = useSingleton({});
   const [showScrollToTopButton, setShowScrollToTopButton] = useState(false)
 
   useEffect(() => {
@@ -81,8 +82,10 @@ function App() {
   return (
     <Router>
       <div className="App">
+        {/* This is the tippy that gets used as the singleton */}
+        <Tippy singleton={source} touch="hold" />
         <div className="jenkins-nav">
-          <Tippy content="Dashboard" placement="right">
+          <Tippy singleton={target} content="Dashboard" placement="right">
             <NavLink to={"/"} className={({ isActive }) => "jenkins-nav__item" + (isActive ? " jenkins-nav__item--selected" : "")} end>
               <div className="jenkins-nav__item__icon"><HomeOutline /></div>
             </NavLink>
@@ -112,13 +115,13 @@ function App() {
               )
             )
           })}
-          <Tippy content="Settings" placement="right">
+          <Tippy singleton={target} content="Settings" placement="right">
             <NavLink to={"/settings"} className={({ isActive }) => "jenkins-nav__item" + (isActive ? " jenkins-nav__item--selected" : "")}>
               <div className="jenkins-nav__item__icon"><SettingsOutline/></div>
             </NavLink>
           </Tippy>
 
-          <Tippy content="Scroll to top" placement="right">
+          <Tippy singleton={target} content="Scroll to top" placement="right">
             <button onClick={() => document.querySelector("#app-layer").scroll({top:0,behavior:'smooth'})} className={`jenkins-nav__item jenkins-nav__item--bottom ${showScrollToTopButton && 'jenkins-nav__item--bottom--visible'}`}>
               <div className="jenkins-nav__item__icon"><ArrowUpOutline/></div>
             </button>
