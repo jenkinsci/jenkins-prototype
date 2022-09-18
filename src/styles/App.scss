@@ -348,7 +348,10 @@ h1 {
 }
 
 .jenkins-body {
-  padding: 4rem 2rem 2rem 2rem;
+  padding-top: calc(env(safe-area-inset-top) + 4rem);
+  padding-left: calc(env(safe-area-inset-left) + 2rem);
+  padding-right: calc(env(safe-area-inset-right) + 2rem);
+  padding-bottom: calc(env(safe-area-inset-bottom) + 2rem);
 
   @media screen and (max-width: 768px) {
     padding-top: calc(2rem + env(safe-area-inset-top));
