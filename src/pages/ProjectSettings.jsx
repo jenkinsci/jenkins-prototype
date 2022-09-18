@@ -7,7 +7,9 @@ function ProjectSettings() {
       <div className="jenkins-sidebar">
         <div className={"jenkins-breadcrumbs"} style={{"margin": "30px 30px 0 30px"}}>
           <Link to={"/"} className={"jenkins-breadcrumb"}>Dashboard</Link>
-          <Link to={"/project"} className={"jenkins-breadcrumb"}>Scalemate</Link>
+          <Link to={"/project"} className={"jenkins-breadcrumb"}>Core</Link>
+          <Link to={"/project"} className={"jenkins-breadcrumb"}>Jenkins</Link>
+          <Link to={"/project"} className={"jenkins-breadcrumb"}>master</Link>
         </div>
         <h1 style={{"margin": "15px 30px 30px 30px"}}>Manage</h1>
         <a className="jenkins-sidebar__item jenkins-sidebar__item--selected">

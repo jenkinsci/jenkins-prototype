@@ -18,14 +18,15 @@
   margin: 0 !important;
   gap: 1ch;
 
-  @media screen and (max-width: 1000px) {
-    height: unset;
+  @media screen and (max-width: 768px) {
+    height: 44px;
+    min-width: 55px;
     padding: 0.8rem 1rem;
     gap: 0.5rem;
     border-radius: 1rem;
   }
 
-  span {
+  span:first-of-type {
     width: 1.2rem!important;
     height: 1.2rem!important;
   }
@@ -103,9 +104,14 @@
 }
 
 .overflow-button {
-  span, svg {
+  span:first-of-type, svg {
     width: 1.6rem !important;
     height: 1.6rem !important;
     margin: 0 -0.1rem;
+
+    @media screen and (max-width: 768px) {
+      width: 1.4666666667rem !important;
+      height: 1.4666666667rem !important;
+    }
   }
 }

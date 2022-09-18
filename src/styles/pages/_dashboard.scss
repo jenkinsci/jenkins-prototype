@@ -1,14 +1,24 @@
 .iamsidebar {
   display: grid;
-  grid-template-columns: 340px 1fr;
+  grid-template-columns: max(min(22.5vw, 400px), 300px) 1fr;
   grid-gap: var(--card-gap);
 
   .jenkins-cards__item {
     min-height: unset;
   }
 
-  @media screen and (max-width: 1000px) {
+  @media screen and (max-width: 768px) {
     display: block;
+  }
+
+
+  @media screen and (max-width: 1000px) {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+
+    .sidebar-item {
+      grid-row: 2;
+    }
   }
 }
 

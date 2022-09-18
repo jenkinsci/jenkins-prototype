@@ -49,7 +49,7 @@ function Dashboard() {
         <div className={"jenkins-app-bar__controls"}>
           <Link to={"/new"} className={"jenkins-button"}>
             <AddOutline/>
-            New project
+            <span className={"jenkins-mobile-hide"}>New project</span>
           </Link>
           <Overflow>
             <a>

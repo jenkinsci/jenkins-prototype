@@ -215,7 +215,7 @@ body {
   overflow: hidden;
   background: var(--background-color);
   
-  @media screen and (max-width: 1000px) {
+  @media screen and (max-width: 768px) {
     display: block;
     width: unset;
     height: unset;
@@ -224,7 +224,7 @@ body {
 }
 
 .jenkins-mobile-hide {
-  @media screen and (max-width: 1000px) {
+  @media screen and (max-width: 768px) {
     display: none !important;
   }
 }
@@ -240,7 +240,7 @@ body {
     margin: 0 auto;
   }
 
-  @media screen and (max-width: 1000px) {
+  @media screen and (max-width: 768px) {
     height: unset;
     overflow: unset;
 
@@ -258,7 +258,7 @@ h1 {
   letter-spacing: unset;
   color: var(--foreground-color);
 
-  @media screen and (max-width: 1000px) {
+  @media screen and (max-width: 768px) {
     font-size: 1.5rem;
   }
 }
@@ -350,7 +350,7 @@ h1 {
 .jenkins-body {
   padding: 4rem 2rem 2rem 2rem;
 
-  @media screen and (max-width: 1000px) {
+  @media screen and (max-width: 768px) {
     padding-top: calc(2rem + env(safe-area-inset-top));
     padding-left: calc(env(safe-area-inset-left) + 1rem);
     padding-right: calc(env(safe-area-inset-right) + 1rem);

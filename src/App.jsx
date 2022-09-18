@@ -104,7 +104,7 @@ function App() {
                 </Tippy>
               ) : (
                   result.panel != null ? (
-                    <Tippy key={result.name} content={result.panel} placement="right" interactive="true" {...tippyProps}>
+                    <Tippy key={result.name} content={result.panel} placement="right" interactive="true" {...tippyProps} touch="hold">
                       <button className="jenkins-nav__item jenkins-mobile-hide">
                         <div className="jenkins-nav__item__icon">{result.icon}</div>
                       </button>

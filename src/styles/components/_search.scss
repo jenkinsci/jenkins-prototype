@@ -12,6 +12,13 @@
     border: none;
     font-size: 14px;
     background: transparent;
+    margin: 0;
+    padding: 0 0.33rem 0 0;
+
+    // Safari adds unwanted padding - let's remove it
+    &::-webkit-search-decoration {
+      -webkit-appearance: none;
+    }
 
     &::placeholder {
       color: var(--color-secondary);
