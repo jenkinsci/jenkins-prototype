@@ -15,7 +15,7 @@ const searchResults = [
   {
     name: "People",
     items: people.map(person => {
-      person.icon = <Avatar person={person} />
+      person.icon = <Avatar person={person} size={"1.6rem"} />
       return person
     })
   },
