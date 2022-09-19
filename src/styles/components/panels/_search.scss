@@ -7,16 +7,12 @@ $search-animation-duration: 0.2s;
   right: 0;
   bottom: 0;
   animation: fade-in-search $search-animation-duration ease;
-  backdrop-filter: blur(5px);
-  z-index: 0;
+  z-index: 50;
+  backdrop-filter: contrast(0.8) brightness(0.6) saturate(1.4) blur(10px);
+  overflow: auto;
 
-  &::before {
-    position: absolute;
-    content: "";
-    inset: 0;
-    background: var(--background-color);
-    opacity: 0.5;
-    z-index: -1;
+  @media (prefers-color-scheme: dark) {
+    backdrop-filter: contrast(0.5) brightness(0.3) saturate(1.4) blur(10px);
   }
 
   & > div {
@@ -25,17 +21,22 @@ $search-animation-duration: 0.2s;
     max-width: 800px;
     margin: 90px auto auto;
     animation: fade-in-search-inner $search-animation-duration ease;
-    filter: drop-shadow(0 0 20px rgba(100, 100, 130, 0.6));
-    border-radius: 10px;
-
+    filter: drop-shadow(0 10px 30px rgba(50, 50, 70, 0.6));
+    border-radius: 15px;
+    backdrop-filter: brightness(1.3) saturate(2) blur(10px);
     z-index: 0;
+
+    @media (prefers-color-scheme: dark) {
+      backdrop-filter: contrast(0.7) brightness(2) blur(30px);
+      filter: drop-shadow(0 0 20px rgba(0, 0, 10, 0.6));
+    }
 
     &::before {
       position: absolute;
       content: "";
       inset: 0;
       background: var(--background-color);
-      opacity: 1;
+      opacity: 0.7;
       z-index: -1;
       border-radius: inherit;
     }
@@ -47,21 +48,23 @@ $search-animation-duration: 0.2s;
 
   #global-search {
     display: grid;
-    grid-template-columns: auto 1fr;
+    grid-template-columns: 50px 1fr;
     align-items: center;
     justify-content: center;
+    height: 50px;
 
     span {
+      width: 50px;
+      height: 50px;
       display: flex;
       align-items: center;
       justify-content: center;
       aspect-ratio: 1;
-      height: 100%;
-    }
 
-    svg {
-      width: 1.1rem;
-      height: 1.1rem;
+      svg {
+        width: 1.1rem;
+        height: 1.1rem;
+      }
     }
 
     input {
@@ -72,13 +75,96 @@ $search-animation-duration: 0.2s;
       font-size: 1rem;
       font-weight: 450;
       padding: 1rem 1.2rem 1rem 0;
+      margin: 0;
       background: transparent;
+
+      // Safari adds unwanted padding - let's remove it
+      &::-webkit-search-decoration {
+        -webkit-appearance: none;
+      }
+
+      &::placeholder {
+        color: var(--color-secondary);
+      }
     }
   }
 
   #global-search-results {
+    display: flex;
+    flex-direction: column;
     margin: 30px auto auto;
-    padding: 1.5rem;
+    padding: 1.5rem 1.5rem calc(1.5rem - 0.675rem) 1.5rem;
+    margin-bottom: 2rem;
+  }
+}
+
+.app-command-palette__heading {
+  font-size: var(--font-6);
+  font-weight: 600;
+  margin: 0 0 0.5rem 0;
+  color: var(--color-secondary);
+}
+
+.app-command-palette__result + .app-command-palette__heading {
+  margin-top: 1rem;
+}
+
+.app-command-palette__result {
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0.85rem;
+  margin: 0 -0.65rem;
+  padding: 0.675rem 0.65rem;
+  font-weight: 450;
+  -webkit-font-smoothing: subpixel-antialiased;
+  font-size: 0.9rem;
+  z-index: 0;
+  cursor: pointer;
+  transition: 0.2s ease;
+  color: var(--foreground-color) !important;
+  text-decoration: none;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0 -0.3rem;
+    background: transparent;
+    border-radius: 10px;
+    pointer-events: none;
+    z-index: -1;
+    transition: 0.2s ease;
+    opacity: 0.15;
+  }
+
+  &:hover::before {
+    background: var(--color-secondary);
+  }
+
+  &:active {
+    &::before {
+      background: var(--button-background-color-active);
+    }
+  }
+
+  &__icon {
+    width: 1.6rem;
+    height: 1.6rem;
+    overflow: hidden;
+
+    span {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    span, svg {
+      width: 1.6rem;
+      height: 1.6rem;
+      color: inherit !important;
+      fill: currentColor !important;
+    }
   }
 }
 
@@ -90,6 +176,6 @@ $search-animation-duration: 0.2s;
 
 @keyframes fade-in-search-inner {
   from {
-    transform: translateY(100px);
+    transform: translateY(60px);
   }
 }

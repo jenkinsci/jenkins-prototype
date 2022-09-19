@@ -155,6 +155,7 @@
 }
 
 @import "components/_app-bar";
+@import "components/avatar";
 @import "components/back-link";
 @import "components/_button";
 @import "components/_breadcrumbs";
@@ -368,5 +369,43 @@ h1 {
 
   &--inner {
     padding: 0 2rem 2rem 3rem;
+  }
+}
+
+.keyboard-tooltip {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.keyboard-shortcut {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  padding: 0 0.3rem;
+  letter-spacing: 1px;
+  margin-right: -0.1rem;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: -0.1rem 0;
+    background: currentColor;
+    opacity: 0.1;
+    border-radius: 5px;
+    mix-blend-mode: overlay;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: -0.1rem 0;
+    border: 1px solid currentColor;
+    opacity: 0.25;
+    border-radius: 5px;
+    mix-blend-mode: overlay;
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
   }
 }

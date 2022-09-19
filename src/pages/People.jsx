@@ -1,54 +1,11 @@
 import {CloseCircleOutline, LogoGithub, SearchOutline, SettingsOutline} from "react-ionicons";
-import { faker } from '@faker-js/faker';
 import {Link} from "react-router-dom";
 import Overflow from "../components/Overflow";
-import {useEffect, useState} from "react";
+import {useState} from "react";
+import people from "../data/people";
 
 export default function People() {
-  const [people, setPeople] = useState([])
   const [filter, setFilter] = useState("");
-
-  const colors = [
-    "orange",
-    "red", "green", "blue", "pink", "brown", "cyan", "indigo", "yellow", "purple"
-  ]
-
-  useEffect(() => {
-    const peopleToAdd = [
-      {
-        name: "Jan Faracik",
-        username: "janfaracik",
-        color1: randomColor(),
-        color2: randomColor(),
-        angle: randomAngle()
-      },
-      {
-        name: "Tim Jacomb",
-        username: "timja",
-        color1: randomColor(),
-        color2: randomColor(),
-        angle: randomAngle()
-      }
-    ]
-    for (let i = 0; i < (20 + Math.random() * 40); i++) {
-      peopleToAdd.push({
-        name: faker.name.fullName(),
-        username: faker.internet.userName(),
-        color1: randomColor(),
-        color2: randomColor(),
-        angle: randomAngle()
-      })
-    }
-    setPeople([...peopleToAdd])
-  }, []);
-
-  function randomAngle() {
-    return Math.random() * 360;
-  }
-
-  function randomColor() {
-    return colors[Math.floor(Math.random() * colors.length)];
-  }
 
   return (
     <div className="jenkins-body">

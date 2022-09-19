@@ -54,7 +54,7 @@ function App() {
     },
     {
       id: "search",
-      name: "Search",
+      name: <span className={"keyboard-tooltip"}>Search <span className={"keyboard-shortcut"}>⌘K</span></span>,
       onClick: () => setSearchVisible(true),
       icon: <SearchOutline/>
     },

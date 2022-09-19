@@ -1,41 +1,13 @@
-import Sun from "../sun.svg";
-import Green from "../green.svg";
 import {Link} from "react-router-dom";
 import Tippy from "@tippyjs/react";
 import {
-  AddOutline, FingerPrintOutline, LogoRss, NewspaperOutline, PlayOutline, ScanCircleOutline, SunnyOutline
+  AddOutline, FingerPrintOutline, NewspaperOutline, PlayOutline, ScanCircleOutline, SunnyOutline
 } from "react-ionicons";
 import Overflow from "../components/Overflow";
-import {useEffect, useState} from "react";
-import {faker} from "@faker-js/faker";
 import tippyProps from "../data/tooltips";
+import projects from "../data/projects";
 
 function Dashboard() {
-  const [projects, setProjects] = useState([])
-  useEffect(() => {
-    const projectsToAdd = [
-      {
-        state: Green,
-        weather: Sun,
-        name: "Jenkins",
-        lastSuccess: "16 hours ago",
-        lastFailure: "One day ago",
-        lastDuration: "30 seconds"
-      }
-    ]
-    for (let i = 0; i < 20; i++) {
-      projectsToAdd.push({
-        state: Green,
-        weather: Sun,
-        name: faker.word.noun(),
-        lastSuccess: "16 hours ago",
-        lastFailure: "One day ago",
-        lastDuration: "30 seconds"
-      })
-    }
-    setProjects([...projectsToAdd])
-  }, []);
-
   return (
     <div className="jenkins-body">
       <div className="jenkins-app-bar">
@@ -127,14 +99,14 @@ function Dashboard() {
                   <td className="jenkins-table-icon-host">
                     <Tippy content="This build passed"  {...tippyProps}>
                       <a className={"jenkins-button jenkins-button--transparent jenkins-button--icon jenkins-button--green"}>
-                        <span className={"jenkins-passing-icon"}></span>
+                        {item.state}
                       </a>
                     </Tippy>
                   </td>
                   <td className="jenkins-table-icon-host">
                     <Tippy content="Build stability: 5 out of the last 5 builds passed." {...tippyProps}>
                       <a className={"jenkins-button jenkins-button--transparent jenkins-button--icon jenkins-button--orange"}>
-                        <SunnyOutline/>
+                        {item.weather}
                       </a>
                     </Tippy>
                   </td>
