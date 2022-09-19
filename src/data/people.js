@@ -2,7 +2,7 @@ const people = [
   {name: "Jan Faracik", username: "janfaracik", color1: "pink", color2: "yellow", angle: 114.186832938992},
   {name: "Tim Jacomb", username: "timja", color1: "purple", color2: "cyan", angle: 45.05438580989023},
   {name: "Catherine Hand", username: "Junius45", color1: "purple", color2: "yellow", angle: 139.07899516440446},
-  {name: "Mabel Rau", username: "Amaya.Feeney", color1: "yellow", color2: "cyan", angle: 67.33983678818281},
+  {name: "David Byrne", username: "flowers", color1: "yellow", color2: "cyan", angle: 67.33983678818281},
   {name: "Luther Little PhD", username: "Priscilla64", color1: "orange", color2: "pink", angle: 270.36209412372784},
   {
     name: "Mercedes Yundt",
@@ -39,7 +39,7 @@ const people = [
     angle: 234.93451418834726
   },
   {name: "Sophie Koepp", username: "Doris97", color1: "orange", color2: "pink", angle: 266.2572953779668},
-  {name: "Ashley Miller", username: "Brown.Marks54", color1: "cyan", color2: "brown", angle: 262.9462451007051},
+  {name: "Matt Berninger", username: "americanmary", color1: "cyan", color2: "brown", angle: 262.9462451007051},
   {
     name: "Jeffery Powlowski",
     username: "Wade_Runolfsdottir",
@@ -48,7 +48,7 @@ const people = [
     angle: 312.4227636852928
   },
   {name: "Laurie Feeney", username: "Scotty.Wilderman73", color1: "pink", color2: "green", angle: 146.77709086005015},
-  {name: "Miss Krista Shields", username: "Bridie11", color1: "pink", color2: "blue", angle: 296.4511381544968},
+  {name: "Krista Shields", username: "Bridie11", color1: "pink", color2: "blue", angle: 296.4511381544968},
   {name: "Gordon Marks", username: "Ryley.Welch85", color1: "cyan", color2: "green", angle: 88.88431191456559},
   {name: "Alfredo Johnson", username: "Rhianna_Kozey", color1: "yellow", color2: "indigo", angle: 261.84765685878654},
   {name: "Rosemarie Kulas", username: "Rae_Connelly19", color1: "cyan", color2: "green", angle: 244.33744204870658}

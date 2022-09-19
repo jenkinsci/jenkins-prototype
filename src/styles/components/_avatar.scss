@@ -7,11 +7,10 @@
   height: 100%;
   border-radius: 100vmax;
   font-weight: 600;
-  font-size: 75%;
   flex-shrink: 0;
   overflow: hidden;
   z-index: 0;
-  margin-right: 1rem;
+  aspect-ratio: 1;
 
   &::before,
   &::after {
@@ -24,26 +23,46 @@
   }
 
   &::before {
-    background: inherit;
-    animation: rotate-bg 10s infinite linear;
-
-    @keyframes rotate-bg {
-      0% {
-        rotate: 0deg;
-      }
-      100% {
-        rotate: 360deg;
-      }
-    }
-  }
-
-  &::after {
     background: radial-gradient(var(--background-color), transparent);
   }
 
-  span {
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+  &::after {
+    border: 1px solid currentColor;
+    opacity: 0.25;
+  }
+
+  &__animation {
+    position: absolute;
+    inset: 0;
+    animation: rotate-bg 5s infinite linear;
+    mix-blend-mode: overlay;
+    border-radius: 100%;
+  }
+
+  &__initials {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     z-index: 10;
+  }
+
+  .a {
+    opacity: 0.25;
+    text-shadow: 0 0 1px var(--background-color);
+  }
+
+  .b {
+    mix-blend-mode: overlay;
+  }
+
+  @keyframes rotate-bg {
+    0% {
+      rotate: 0deg;
+    }
+    100% {
+      rotate: 360deg;
+    }
   }
 }

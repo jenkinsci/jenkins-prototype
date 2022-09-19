@@ -3,67 +3,25 @@ import {
   AlbumsOutline,
   ExtensionPuzzleOutline,
   PlayOutline,
-  SearchOutline,
   SunnyOutline
 } from "react-ionicons";
-import { faker } from '@faker-js/faker';
-import {Link} from "react-router-dom";
+import {Link, useParams} from "react-router-dom";
 import Tippy from "@tippyjs/react";
-import Green from "../green.svg";
-import Sun from "../sun.svg";
+import people from "../data/people";
+import Avatar from "../components/Avatar";
+import projects from "../data/projects";
 
 export default function Person() {
-  const colors = [
-    "orange",
-    "red", "green", "blue", "pink", "brown", "cyan", "indigo", "yellow", "purple"
-  ]
-
-  const color1 = randomColor()
-  let color2 = null;
-  while (color2 === null || color2 === color1) {
-    color2 = randomColor()
-  }
-  const angle = randomAngle()
-
-  const items = [
-    {
-      state: Green,
-      weather: Sun,
-      name: "Jenkins",
-      lastSuccess: "16 hours ago",
-      lastFailure: "One day ago",
-      lastDuration: "30 seconds"
-    }
-  ]
-
-  for (let i = 0; i < 30; i++) {
-    items.push({
-      state: Green,
-      weather: Sun,
-      name: "Jenkins",
-      lastSuccess: "16 hours ago",
-      lastFailure: "One day ago",
-      lastDuration: "30 seconds"
-    })
-  }
-
-  function randomAngle() {
-    return Math.random() * 360;
-  }
-
-  function randomColor() {
-    return colors[Math.floor(Math.random() * colors.length)];
-  }
+  let { username } = useParams();
+  const person = people.find(p => p.username === username);
 
   return (
     <div className="jenkins-body">
       <div className="jenkins-app-bar">
         <div className={"jenkins-app-bar__content"}>
           <h1 className={"jenkins-project-heading"}>
-            <div className={"avatar"} style={{"background": `linear-gradient(${angle}deg, var(--${color1}), var(--${color2}))`}}>
-              <span style={{"background": `linear-gradient(${angle}deg, var(--${color1}), var(--${color2}))`, "-webkit-background-clip": "text"}}>JF</span>
-            </div>
-            Jan Faracik
+            <Avatar person={person} size={"3.6rem"} animated={true} />
+            { person.name }
           </h1>
         </div>
         <div className={"jenkins-app-bar__controls"}>
@@ -106,7 +64,7 @@ export default function Person() {
           </tr>
           </thead>
           <tbody>
-          {items.map((item) => {
+          {projects.map((item) => {
             return (
               <tr key={item.name}>
                 <td className="jenkins-table-icon-host">

@@ -34,46 +34,6 @@
         transition: 0.3s ease;
       }
 
-      div {
-        position: relative;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 2.6rem;
-        height: 2.6rem;
-        background: red;
-        border-radius: 100vmax;
-        font-weight: 600;
-        font-size: 1.1rem;
-        flex-shrink: 0;
-        z-index: 0;
-
-        &::before,
-        &::after {
-          content: "";
-          position: absolute;
-          inset: 0;
-          mix-blend-mode: overlay;
-          border-radius: inherit;
-          z-index: -1;
-        }
-
-        &::before {
-          background: radial-gradient(var(--background-color), transparent);
-        }
-
-        &::after {
-          border: 1px solid currentColor;
-          opacity: 0.125;
-        }
-
-        span {
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-          z-index: 1;
-        }
-      }
-
       p {
         margin: 0;
         font-weight: 500;
@@ -120,55 +80,4 @@
   display: grid;
   grid-template-columns: 360px 1fr;
   grid-gap: 1rem;
-}
-
-.avatar {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 3.4rem;
-  height: 3.4rem;
-  background: red;
-  border-radius: 100vmax;
-  font-weight: 600;
-  font-size: 1.4rem;
-  flex-shrink: 0;
-  overflow: hidden;
-  z-index: 0;
-  margin-right: 1rem;
-
-  &::before,
-  &::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    mix-blend-mode: overlay;
-    border-radius: inherit;
-    z-index: -1;
-  }
-
-  &::before {
-    background: inherit;
-    animation: rotate-bg 10s infinite linear;
-
-    @keyframes rotate-bg {
-      0% {
-        rotate: 0deg;
-      }
-      100% {
-        rotate: 360deg;
-      }
-    }
-  }
-
-  &::after {
-    background: radial-gradient(var(--background-color), transparent);
-  }
-
-  span {
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    z-index: 10;
-  }
 }

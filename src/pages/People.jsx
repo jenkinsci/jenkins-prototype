@@ -3,6 +3,7 @@ import {Link} from "react-router-dom";
 import Overflow from "../components/Overflow";
 import {useState} from "react";
 import people from "../data/people";
+import Avatar from "../components/Avatar";
 
 export default function People() {
   const [filter, setFilter] = useState("");
@@ -44,11 +45,7 @@ export default function People() {
           return (
             <li className={"app-people__item"}>
               <Link to={`/people/${person.username}`}>
-                <div style={{"background": `linear-gradient(${person.angle}deg, var(--${person.color1}), var(--${person.color2}))`}}>
-                <span style={{"background": `linear-gradient(${person.angle}deg, var(--${person.color1}), var(--${person.color2}))`, "-webkit-background-clip": "text"}}>
-                  {person.name.split(" ")[0][0]}{person.name.split(" ")[1][0]}
-                </span>
-                </div>
+                <Avatar person={person} size={"2.6rem"} />
                 <p>
                   {person.name}
                   <br/>

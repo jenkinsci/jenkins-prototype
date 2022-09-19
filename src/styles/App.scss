@@ -27,12 +27,7 @@
   --red: #e6001f;
   --yellow: #fc0;
 
-  --green: #31c048;
   --green-subtle: hsla(130, 59%, 47%, 15%);
-
-  --orange: #fe820a;
-
-  --red: #fc2125;
   --red-subtle: hsla(359, 97%, 56%, 15%);
 
   // Table
@@ -110,15 +105,21 @@
     // Card
     --card-background: var(--overlap-color);
 
-    // Color
+    // Colors
+    --blue: hsl(210, 100%, 55%);
+    --brown: hsl(30, 35%, 45%);
+    --cyan: hsl(200, 100%, 70%);
+    --green: hsl(135, 75%, 55%);
+    --indigo: hsl(250, 75%, 60%);
+    --orange: hsl(35, 100%, 50%);
+    --pink: hsl(350, 100%, 60%);
+    --purple: hsl(280, 85%, 60%);
+    --red: hsl(5, 100%, 60%);
+    --yellow: hsl(50, 100%, 55%);
+
     --white: hsl(230, 13%, 20%);
 
-    --green: #2fcc47;
     --green-subtle: hsla(129, 63%, 49%, 15%);
-
-    --orange: #fe8d0f;
-
-    --red: #fc2d2d;
     --red-subtle: hsla(0, 97%, 58%, 15%);
 
     // Form
