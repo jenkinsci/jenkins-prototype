@@ -52,21 +52,13 @@
   gap: 10px;
   margin: 0 0 15px;
 
-  span {
+  & > span {
     display: contents;
-  }
 
-  svg {
-    color: currentColor !important;
-    width: 16px;
-    height: 16px;
-  }
-
-  &--link {
-    text-decoration: none;
-
-    &:hover {
-      text-decoration: underline;
+    svg {
+      color: currentColor !important;
+      width: 1.6rem;
+      height: 1.6rem;
     }
   }
 }

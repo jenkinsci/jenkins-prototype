@@ -1,6 +1,10 @@
 .jenkins-link {
+  cursor: pointer;
   color: var(--link-color);
   text-decoration: none;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+  transition: color 0.3s ease;
 
   &:hover {
     color: var(--link-color-hover);

@@ -7,17 +7,18 @@ import {
   GitCommitOutline,
   GitPullRequestOutline,
   HourglassOutline,
-  PersonOutline,
   PlayOutline,
   ShieldOutline,
   TimeOutline,
   TimerOutline
 } from "react-ionicons";
 import Tippy from "@tippyjs/react";
-import Stageview from "../components/Stageview";
 import ResizeOutline from "../components/icons/ResizeOutline";
 import Overflow from "../components/Overflow";
 import tippyProps from "../data/tooltips";
+import people from "../data/people";
+import Avatar from "../components/Avatar";
+import Card from "../components/Card";
 
 function Dashboard() {
   return (
@@ -88,10 +89,10 @@ function Dashboard() {
             })}
           </code>
         </div>
-        <div className={"jenkins-cards__item"}><p className="jenkins-cards__item__title">Details</p>
+        <Card title={"Details"}>
           <p className={"app-details__item"}>
-            <PersonOutline />
-            Started by user Jan Faracik
+            <Avatar size={"1.6rem"} person={people.find(e => e.username === 'janfaracik')} />
+            <div>Started by <Link className={"jenkins-link"} to={"/people/janfaracik"}>Jan Faracik</Link></div>
           </p>
           <p className={"app-details__item"}>
             <TimeOutline />
@@ -107,36 +108,30 @@ function Dashboard() {
           </p>
           <p className={"app-details__item"}>
             <GitPullRequestOutline />
-            <a className={"app-details__item--link"} href="https://github.com/jenkinsci/jenkins/pull/7084">#7084</a>
+            Pull request
+            <a className={"jenkins-link"} href="https://github.com/jenkinsci/jenkins/pull/7084">#7084</a>
           </p>
           <p className={"app-details__item"}>
             <GitCommitOutline />
-            <a className={"app-details__item--link"} href="https://github.com/jenkinsci/jenkins/commit/82df2555089391a0dd1a33813c6609e882021d43">82df255</a>
+            Commit
+            <a className={"jenkins-link"} href="https://github.com/jenkinsci/jenkins/commit/82df2555089391a0dd1a33813c6609e882021d43">82df255</a>
           </p>
-        </div>
-        <div className={"jenkins-cards__item"}>
-          <p className="jenkins-cards__item__title">Artifacts</p>
-          <a className={"jenkins-card-big-link"} href="#">jenkins-bom-2.365-rc32749.fc4dc4e55f29.pom</a>
-          <a className={"jenkins-card-big-link"} href="#">jenkins-bom-2.365-rc32749.fc4dc4e55f29.pom</a>
-          <a className={"jenkins-card-big-link"} href="#">jenkins-bom-2.365-rc32749.fc4dc4e55f29.pom</a>
-          <a className={"jenkins-card-big-link"} href="#">jenkins-bom-2.365-rc32749.fc4dc4e55f29.pom</a>
-          <a className={"jenkins-card-big-link"} href="#">jenkins-bom-2.365-rc32749.fc4dc4e55f29.pom</a>
-          <a className={"jenkins-card-big-link"} href="#">jenkins-bom-2.365-rc32749.fc4dc4e55f29.pom</a>
-          <a className={"jenkins-card-big-link"} href="#">jenkins-bom-2.365-rc32749.fc4dc4e55f29.pom</a>
-        </div>
-        <div className={"jenkins-cards__item jenkins-cards__item--wide"}>
-          <p className="jenkins-cards__item__title">
-            Stage view
-            <div className="jenkins-cards__item__title__actions">
-              <Tippy content="Expand" {...tippyProps}>
-                <a href="#">
-                  <ResizeOutline />
-                </a>
-              </Tippy>
-            </div>
-          </p>
-          <Stageview />
-        </div>
+        </Card>
+        <Card title={"Artifacts"}>
+          <a className={"jenkins-link"} style={{display: "flex", marginBottom: "1rem"}}>jenkins-core-2.370-rc32873.a_643d8fefa_72-javadoc.jar</a>
+          <a className={"jenkins-link"} style={{display: "flex", marginBottom: "1rem"}}>jenkins-core-2.370-rc32873.a_643d8fefa_72-sources.jar</a>
+          <a className={"jenkins-link"} style={{display: "flex", marginBottom: "1rem"}}>jenkins-core-2.370-rc32873.a_643d8fefa_72.jar</a>
+          <a className={"jenkins-link"} style={{display: "flex", marginBottom: "1rem"}}>jenkins-core-2.370-rc32873.a_643d8fefa_72.pom</a>
+        </Card>
+        <Card title={"Test results"} expandable={true}>
+          TODO
+        </Card>
+        <Card title={"Test coverage"} expandable={true}>
+          TODO
+        </Card>
+        <Card title={"Linting"} expandable={true}>
+          TODO
+        </Card>
       </div>
     </div>
   );

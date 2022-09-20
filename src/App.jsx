@@ -28,6 +28,7 @@ import StageviewPage from "./pages/project/StageviewPage";
 import ConsolePage from "./pages/project/ConsolePage";
 import Person from "./pages/Person";
 import {default as props} from "./data/tooltips";
+import Builds from "./components/panels/Builds";
 
 function App() {
 
@@ -68,7 +69,8 @@ function App() {
       id: "build-monitor",
       name: "Build monitor",
       link: "/build-monitor",
-      icon: <PieChartOutline/>
+      icon: <PieChartOutline/>,
+      panel: <Builds />
     },
     {
       id: "people",
@@ -97,7 +99,7 @@ function App() {
           {controlBar.map(e => controlBarItems.find(i => i.id === e)).map((result) => {
             return (
               result.link != null ? (
-                <Tippy key={result.name} content={result.name} placement="right" {...tippyProps}>
+                <Tippy key={result.name} content={result.panel || result.name} interactive={result.panel !== undefined} placement="right" {...tippyProps}>
                   <NavLink to={result.link} className={({ isActive }) => "jenkins-nav__item" + (isActive ? " jenkins-nav__item--selected" : "")}>
                     <div className="jenkins-nav__item__icon">{result.icon}</div>
                   </NavLink>

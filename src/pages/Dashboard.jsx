@@ -6,6 +6,7 @@ import {
 import Overflow from "../components/Overflow";
 import tippyProps from "../data/tooltips";
 import projects from "../data/projects";
+import Card from "../components/Card";
 
 function Dashboard() {
   return (
@@ -47,7 +48,7 @@ function Dashboard() {
 
       <div className="iamsidebar">
         <div className="sidebar-item jenkins-mobile-hide">
-          <div className={"jenkins-cards__item"}>
+          <Card>
             <p className="jenkins-cards__item__title" style={{margin: 0, lineHeight: 1.66}}>
               This instance hosts several GitHub Organization folders organized by subject area.
               <br/>
@@ -57,28 +58,7 @@ function Dashboard() {
               <br/>
               buildPlugin()
             </p>
-          </div>
-          <div className={"jenkins-cards__item"}>
-            <p className="jenkins-cards__item__title">Queue</p>
-            <div className={"jenkins-build-history"}>
-              <div className={"jenkins-build-history__item"}>
-                <Link to={"/project/build"} className={"jenkins-link"}>part of Infra » acceptance-tests » install-lts-debian-package #43775</Link>
-              </div>
-            </div>
-          </div>
-          <div className={"jenkins-cards__item"}>
-            <p className="jenkins-cards__item__title">Executors</p>
-            <div className={"jenkins-build-history"}>
-              {Array.from(Array(10), (e, i) => {
-                return (
-                  <div key={i} className={"jenkins-build-history__item"}>
-                    <span className={"jenkins-passing-icon"}></span>
-                    <Link to={"/project/build"} className={"jenkins-link"}>Build {374 - i}</Link>
-                  </div>
-                )
-              })}
-            </div>
-          </div>
+          </Card>
         </div>
         <table className={"jenkins-table jenkins-mobile-hide"}>
           <thead>
