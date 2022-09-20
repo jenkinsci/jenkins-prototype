@@ -1,8 +1,5 @@
 import {Link} from "react-router-dom";
-import {AccessibilityOutline, AlbumsOutline, ExtensionPuzzleOutline, PlayOutline, SearchOutline} from "react-ionicons";
-import Tippy from "@tippyjs/react";
-import Green from "../green.svg";
-import Sun from "../sun.svg";
+import {AccessibilityOutline, AlbumsOutline, ExtensionPuzzleOutline, SearchOutline} from "react-ionicons";
 
 function PluginManager() {
   const items = [
