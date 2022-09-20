@@ -34,4 +34,10 @@
     margin: 0 15px 0 10px;
     opacity: 0.35;
   }
+
+  @media screen and (max-width: 768px) {
+    &:not(:first-child):not(:last-child) {
+      display: none;
+    }
+  }
 }
