@@ -287,3 +287,9 @@ td.jenkins-table-icon-host {
 th.jenkins-table-icon-host {
   padding-left: 0 !important;
 }
+
+.jenkins-table-centerer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

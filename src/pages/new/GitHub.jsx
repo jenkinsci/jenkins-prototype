@@ -1,29 +1,46 @@
 import {Link} from "react-router-dom";
-import {LockClosedOutline, ShapesOutline} from "react-ionicons";
+import {LockClosedOutline, LogoDocker, ShapesOutline} from "react-ionicons";
 
 export default function GitHub() {
   const items = [
     {
       icon: <img src={"https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Jenkins_logo.svg/1200px-Jenkins_logo.svg.png"} />,
       name: "Jenkins",
-      description: "1231231231231"
+      description: "Jenkins automation server"
     },
     {
       icon: <ShapesOutline />,
       name: "Dark Theme Plugin",
-      description: "12312313123"
+      description: "Jenkins Dark Theme"
     },
     {
       icon: <img src={"https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Jenkins_logo.svg/1200px-Jenkins_logo.svg.png"} />,
       name: "Jenkins Prototype",
       description: "Prototype of Jenkins UI",
       locked: true
+    },
+    {
+      icon: <LogoDocker />,
+      name: "docker",
+      description: "Docker official jenkins repo"
+    },
+    {
+      icon: <LogoDocker />,
+      name: "helm-charts",
+      description: "Jenkins community Helm charts"
+    },
+    {
+      icon: <LogoDocker />,
+      name: "configuration-as-code-plugin",
+      description: "Jenkins Configuration as Code Plugin"
     }
   ]
 
   return (
     <>
       <h1 style={{"margin": "30px 0 30px 0"}}>GitHub</h1>
+
+      <p style={{color: "var(--color-secondary)"}}>Import a GitHub repository straight into Jenkins</p>
 
       <div className={"app-project-links"}>
         {items.map(item => {

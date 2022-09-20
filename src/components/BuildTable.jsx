@@ -23,18 +23,20 @@ export default function BuildTable({projects}) {
           return (
             <tr key={index}>
               <td className="jenkins-table-icon-host">
-                <Tippy content="This build passed"  {...tippyProps}>
-                  <a className={"jenkins-button jenkins-button--transparent jenkins-button--icon jenkins-button--green"}>
+                <div className={"jenkins-table-centerer"} style={{marginLeft: "1rem"}}>
+                  <Tippy content="This build passed"  {...tippyProps}>
                     {item.state}
-                  </a>
-                </Tippy>
+                  </Tippy>
+                </div>
               </td>
               <td className="jenkins-table-icon-host">
-                <Tippy content="Build stability: 5 out of the last 5 builds passed." {...tippyProps}>
-                  <a className={"jenkins-button jenkins-button--transparent jenkins-button--icon jenkins-button--orange"}>
-                    {item.weather}
-                  </a>
-                </Tippy>
+                <div className={"jenkins-table-centerer"}>
+                  <Tippy content="Build stability: 5 out of the last 5 builds passed." {...tippyProps}>
+                    <a className={"jenkins-button jenkins-button--transparent jenkins-button--icon jenkins-button--orange"}>
+                      {item.weather}
+                    </a>
+                  </Tippy>
+                </div>
               </td>
               <td width="20%">
                 <Link className={"jenkins-link"} to={"/project"}>{item.name}</Link>
