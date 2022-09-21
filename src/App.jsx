@@ -51,7 +51,8 @@ function App() {
       id: "favorites",
       name: "Favorites",
       panel: <Favorites/>,
-      icon: <StarOutline/>
+      icon: <StarOutline/>,
+      showOnMobile: false
     },
     {
       id: "search",
@@ -62,8 +63,10 @@ function App() {
     {
       id: "theme-switcher",
       name: "Switch theme",
+      link: "/settings/appearance",
       panel: <ThemeSwitcher/>,
-      icon: <ColorFillOutline/>
+      icon: <ColorFillOutline/>,
+      showOnMobile: false
     },
     {
       id: "build-monitor",
@@ -100,20 +103,20 @@ function App() {
             return (
               result.link != null ? (
                 <Tippy key={result.name} content={result.panel || result.name} interactive={result.panel !== undefined} placement="right" {...tippyProps}>
-                  <NavLink to={result.link} className={({ isActive }) => "jenkins-nav__item" + (isActive ? " jenkins-nav__item--selected" : "")}>
+                  <NavLink to={result.link} className={({ isActive }) => `jenkins-nav__item ${result.showOnMobile === false ? 'jenkins-mobile-hide' : ''}` + (isActive ? " jenkins-nav__item--selected" : "")}>
                     <div className="jenkins-nav__item__icon">{result.icon}</div>
                   </NavLink>
                 </Tippy>
               ) : (
                   result.panel != null ? (
                     <Tippy key={result.name} content={result.panel} placement="right" interactive="true" {...tippyProps} touch="hold">
-                      <button className="jenkins-nav__item jenkins-mobile-hide">
+                      <button className={`jenkins-nav__item ${result.showOnMobile === false ? 'jenkins-mobile-hide' : ''}`}>
                         <div className="jenkins-nav__item__icon">{result.icon}</div>
                       </button>
                     </Tippy>
                   ) : (
                     <Tippy key={result.name} content={result.name} placement="right" {...tippyProps}>
-                      <button className="jenkins-nav__item" onClick={() => result.onClick()}>
+                      <button className={`jenkins-nav__item ${result.showOnMobile === false ? 'jenkins-mobile-hide' : ''}`} onClick={() => result.onClick()}>
                         <div className="jenkins-nav__item__icon">{result.icon}</div>
                       </button>
                     </Tippy>
@@ -122,7 +125,7 @@ function App() {
             )
           })}
           <Tippy content="Settings" placement="right" {...tippyProps}>
-            <NavLink to={"/settings"} className={({ isActive }) => "jenkins-nav__item" + (isActive ? " jenkins-nav__item--selected" : "")}>
+            <NavLink to={"/settings"} className={({ isActive }) => "jenkins-nav__item" + (isActive ? " jenkins-nav__item--selected" : "")} end>
               <div className="jenkins-nav__item__icon"><SettingsOutline/></div>
             </NavLink>
           </Tippy>
@@ -137,6 +140,7 @@ function App() {
           <Routes>
             <Route path="/new/*" element={<NewProject/>} />
             <Route path="/settings/plugins" element={<PluginManager/>} />
+            <Route path="/settings/plugins/*" element={<PluginManager/>} />
             <Route path="/settings/*" element={<Settings/>} />
             <Route path="/people/:username" element={<Person />} />
             <Route path="/people" element={<People/>} />

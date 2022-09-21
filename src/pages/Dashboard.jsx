@@ -1,21 +1,22 @@
 import {Link} from "react-router-dom";
-import Tippy from "@tippyjs/react";
 import {
-  AddOutline, FingerPrintOutline, NewspaperOutline, PlayOutline, ScanCircleOutline, SunnyOutline
+  AddOutline, FingerPrintOutline, NewspaperOutline, ScanCircleOutline, SunnyOutline
 } from "react-ionicons";
 import Overflow from "../components/Overflow";
-import tippyProps from "../data/tooltips";
 import projects from "../data/projects";
 import Card from "../components/Card";
 import BuildTable from "../components/BuildTable";
 
 function Dashboard() {
+
+  let hour = new Date().getHours();
+
   return (
     <div className="jenkins-body">
       <div className="jenkins-app-bar">
         <div className={"jenkins-app-bar__content"}>
           <div className="rotating-title">
-            <p>Morning Jan</p>
+            <p>{ hour < 12 && "Morning" || hour < 18 && "Afternoon" || "Evening" } Jan</p>
             <p>Jenkins</p>
           </div>
           <h1>Dashboard</h1>

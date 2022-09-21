@@ -1,38 +1,14 @@
-import {Link} from "react-router-dom";
-import {AccessibilityOutline, AlbumsOutline, ExtensionPuzzleOutline, SearchOutline} from "react-ionicons";
+import {Link, NavLink, Route, Routes} from "react-router-dom";
+import {
+  DownloadOutline,
+  ExtensionPuzzleOutline,
+  SettingsOutline
+} from "react-ionicons";
+import NotImplemented from "./settings/NotImplemented";
+import Available from "./plugin-manager/available";
+import UpdatesAndInstalled from "./plugin-manager/updates-and-installed";
 
 function PluginManager() {
-  const items = [
-    {
-      name: "Credentials",
-      released: "16 hours ago",
-      description: "This plugin allows you to store credentials in Jenkins."
-    },
-    {
-      name: "SSH Credentials",
-      released: "16 hours ago",
-      description: "Allows storage of SSH credentials in Jenkins"
-    },
-    {
-      name: "JUnit",
-      released: "16 hours ago",
-      description: "Allows JUnit-format test results to be published."
-    },
-    {
-      name: "GitHub",
-      released: "16 hours ago",
-      description: "Integrates GitHub into Jenkins"
-    }
-  ]
-
-  for (let i = 0; i < 30; i++) {
-    items.push({
-      name: "SCM API",
-      released: "16 hours ago",
-      description: "This plugin provides a new enhanced API for interacting with SCM svstems"
-    })
-  }
-
   return (
     <div className="jenkins-body jenkins-body--sidebar app-plugin-manager">
       <div className="jenkins-sidebar">
@@ -41,60 +17,31 @@ function PluginManager() {
           <Link to={"/settings/plugins"} className={"jenkins-breadcrumb"}>Plugins</Link>
         </div>
         <h1 style={{"margin": "15px 30px 45px 30px"}}>Plugins</h1>
-        <a className="jenkins-sidebar__item jenkins-sidebar__item--selected">
-          <div className="jenkins-sidebar__item__icon">
-            <AlbumsOutline />
-          </div>
-          Available plugins
-        </a>
-        <a className="jenkins-sidebar__item">
-          <div className="jenkins-sidebar__item__icon">
-            <AccessibilityOutline />
-          </div>
-          Updates and installed plugins
-        </a>
-        <a className="jenkins-sidebar__item">
+        <NavLink to={"/settings/plugins/"} className={({ isActive }) => "jenkins-sidebar__item" + (isActive ? " jenkins-sidebar__item--selected" : "")} end>
           <div className="jenkins-sidebar__item__icon">
             <ExtensionPuzzleOutline />
           </div>
+          Available plugins
+        </NavLink>
+        <NavLink to={"/settings/plugins/updates-and-installed"} className={({ isActive }) => "jenkins-sidebar__item" + (isActive ? " jenkins-sidebar__item--selected" : "")}>
+          <div className="jenkins-sidebar__item__icon">
+            <DownloadOutline />
+          </div>
+          Updates and installed plugins
+        </NavLink>
+        <NavLink to={"/settings/plugins/advanced–settings"} className={({ isActive }) => "jenkins-sidebar__item" + (isActive ? " jenkins-sidebar__item--selected" : "")}>
+          <div className="jenkins-sidebar__item__icon">
+            <SettingsOutline />
+          </div>
           Advanced settings
-        </a>
+        </NavLink>
       </div>
       <div className="jenkins-body jenkins-body--inner">
-        <div className={"jenkins-breadcrumbs"} style={{"margin": "30px 30px 0 30px"}}>
-          <Link to={"/"} className={"jenkins-breadcrumb"} style={{"opacity": 0}}>Settings</Link>
-        </div>
-        <div className={"big-search-bar"}>
-          <SearchOutline />
-          Search available plugins
-        </div>
-        <table className={"jenkins-table"}>
-          <thead>
-          <tr>
-            <th>Name</th>
-            <th>Released</th>
-          </tr>
-          </thead>
-          <tbody>
-          {items.map((item) => {
-            return (
-              <tr key={item.name}>
-                <td>
-                  <div className={"app-plugin"}>
-                    <Link className={"jenkins-link"} to={"/project"}>{item.name}</Link>
-                    <div className={"app-tags"}>
-                      <div>Tag 1</div>
-                      <div>Tag 2</div>
-                      <div>Tag 3</div>
-                    </div>
-                    <p className={"description"}>{item.description}</p>
-                  </div>
-                </td>
-                <td>{item.released}</td>
-              </tr>
-            )})}
-          </tbody>
-        </table>
+        <Routes>
+          <Route path="/" exact="true" element={<Available />} />
+          <Route path="/updates-and-installed" element={<UpdatesAndInstalled />} />
+          <Route path="*" element={<NotImplemented/>} />
+        </Routes>
       </div>
     </div>
   );

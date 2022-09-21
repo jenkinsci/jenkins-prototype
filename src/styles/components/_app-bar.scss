@@ -85,6 +85,7 @@
   to {
     transform: translateY(-0.5rem);
     opacity: 0;
+    filter: blur(2px);
   }
 }
 
@@ -93,5 +94,6 @@
   from {
     transform: translateY(0.5rem);
     opacity: 0;
+    filter: blur(2px);
   }
 }
