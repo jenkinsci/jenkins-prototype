@@ -1,38 +1,8 @@
 import {Link} from "react-router-dom";
-import {SearchOutline} from "react-ionicons";
+import {DownloadOutline, SearchOutline} from "react-ionicons";
+import plugins from "../../data/plugins";
 
 export default function Available() {
-  const items = [
-    {
-      name: "Credentials",
-      released: "16 hours ago",
-      description: "This plugin allows you to store credentials in Jenkins."
-    },
-    {
-      name: "SSH Credentials",
-      released: "16 hours ago",
-      description: "Allows storage of SSH credentials in Jenkins"
-    },
-    {
-      name: "JUnit",
-      released: "16 hours ago",
-      description: "Allows JUnit-format test results to be published."
-    },
-    {
-      name: "GitHub",
-      released: "16 hours ago",
-      description: "Integrates GitHub into Jenkins"
-    }
-  ]
-
-  for (let i = 0; i < 30; i++) {
-    items.push({
-      name: "SCM API",
-      released: "16 hours ago",
-      description: "This plugin provides a new enhanced API for interacting with SCM svstems"
-    })
-  }
-
   return (
     <>
       <div className={"jenkins-breadcrumbs"} style={{"margin": "30px 30px 0 30px"}}>
@@ -45,26 +15,43 @@ export default function Available() {
       <table className={"jenkins-table"}>
         <thead>
         <tr>
+          <th></th>
           <th>Name</th>
           <th>Released</th>
         </tr>
         </thead>
         <tbody>
-        {items.map((item) => {
+        {plugins.map((item) => {
           return (
             <tr key={item.name}>
+              <td style={{width: "50px", verticalAlign: "top", paddingTop: "16px"}}>
+                <div style={{width: "1.4rem", height: "1.4rem", border: "2px solid var(--color-secondary)", borderRadius: "6px"}}>
+
+                </div>
+              </td>
               <td>
                 <div className={"app-plugin"}>
-                  <Link className={"jenkins-link"} to={"/project"}>{item.name}</Link>
-                  <div className={"app-tags"}>
-                    <div>Tag 1</div>
-                    <div>Tag 2</div>
-                    <div>Tag 3</div>
-                  </div>
+                  <Link className={"jenkins-link"} to={"/project"}>
+                    {item.name} <span style={{color: "var(--color-secondary)", marginLeft: "5px"}}>{item.version}</span>
+                  </Link>
+                  {item.tags &&
+                    <div className={"app-tags"}>
+                      {item.tags.map(tag => {
+                        return (
+                          <div>{ tag }</div>
+                        )
+                      })}
+                    </div>
+                  }
                   <p className={"description"}>{item.description}</p>
                 </div>
               </td>
               <td>{item.released}</td>
+              <td>
+                <button className={"jenkins-button jenkins-button--transparent"}>
+                  <DownloadOutline />
+                </button>
+              </td>
             </tr>
           )})}
         </tbody>

@@ -1,8 +1,9 @@
 import {Link} from "react-router-dom";
 import {SearchOutline} from "react-ionicons";
+import plugins from "../../data/plugins";
 
 export default function UpdatesAndInstalled() {
-  const items = [
+  const updates = [
     {
       name: "Credentials",
       released: "16 hours ago",
@@ -25,14 +26,6 @@ export default function UpdatesAndInstalled() {
     }
   ]
 
-  for (let i = 0; i < 30; i++) {
-    items.push({
-      name: "SCM API",
-      released: "16 hours ago",
-      description: "This plugin provides a new enhanced API for interacting with SCM svstems"
-    })
-  }
-
   return (
     <>
       <div className={"jenkins-breadcrumbs"} style={{"margin": "30px 30px 0 30px"}}>
@@ -50,7 +43,7 @@ export default function UpdatesAndInstalled() {
         </tr>
         </thead>
         <tbody>
-        {items.map((item) => {
+        {plugins.map((item) => {
           return (
             <tr key={item.name}>
               <td>
