@@ -10,24 +10,10 @@
   white-space: pre-line;
   z-index: 0;
   background: transparent;
+  backdrop-filter: contrast(1) saturate(2) brightness(1.1) blur(15px);
 
-  // The @supports can be removed when Firefox supports backdrop-filter
-  @supports (backdrop-filter: blur(15px)) {
-    backdrop-filter: saturate(2) blur(15px);
-  }
-
-  &::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    z-index: -1;
-    border-radius: inherit;
-
-    backdrop-filter: contrast(1) saturate(2) brightness(1.1) blur(15px);
-
-    @media (prefers-color-scheme: dark) {
-      backdrop-filter: contrast(0.6) saturate(4) brightness(0.4) blur(15px) !important;
-    }
+  @media (prefers-color-scheme: dark) {
+    backdrop-filter: contrast(0.6) saturate(4) brightness(0.4) blur(15px) !important;
   }
 
   &::after {
@@ -53,12 +39,10 @@
 .tippy-box[data-theme~="tooltip-nav"] {
   color: white;
 
-  &::before {
-    backdrop-filter: contrast(2) saturate(2) brightness(0.4) blur(15px);
+  backdrop-filter: contrast(2) saturate(2) brightness(0.4) blur(15px);
 
-    @media (prefers-color-scheme: dark) {
-      backdrop-filter: contrast(0.6) saturate(4) brightness(0.4) blur(15px) !important;
-    }
+  @media (prefers-color-scheme: dark) {
+    backdrop-filter: contrast(0.6) saturate(4) brightness(0.4) blur(15px) !important;
   }
 
   &::after {

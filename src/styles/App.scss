@@ -1,4 +1,4 @@
-:root {
+[data-theme="light"], body {
   --accent-color: hsl(212, 100%, 42%);
 
   --background-color: hsl(212, 20%, 99.5%);
@@ -85,73 +85,81 @@
   --font-6: 1rem;
 }
 
+@mixin dark-theme {
+  color-scheme: dark;
+
+  $hue: 0;
+
+  --accent-color: hsl(220, 100%, 65%);
+  --background-color: hsl(230, 15%, 5%);
+
+  --foreground-color: hsl(230, 15%, 90%);
+  --color-secondary: hsl(230, 15%, 55%);
+
+  --overlap-color: hsl(230, 15%, 8%);
+
+  // Branding
+  --focus-input-border: #4bbeff;
+
+  // Card
+  --card-background: var(--overlap-color);
+
+  // Colors
+  --blue: hsl(210, 100%, 55%);
+  --brown: hsl(30, 35%, 45%);
+  --cyan: hsl(200, 100%, 70%);
+  --green: hsl(135, 75%, 55%);
+  --indigo: hsl(250, 75%, 60%);
+  --orange: hsl(35, 100%, 50%);
+  --pink: hsl(350, 100%, 60%);
+  --purple: hsl(280, 85%, 60%);
+  --red: hsl(5, 100%, 60%);
+  --yellow: hsl(50, 100%, 55%);
+
+  --white: hsl(230, 13%, 20%);
+
+  --green-subtle: hsla(129, 63%, 49%, 15%);
+  --red-subtle: hsla(0, 97%, 58%, 15%);
+
+  // Form
+  --focus-input-glow: rgba(43, 116, 160, 0.4);
+
+  // Table
+  --table-background-color: var(--overlap-color);
+  --table-body-background: var(--background-color);
+
+  // Root
+  --button-background-color: var(--overlap-color);
+  --button-background-color-hover: hsl(230, 13%, 20%);
+  --button-background-color-active: hsl(230, 13%, 20%);
+
+  // Form
+  --input-color: hsl(230, 13%, 10%);
+  --input-border: hsl(230, 13%, 20%);
+  --input-border-hover: hsl(230, 13%, 30%);
+  --form-input-glow: 0 0 0 10px transparent;
+  --form-input-glow--focus: 0 0 0 5px var(--focus-input-glow);
+
+  // Link
+  --link-color: var(--accent-color);
+  --link-color-hover: hsl(220, 100%, 72.5%);
+  --link-color-active: hsl(220, 100%, 80%);
+
+  // Nav bar
+  --nav-background-color: var(--overlap-color);
+  --nav-foreground-color: var(--foreground-color);
+  --nav-item-hover: hsl(230, 15%, 16%);
+  --nav-item-active: hsl(230, 15%, 18%);
+  --nav-item-selected: hsl(230, 15%, 12%);
+}
+
+[data-theme="dark"] {
+  @include dark-theme;
+}
+
 @media (prefers-color-scheme: dark) {
   :root {
-    color-scheme: dark;
-
-    $hue: 0;
-
-    --accent-color: hsl(220, 100%, 65%);
-    --background-color: hsl(230, 15%, 5%);
-
-    --foreground-color: hsl(230, 15%, 90%);
-    --color-secondary: hsl(230, 15%, 55%);
-
-    --overlap-color: hsl(230, 15%, 8%);
-
-    // Branding
-    --focus-input-border: #4bbeff;
-
-    // Card
-    --card-background: var(--overlap-color);
-
-    // Colors
-    --blue: hsl(210, 100%, 55%);
-    --brown: hsl(30, 35%, 45%);
-    --cyan: hsl(200, 100%, 70%);
-    --green: hsl(135, 75%, 55%);
-    --indigo: hsl(250, 75%, 60%);
-    --orange: hsl(35, 100%, 50%);
-    --pink: hsl(350, 100%, 60%);
-    --purple: hsl(280, 85%, 60%);
-    --red: hsl(5, 100%, 60%);
-    --yellow: hsl(50, 100%, 55%);
-
-    --white: hsl(230, 13%, 20%);
-
-    --green-subtle: hsla(129, 63%, 49%, 15%);
-    --red-subtle: hsla(0, 97%, 58%, 15%);
-
-    // Form
-    --focus-input-glow: rgba(43, 116, 160, 0.4);
-
-    // Table
-    --table-background-color: var(--overlap-color);
-    --table-body-background: var(--background-color);
-
-    // Root
-    --button-background-color: var(--overlap-color);
-    --button-background-color-hover: hsl(230, 13%, 20%);
-    --button-background-color-active: hsl(230, 13%, 20%);
-
-    // Form
-    --input-color: hsl(230, 13%, 10%);
-    --input-border: hsl(230, 13%, 20%);
-    --input-border-hover: hsl(230, 13%, 30%);
-    --form-input-glow: 0 0 0 10px transparent;
-    --form-input-glow--focus: 0 0 0 5px var(--focus-input-glow);
-
-    // Link
-    --link-color: var(--accent-color);
-    --link-color-hover: hsl(220, 100%, 72.5%);
-    --link-color-active: hsl(220, 100%, 80%);
-
-    // Nav bar
-    --nav-background-color: var(--overlap-color);
-    --nav-foreground-color: var(--foreground-color);
-    --nav-item-hover: hsl(230, 15%, 16%);
-    --nav-item-active: hsl(230, 15%, 18%);
-    --nav-item-selected: hsl(230, 15%, 12%);
+    @include dark-theme;
   }
 }
 
@@ -216,7 +224,7 @@ body {
   height: 100vh;
   overflow: hidden;
   background: var(--background-color);
-  
+
   @media screen and (max-width: 768px) {
     display: block;
     width: unset;
