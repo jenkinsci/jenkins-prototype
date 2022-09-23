@@ -39,7 +39,7 @@ function NewProject() {
       <div className="jenkins-sidebar">
         <div className={"jenkins-breadcrumbs"} style={{"margin": "30px 30px 0 30px"}}>
           <Link to={"/"} className={"jenkins-breadcrumb"}>Dashboard</Link>
-          <Link to={"/project"} className={"jenkins-breadcrumb"}>New project</Link>
+          <Link to={"/new"} className={"jenkins-breadcrumb"}>New project</Link>
         </div>
         <h1 style={{"margin": "15px 30px 30px 30px"}}>New project</h1>
 
