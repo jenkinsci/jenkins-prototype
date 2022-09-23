@@ -1,9 +1,5 @@
 import {Link, NavLink, Route, Routes} from "react-router-dom";
-import {
-  DownloadOutline,
-  ExtensionPuzzleOutline,
-  SettingsOutline
-} from "react-ionicons";
+import {DownloadOutline, ExtensionPuzzleOutline, SettingsOutline} from "react-ionicons";
 import NotImplemented from "./settings/NotImplemented";
 import Available from "./plugin-manager/available";
 import UpdatesAndInstalled from "./plugin-manager/updates-and-installed";

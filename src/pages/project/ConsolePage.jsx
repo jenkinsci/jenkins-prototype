@@ -1,5 +1,5 @@
 import {Link} from "react-router-dom";
-import {CopyOutline, DownloadOutline, EllipsisHorizontalOutline, PlayOutline, SearchOutline} from "react-ionicons";
+import {CopyOutline, DownloadOutline, SearchOutline} from "react-ionicons";
 import TerminalText from "../../terminal";
 
 export default function ConsolePage() {

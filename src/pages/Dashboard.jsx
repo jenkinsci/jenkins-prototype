@@ -1,7 +1,5 @@
 import {Link} from "react-router-dom";
-import {
-  AddOutline, FingerPrintOutline, NewspaperOutline, ScanCircleOutline, SunnyOutline
-} from "react-ionicons";
+import {AddOutline, FingerPrintOutline, NewspaperOutline, ScanCircleOutline, SunnyOutline} from "react-ionicons";
 import Overflow from "../components/Overflow";
 import projects from "../data/projects";
 import Card from "../components/Card";

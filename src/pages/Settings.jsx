@@ -1,6 +1,4 @@
-import {
-  OpenOutline, SearchOutline,
-} from 'react-ionicons'
+import {OpenOutline, SearchOutline,} from 'react-ionicons'
 import {NavLink, Route, Routes} from "react-router-dom";
 import System from "./settings/System";
 import Tools from "./settings/Tools";

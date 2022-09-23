@@ -1,8 +1,5 @@
 import {Link, NavLink, Route, Routes} from "react-router-dom";
-import {
-  DuplicateOutline, LayersOutline,
-  LogoGithub, LogoGitlab, OpenOutline
-} from "react-ionicons";
+import {DuplicateOutline, LayersOutline, LogoGithub, LogoGitlab, OpenOutline} from "react-ionicons";
 import NotImplemented from "./settings/NotImplemented";
 import ProjectTypes from "./new/ProjectTypes";
 import GitHub from "./new/GitHub";

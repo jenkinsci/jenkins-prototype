@@ -1,10 +1,20 @@
 import {
   AnalyticsOutline,
   BrushOutline,
-  CloudOutline, CodeWorkingOutline, CubeOutline,
-  ExtensionPuzzleOutline, FileTrayFullOutline,
-  HammerOutline, HelpCircleOutline, LockClosedOutline, PeopleOutline, PowerOutline, ReloadOutline,
-  ServerOutline, SettingsOutline, TerminalOutline
+  CloudOutline,
+  CodeWorkingOutline,
+  CubeOutline,
+  ExtensionPuzzleOutline,
+  FileTrayFullOutline,
+  HammerOutline,
+  HelpCircleOutline,
+  LockClosedOutline,
+  PeopleOutline,
+  PowerOutline,
+  ReloadOutline,
+  ServerOutline,
+  SettingsOutline,
+  TerminalOutline
 } from "react-ionicons";
 
 const settings = [

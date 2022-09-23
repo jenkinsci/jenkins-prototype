@@ -1,12 +1,5 @@
-import {
-  AccessibilityOutline,
-  AlbumsOutline,
-  ExtensionPuzzleOutline,
-  PlayOutline,
-  SunnyOutline
-} from "react-ionicons";
+import {AccessibilityOutline, AlbumsOutline, ExtensionPuzzleOutline} from "react-ionicons";
 import {Link, useParams} from "react-router-dom";
-import Tippy from "@tippyjs/react";
 import people from "../data/people";
 import Avatar from "../components/Avatar";
 import projects from "../data/projects";

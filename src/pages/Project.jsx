@@ -1,13 +1,9 @@
-import Green from "../green.svg";
 import {Link} from "react-router-dom";
-import {
-  PlayOutline,
-  SearchOutline, ShieldOutline
-} from "react-ionicons";
+import {PlayOutline, SearchOutline, ShieldOutline} from "react-ionicons";
 import Stageview from "../components/Stageview";
 import Tippy from "@tippyjs/react";
 import ResizeOutline from "../components/icons/ResizeOutline";
-import { LineChart, Line, CartesianGrid, XAxis, YAxis, Tooltip } from 'recharts';
+import {CartesianGrid, Line, LineChart, Tooltip, XAxis, YAxis} from 'recharts';
 import Overflow from "../components/Overflow";
 import tippyProps from "../data/tooltips";
 
@@ -71,7 +67,7 @@ export default function Project() {
             {Array.from(Array(10), (e, i) => {
               return (
                 <div className={"jenkins-build-history__item"}>
-                  <img src={Green}/>
+                  <span className={"jenkins-passing-icon"}></span>
                   <Link to={"/project/build"} className={"jenkins-link"}>Build {374 - i}</Link>
                 </div>
               )

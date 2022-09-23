@@ -1,7 +1,9 @@
 import {Link} from "react-router-dom";
-import {LockClosedOutline, LogoDocker, ShapesOutline} from "react-ionicons";
+import {LockClosedOutline, LogoDocker, SearchOutline, ShapesOutline} from "react-ionicons";
+import {useEffect, useState} from "react";
 
 export default function GitHub() {
+  const [loaded, setLoaded] = useState(false);
   const items = [
     {
       icon: <img src={"https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Jenkins_logo.svg/1200px-Jenkins_logo.svg.png"} />,
@@ -36,32 +38,58 @@ export default function GitHub() {
     }
   ]
 
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      setLoaded(true);
+    }, 1500);
+    return () => { clearTimeout(timeout) }
+  }, [])
+
   return (
     <>
       <h1 style={{"margin": "30px 0 30px 0"}}>GitHub</h1>
 
       <p style={{color: "var(--color-secondary)"}}>Import a GitHub repository straight into Jenkins</p>
 
-      <div className={"app-project-links"}>
-        {items.map(item => {
-          return (
-            <Link className={"app-project-link"} to={"/"}>
-              <div className={"app-project-link__icon"}>
-                {item.icon}
-              </div>
-              <div className={"app-project-link__text"}>
-                <p>
-                  {item.name}
-                  {item.locked &&
-                    <LockClosedOutline />
-                  }
-                </p>
-                <p>{item.description}</p>
-              </div>
-            </Link>
-          )
-        })}
-      </div>
+      {loaded &&
+        <>
+          <div className={"app-project-links"}>
+            <div className={"app-search-bar"}>
+              <SearchOutline />
+              <input type="search" placeholder={"Search repositories"} autoFocus={true} />
+            </div>
+
+            {items.map(item => {
+              return (
+                <Link className={"app-project-link"} to={"/"}>
+                  <div className={"app-project-link__icon"}>
+                    {item.icon}
+                  </div>
+                  <div className={"app-project-link__text"}>
+                    <p>
+                      {item.name}
+                      {item.locked &&
+                        <LockClosedOutline />
+                      }
+                    </p>
+                    <p>{item.description}</p>
+                  </div>
+                </Link>
+              )
+            })}
+          </div>
+          <br />
+          <a className={"jenkins-button jenkins-button--primary"}>
+            Next
+          </a>
+        </>
+      }
+      {!loaded &&
+        <>
+          <br />
+          <p className={"jenkins-spinner"}>Loading</p>
+        </>
+      }
     </>
   );
 }

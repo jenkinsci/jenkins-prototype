@@ -2,7 +2,8 @@ import './styles/App.scss';
 import Settings from "./pages/Settings";
 import {
   ArrowUpOutline,
-  ColorFillOutline, HomeOutline,
+  ColorFillOutline,
+  HomeOutline,
   PeopleOutline,
   PieChartOutline,
   SearchOutline,
