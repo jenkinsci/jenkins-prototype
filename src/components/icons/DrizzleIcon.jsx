@@ -1,14 +1,11 @@
 export default function DrizzleIcon() {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--cyan)"
-         stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="feather feather-cloud-drizzle">
-      <line x1="8" y1="19" x2="8" y2="21"></line>
-      <line x1="8" y1="13" x2="8" y2="15"></line>
-      <line x1="16" y1="19" x2="16" y2="21"></line>
-      <line x1="16" y1="13" x2="16" y2="15"></line>
-      <line x1="12" y1="21" x2="12" y2="23"></line>
-      <line x1="12" y1="15" x2="12" y2="17"></line>
-      <path d="M20 16.58A5 5 0 0 0 18 7h-1.26A8 8 0 1 0 4 15.25" fill="transparent" stroke="var(--color-secondary)"></path>
+    <svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" stroke="var(--color-secondary)" strokeWidth="32px">
+      <path fill="transparent" d="M114.61,162.85A16.07,16.07,0,0,0,128,149.6C140.09,76.17,193.63,32,256,32c57.93,0,96.62,37.75,112.2,77.74a15.84,15.84,0,0,0,12.2,9.87c50,8.15,91.6,41.54,91.6,99.59C472,278.6,423.4,320,364,320H130c-49.5,0-90-24.7-90-79.2C40,192.33,78.67,168.58,114.61,162.85Z"/>
+      <line x1="144" y1="384" x2="112" y2="432" stroke="var(--cyan)" strokeLinecap="round" />
+      <line x1="224" y1="384" x2="160" y2="480" stroke="var(--cyan)" strokeLinecap="round" />
+      <line x1="304" y1="384" x2="272" y2="432" stroke="var(--cyan)" strokeLinecap="round" />
+      <line x1="384" y1="384" x2="320" y2="480" stroke="var(--cyan)" strokeLinecap="round" />
     </svg>
   )
 }

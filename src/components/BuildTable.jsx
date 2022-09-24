@@ -30,7 +30,7 @@ export default function BuildTable({projects}) {
                 </div>
               </td>
               <td className="jenkins-table-icon-host">
-                <div className={"jenkins-table-centerer"}>
+                <div className={"jenkins-table-centerer jenkins-table-centerer--small"}>
                   <Tippy content="Build stability: 5 out of the last 5 builds passed." {...tippyProps}>
                     {item.weather}
                   </Tippy>

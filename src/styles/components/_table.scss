@@ -267,8 +267,8 @@
 
 .jenkins-table-icon-host {
   box-sizing: border-box;
-  min-width: 60px;
-  width: 60px;
+  min-width: 58px;
+  width: 58px;
   height: 100%;
   aspect-ratio: 1;
   text-align: center !important;
@@ -283,8 +283,8 @@ td.jenkins-table-icon-host {
   }
 
   svg {
-    width: 1.5rem !important;
-    height: 1.5rem !important;
+    width: 1.5rem;
+    height: 1.5rem;
   }
 }
 
@@ -296,4 +296,16 @@ th.jenkins-table-icon-host:not(:first-of-type) {
   display: flex;
   align-items: center;
   justify-content: center;
+
+  &--small {
+    svg {
+      width: 1.45rem !important;
+      height: 1.45rem !important;
+      stroke-width: 40px;
+
+      * {
+        stroke-width: 40px;
+      }
+    }
+  }
 }
