@@ -19,11 +19,11 @@
       & > th {
         color: var(--table-header-foreground);
         text-align: left;
-        padding-top: calc((var(--table-padding) * 1.7) - 7.5px);
-        padding-bottom: calc((var(--table-padding) * 1.7) - 2.5px);
+        padding-top: calc((var(--table-padding) * 1.7) - 7px);
+        padding-bottom: calc((var(--table-padding) * 1.7) - 2px);
         padding-left: var(--table-padding);
         font-weight: 600;
-        font-size: 0.9rem;
+        font-size: 0.95rem;
 
         &[align="center"] {
           text-align: center;
@@ -266,7 +266,11 @@
 }
 
 .jenkins-table-icon-host {
-  width: 30px;
+  box-sizing: border-box;
+  min-width: 60px;
+  width: 60px;
+  height: 100%;
+  aspect-ratio: 1;
   text-align: center !important;
 }
 
@@ -274,17 +278,17 @@ td.jenkins-table-icon-host {
   padding: 0 !important;
 
   span {
-    width: 1.6rem !important;
-    height: 1.6rem !important;
+    width: 1.5rem !important;
+    height: 1.5rem !important;
   }
 
   svg {
-    width: 1.4rem !important;
-    height: 1.4rem !important;
+    width: 1.5rem !important;
+    height: 1.5rem !important;
   }
 }
 
-th.jenkins-table-icon-host {
+th.jenkins-table-icon-host:not(:first-of-type) {
   padding-left: 0 !important;
 }
 

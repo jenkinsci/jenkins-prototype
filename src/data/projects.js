@@ -1,12 +1,13 @@
-import {SunnyOutline} from "react-ionicons";
 import PassingIcon from "../components/icons/PassingIcon";
 import FailedIcon from "../components/icons/FailedIcon";
 import UnstableIcon from "../components/icons/UnstableIcon";
+import SunIcon from "../components/icons/SunIcon";
+import LightningIcon from "../components/icons/LightningIcon";
 
 const projects = [
   {
     state: <PassingIcon />,
-    weather: <SunnyOutline/>,
+    weather: <SunIcon />,
     name: "Jenkins",
     lastSuccess: "16 hours ago",
     lastFailure: "One day ago",
@@ -14,39 +15,39 @@ const projects = [
   },
   {
     state: <FailedIcon />,
-    weather: <SunnyOutline/>,
+    weather: <LightningIcon />,
     name: "acceptance-test-harness",
     lastSuccess: "16 hours ago",
     lastFailure: "One day ago",
-    lastDuration: "30 seconds"
+    lastDuration: "54 minutes"
   },
   {
     state: <UnstableIcon />,
-    weather: <SunnyOutline/>,
+    weather: <SunIcon />,
     name: "core-pr-tester",
     lastSuccess: "16 hours ago",
     lastFailure: "One day ago",
-    lastDuration: "30 seconds"
+    lastDuration: "3 minutes"
   },
   {
     state: <PassingIcon />,
-    weather: <SunnyOutline/>,
+    weather: <SunIcon />,
     name: "jenkins-test-harness",
     lastSuccess: "16 hours ago",
     lastFailure: "One day ago",
-    lastDuration: "30 seconds"
+    lastDuration: "20 seconds"
   },
   {
     state: <PassingIcon />,
-    weather: <SunnyOutline/>,
+    weather: <SunIcon />,
     name: "jenkins-test-harness-htmlunit",
     lastSuccess: "16 hours ago",
     lastFailure: "One day ago",
-    lastDuration: "30 seconds"
+    lastDuration: "5 minutes"
   },
   {
     state: <PassingIcon />,
-    weather: <SunnyOutline/>,
+    weather: <SunIcon />,
     name: "pom",
     lastSuccess: "16 hours ago",
     lastFailure: "One day ago",
@@ -54,92 +55,44 @@ const projects = [
   },
   {
     state: <UnstableIcon />,
-    weather: <SunnyOutline/>,
+    weather: <SunIcon />,
     name: "remoting",
     lastSuccess: "16 hours ago",
     lastFailure: "One day ago",
-    lastDuration: "30 seconds"
+    lastDuration: "44 seconds"
   },
   {
     state: <FailedIcon />,
-    weather: <SunnyOutline/>,
+    weather: <SunIcon />,
     name: "slave-installer-module",
     lastSuccess: "16 hours ago",
     lastFailure: "One day ago",
-    lastDuration: "30 seconds"
+    lastDuration: "1 minute"
   },
   {
     state: <PassingIcon />,
-    weather: <SunnyOutline/>,
+    weather: <SunIcon />,
     name: "stapler",
     lastSuccess: "16 hours ago",
     lastFailure: "One day ago",
-    lastDuration: "30 seconds"
+    lastDuration: "2 minutes"
   },
   {
     state: <PassingIcon />,
-    weather: <SunnyOutline/>,
+    weather: <SunIcon />,
     name: "windows-slave-installer-module",
     lastSuccess: "16 hours ago",
     lastFailure: "One day ago",
-    lastDuration: "30 seconds"
+    lastDuration: "4 seconds"
   },
   {
     state: <PassingIcon />,
-    weather: <SunnyOutline/>,
+    weather: <SunIcon />,
     name: "winstone",
     lastSuccess: "16 hours ago",
     lastFailure: "One day ago",
-    lastDuration: "30 seconds"
-  },
-  {
-    state: <PassingIcon />,
-    weather: <SunnyOutline/>,
-    name: "Jenkins",
-    lastSuccess: "16 hours ago",
-    lastFailure: "One day ago",
-    lastDuration: "30 seconds"
-  },
-  {
-    state: <PassingIcon />,
-    weather: <SunnyOutline/>,
-    name: "Jenkins",
-    lastSuccess: "16 hours ago",
-    lastFailure: "One day ago",
-    lastDuration: "30 seconds"
-  },
-  {
-    state: <PassingIcon />,
-    weather: <SunnyOutline/>,
-    name: "Jenkins",
-    lastSuccess: "16 hours ago",
-    lastFailure: "One day ago",
-    lastDuration: "30 seconds"
-  },
-  {
-    state: <PassingIcon />,
-    weather: <SunnyOutline/>,
-    name: "Jenkins",
-    lastSuccess: "16 hours ago",
-    lastFailure: "One day ago",
-    lastDuration: "30 seconds"
-  },
-  {
-    state: <PassingIcon />,
-    weather: <SunnyOutline/>,
-    name: "Jenkins",
-    lastSuccess: "16 hours ago",
-    lastFailure: "One day ago",
-    lastDuration: "30 seconds"
-  },
-  {
-    state: <PassingIcon />,
-    weather: <SunnyOutline/>,
-    name: "Jenkins",
-    lastSuccess: "16 hours ago",
-    lastFailure: "One day ago",
-    lastDuration: "30 seconds"
-  },
+    lastDuration: "12 seconds"
+  }
 ]
 
 export default projects;

@@ -2,7 +2,6 @@ import Tippy from "@tippyjs/react";
 import tippyProps from "../data/tooltips";
 import {Link} from "react-router-dom";
 import {PlayOutline} from "react-ionicons";
-import PassingIcon from "./icons/PassingIcon";
 
 export default function BuildTable({projects}) {
   return (
@@ -33,13 +32,11 @@ export default function BuildTable({projects}) {
               <td className="jenkins-table-icon-host">
                 <div className={"jenkins-table-centerer"}>
                   <Tippy content="Build stability: 5 out of the last 5 builds passed." {...tippyProps}>
-                    <a className={"jenkins-button jenkins-button--transparent jenkins-button--icon jenkins-button--orange"}>
-                      {item.weather}
-                    </a>
+                    {item.weather}
                   </Tippy>
                 </div>
               </td>
-              <td width="20%">
+              <td width="30%">
                 <Link className={"jenkins-link"} to={"/project"}>{item.name}</Link>
               </td>
               <td width="20%">
@@ -50,11 +47,9 @@ export default function BuildTable({projects}) {
                 {item.lastFailure}
                 <Link to={"/project/build"} className={"app-tag"}>#1336</Link>
               </td>
-              <td width="20%">{item.lastDuration}</td>
+              <td width="15%">{item.lastDuration}</td>
               <td className="jenkins-table-icon-host">
-                <a className={"jenkins-button jenkins-button--transparent jenkins-button--icon jenkins-button--green"}>
-                  <PlayOutline/>
-                </a>
+                <PlayOutline color={"var(--green)"} />
               </td>
             </tr>
           )})}
@@ -64,7 +59,7 @@ export default function BuildTable({projects}) {
         {projects.map((item, index) => {
           return (
             <Link key={index} to={"/project"} className={"jenkins-mobile-projects__item"}>
-              <PassingIcon />
+              {item.state}
               <div>
                 <p className={"title"}>{item.name}</p>
                 <p>{item.lastSuccess} by Jan Faracik - Duration {item.lastDuration}</p>

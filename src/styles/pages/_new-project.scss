@@ -73,6 +73,6 @@
   }
 }
 
-path:not([stroke]) {
+path:not([stroke]):not([fill]) {
   fill: currentColor;
 }
