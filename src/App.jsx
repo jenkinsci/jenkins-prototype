@@ -152,6 +152,7 @@ function App() {
             <Route path="/project/build" element={<Build/>} />
             <Route path="/project/stageview" element={<StageviewPage />} />
             <Route path="/project/build-history" element={<BuildHistoryPage />} />
+            <Route path="/project/build/:number" element={<Build/>} />
             <Route path="/project" element={<Project/>} />
             <Route path="/" element={<Dashboard/>} />
           </Routes>

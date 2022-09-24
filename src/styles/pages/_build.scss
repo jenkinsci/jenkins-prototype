@@ -51,8 +51,9 @@
   align-items: center;
   gap: 10px;
   margin: 0 0 15px;
+  line-height: 1.5;
 
-  & > span {
+  & > span:first-of-type {
     display: contents;
 
     svg {

@@ -44,6 +44,14 @@
     &--wide {
       grid-column: span 2;
     }
+
+    hr {
+      margin: 0.4rem 0 calc(0.4rem + 15px) 0;
+      opacity: 0.2;
+      border: none;
+      height: 2px;
+      background: var(--color-secondary);
+    }
   }
 
   &__item__title {

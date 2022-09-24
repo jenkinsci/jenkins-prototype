@@ -61,7 +61,7 @@ export default function Project() {
           </p>
           <Stageview/>
         </div>
-        <Card title="Build history" expandable={true} expandableLink={"/project/build-history"}>
+        <Card title="Builds" expandable={true} expandableLink={"/project/build-history"}>
           <div className={"app-search-bar"} style={{"margin": "20px 0"}}>
             <SearchOutline />
             <input type="search" placeholder={"Search"} />
@@ -70,7 +70,7 @@ export default function Project() {
             {builds.map(build => {
               return (
                 <div className={"jenkins-build-history__item"}>
-                  <Link to={"/project/build"} className={"jenkins-build-history__item__link"}>
+                  <Link to={"/project/build/" + build.name} className={"jenkins-build-history__item__link"}>
                     <div className={"jenkins-build-history__item__link__icon"}>
                       {build.state}
                       <div className={"jenkins-build-history__item__link__icon__owner"}>
@@ -80,7 +80,7 @@ export default function Project() {
                       </div>
                     </div>
                     <div className={"jenkins-build-history__item__link__details"}>
-                      <p className="jenkins-build-history__item__link__details__build-number">{build.name}</p>
+                      <p className="jenkins-build-history__item__link__details__build-number">#{build.name}</p>
                       <p className="jenkins-build-history__item__link__details__message">{build.message}</p>
                     </div>
                   </Link>
