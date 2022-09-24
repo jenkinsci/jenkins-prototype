@@ -86,7 +86,7 @@ const projects = [
     lastDuration: "4 seconds"
   },
   {
-    state: <PassingIcon />,
+    state: <FailedIcon />,
     weather: <SunIcon />,
     name: "winstone",
     lastSuccess: "16 hours ago",
