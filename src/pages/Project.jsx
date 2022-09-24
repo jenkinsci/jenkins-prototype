@@ -6,6 +6,7 @@ import ResizeOutline from "../components/icons/ResizeOutline";
 import {CartesianGrid, Line, LineChart, Tooltip, XAxis, YAxis} from 'recharts';
 import Overflow from "../components/Overflow";
 import tippyProps from "../data/tooltips";
+import PassingIcon from "../components/icons/PassingIcon";
 
 export default function Project() {
   const data = [{name: 'Page A', uv: 400},
@@ -25,7 +26,7 @@ export default function Project() {
       <div className="jenkins-app-bar jenkins-app-bar--responsive">
         <div className={"jenkins-app-bar__content"}>
           <h1 className={"jenkins-project-heading"}>
-            <span className={"jenkins-passing-icon"}></span>
+            <PassingIcon />
             master
           </h1>
         </div>
@@ -67,7 +68,7 @@ export default function Project() {
             {Array.from(Array(10), (e, i) => {
               return (
                 <div className={"jenkins-build-history__item"}>
-                  <span className={"jenkins-passing-icon"}></span>
+                  <PassingIcon />
                   <Link to={"/project/build"} className={"jenkins-link"}>Build {374 - i}</Link>
                 </div>
               )

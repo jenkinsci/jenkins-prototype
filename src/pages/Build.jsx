@@ -19,6 +19,7 @@ import tippyProps from "../data/tooltips";
 import people from "../data/people";
 import Avatar from "../components/Avatar";
 import Card from "../components/Card";
+import PassingIcon from "../components/icons/PassingIcon";
 
 function Dashboard() {
   return (
@@ -33,7 +34,7 @@ function Dashboard() {
       <div className="jenkins-app-bar jenkins-app-bar--responsive">
         <div className={"jenkins-app-bar__content"}>
           <h1 className={"jenkins-project-heading"}>
-            <span className={"jenkins-passing-icon"}></span>
+            <PassingIcon />
             Build 374
           </h1>
         </div>

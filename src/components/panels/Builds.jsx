@@ -1,5 +1,6 @@
 import {Link} from "react-router-dom";
 import runningBuilds from "../../data/running-builds";
+import PassingIcon from "../icons/PassingIcon";
 
 export default function Builds() {
   return runningBuilds.map(category => {
@@ -9,7 +10,7 @@ export default function Builds() {
         {category.items.map(item => {
           return (
             <Link to={item.link} className={"app-command-palette__result"}>
-              <span className={"jenkins-passing-icon"}></span>
+              <PassingIcon />
               {item.name}
             </Link>
           )

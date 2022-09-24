@@ -1,8 +1,11 @@
 import {SunnyOutline} from "react-ionicons";
+import PassingIcon from "../components/icons/PassingIcon";
+import FailedIcon from "../components/icons/FailedIcon";
+import UnstableIcon from "../components/icons/UnstableIcon";
 
 const projects = [
   {
-    state: <span className={"jenkins-passing-icon"}></span>,
+    state: <PassingIcon />,
     weather: <SunnyOutline/>,
     name: "Jenkins",
     lastSuccess: "16 hours ago",
@@ -10,7 +13,7 @@ const projects = [
     lastDuration: "30 seconds"
   },
   {
-    state: <span className={"jenkins-passing-icon"}></span>,
+    state: <FailedIcon />,
     weather: <SunnyOutline/>,
     name: "acceptance-test-harness",
     lastSuccess: "16 hours ago",
@@ -18,7 +21,7 @@ const projects = [
     lastDuration: "30 seconds"
   },
   {
-    state: <span className={"jenkins-passing-icon"}></span>,
+    state: <UnstableIcon />,
     weather: <SunnyOutline/>,
     name: "core-pr-tester",
     lastSuccess: "16 hours ago",
@@ -26,7 +29,7 @@ const projects = [
     lastDuration: "30 seconds"
   },
   {
-    state: <span className={"jenkins-passing-icon"}></span>,
+    state: <PassingIcon />,
     weather: <SunnyOutline/>,
     name: "jenkins-test-harness",
     lastSuccess: "16 hours ago",
@@ -34,7 +37,7 @@ const projects = [
     lastDuration: "30 seconds"
   },
   {
-    state: <span className={"jenkins-passing-icon"}></span>,
+    state: <PassingIcon />,
     weather: <SunnyOutline/>,
     name: "jenkins-test-harness-htmlunit",
     lastSuccess: "16 hours ago",
@@ -42,7 +45,7 @@ const projects = [
     lastDuration: "30 seconds"
   },
   {
-    state: <span className={"jenkins-passing-icon"}></span>,
+    state: <PassingIcon />,
     weather: <SunnyOutline/>,
     name: "pom",
     lastSuccess: "16 hours ago",
@@ -50,7 +53,7 @@ const projects = [
     lastDuration: "30 seconds"
   },
   {
-    state: <span className={"jenkins-passing-icon"}></span>,
+    state: <UnstableIcon />,
     weather: <SunnyOutline/>,
     name: "remoting",
     lastSuccess: "16 hours ago",
@@ -58,7 +61,7 @@ const projects = [
     lastDuration: "30 seconds"
   },
   {
-    state: <span className={"jenkins-passing-icon"}></span>,
+    state: <FailedIcon />,
     weather: <SunnyOutline/>,
     name: "slave-installer-module",
     lastSuccess: "16 hours ago",
@@ -66,7 +69,7 @@ const projects = [
     lastDuration: "30 seconds"
   },
   {
-    state: <span className={"jenkins-passing-icon"}></span>,
+    state: <PassingIcon />,
     weather: <SunnyOutline/>,
     name: "stapler",
     lastSuccess: "16 hours ago",
@@ -74,7 +77,7 @@ const projects = [
     lastDuration: "30 seconds"
   },
   {
-    state: <span className={"jenkins-passing-icon"}></span>,
+    state: <PassingIcon />,
     weather: <SunnyOutline/>,
     name: "windows-slave-installer-module",
     lastSuccess: "16 hours ago",
@@ -82,7 +85,7 @@ const projects = [
     lastDuration: "30 seconds"
   },
   {
-    state: <span className={"jenkins-passing-icon"}></span>,
+    state: <PassingIcon />,
     weather: <SunnyOutline/>,
     name: "winstone",
     lastSuccess: "16 hours ago",
@@ -90,7 +93,7 @@ const projects = [
     lastDuration: "30 seconds"
   },
   {
-    state: <span className={"jenkins-passing-icon"}></span>,
+    state: <PassingIcon />,
     weather: <SunnyOutline/>,
     name: "Jenkins",
     lastSuccess: "16 hours ago",
@@ -98,7 +101,7 @@ const projects = [
     lastDuration: "30 seconds"
   },
   {
-    state: <span className={"jenkins-passing-icon"}></span>,
+    state: <PassingIcon />,
     weather: <SunnyOutline/>,
     name: "Jenkins",
     lastSuccess: "16 hours ago",
@@ -106,7 +109,7 @@ const projects = [
     lastDuration: "30 seconds"
   },
   {
-    state: <span className={"jenkins-passing-icon"}></span>,
+    state: <PassingIcon />,
     weather: <SunnyOutline/>,
     name: "Jenkins",
     lastSuccess: "16 hours ago",
@@ -114,7 +117,7 @@ const projects = [
     lastDuration: "30 seconds"
   },
   {
-    state: <span className={"jenkins-passing-icon"}></span>,
+    state: <PassingIcon />,
     weather: <SunnyOutline/>,
     name: "Jenkins",
     lastSuccess: "16 hours ago",
@@ -122,7 +125,7 @@ const projects = [
     lastDuration: "30 seconds"
   },
   {
-    state: <span className={"jenkins-passing-icon"}></span>,
+    state: <PassingIcon />,
     weather: <SunnyOutline/>,
     name: "Jenkins",
     lastSuccess: "16 hours ago",
@@ -130,7 +133,7 @@ const projects = [
     lastDuration: "30 seconds"
   },
   {
-    state: <span className={"jenkins-passing-icon"}></span>,
+    state: <PassingIcon />,
     weather: <SunnyOutline/>,
     name: "Jenkins",
     lastSuccess: "16 hours ago",

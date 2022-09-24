@@ -2,6 +2,7 @@ import Tippy from "@tippyjs/react";
 import tippyProps from "../data/tooltips";
 import {Link} from "react-router-dom";
 import {PlayOutline} from "react-ionicons";
+import PassingIcon from "./icons/PassingIcon";
 
 export default function BuildTable({projects}) {
   return (
@@ -63,7 +64,7 @@ export default function BuildTable({projects}) {
         {projects.map((item, index) => {
           return (
             <Link key={index} to={"/project"} className={"jenkins-mobile-projects__item"}>
-              <span className={"jenkins-passing-icon"}></span>
+              <PassingIcon />
               <div>
                 <p className={"title"}>{item.name}</p>
                 <p>{item.lastSuccess} by Jan Faracik - Duration {item.lastDuration}</p>
