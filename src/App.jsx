@@ -31,6 +31,7 @@ import Person from "./pages/Person";
 import {default as props} from "./data/tooltips";
 import Builds from "./components/panels/Builds";
 import BuildHistoryPage from "./pages/project/BuildHistoryPage";
+import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
 
@@ -94,6 +95,7 @@ function App() {
 
   return (
     <Router>
+      <ScrollToTop />
       <div className="App">
         <div className="jenkins-nav">
           <Tippy content="Dashboard" placement="right" {...tippyProps}>
