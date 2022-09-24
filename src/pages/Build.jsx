@@ -1,6 +1,7 @@
 import TerminalText from "../terminal";
 import {Link, useParams} from "react-router-dom";
 import {
+  CheckmarkDoneOutline,
   CopyOutline,
   DownloadOutline,
   FingerPrintOutline,
@@ -134,13 +135,27 @@ function Build() {
           <a className={"jenkins-link"} style={{display: "flex", marginBottom: "1rem"}}>jenkins-core-2.370-rc32873.a_643d8fefa_72.pom</a>
         </Card>
         <Card title={"Test results"} expandable={true}>
-          TODO
+          <div className={"app-linting-card"}>
+            <CheckmarkDoneOutline />
+            <p>All tests passed</p>
+            <p>0 failures (±0), 273 skipped (+273), 56,679 ran</p>
+            <p>Took 15 hours</p>
+          </div>
         </Card>
         <Card title={"Test coverage"} expandable={true}>
-          TODO
+          <p>Project Coverage:</p>
+          <p>Line: 47.70% (-0.05%)</p>
+          <p>Branch: 59.83% (-0.05%)</p>
+          <p>Indirect Coverage Changes:</p>
+          <p>Line: 36.23%</p>
+          <p>Branch: 32.14%</p>
+          <p>84 lines (16 files) are affected</p>
         </Card>
-        <Card title={"Linting"} expandable={true}>
-          TODO
+        <Card title={"ESLint"} expandable={true}>
+          <div className={"app-linting-card"}>
+            <CheckmarkDoneOutline />
+            <p>No issues found</p>
+          </div>
         </Card>
       </div>
     </div>
