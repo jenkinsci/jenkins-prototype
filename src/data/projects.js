@@ -3,6 +3,9 @@ import FailedIcon from "../components/icons/FailedIcon";
 import UnstableIcon from "../components/icons/UnstableIcon";
 import SunIcon from "../components/icons/SunIcon";
 import LightningIcon from "../components/icons/LightningIcon";
+import DrizzleIcon from "../components/icons/DrizzleIcon";
+import CloudIcon from "../components/icons/CloudIcon";
+import SunCloudIcon from "../components/icons/SunCloudIcon";
 
 const projects = [
   {
@@ -23,7 +26,7 @@ const projects = [
   },
   {
     state: <UnstableIcon />,
-    weather: <SunIcon />,
+    weather: <DrizzleIcon />,
     name: "core-pr-tester",
     lastSuccess: "16 hours ago",
     lastFailure: "One day ago",
@@ -39,7 +42,7 @@ const projects = [
   },
   {
     state: <PassingIcon />,
-    weather: <SunIcon />,
+    weather: <DrizzleIcon />,
     name: "jenkins-test-harness-htmlunit",
     lastSuccess: "16 hours ago",
     lastFailure: "One day ago",
@@ -55,7 +58,7 @@ const projects = [
   },
   {
     state: <UnstableIcon />,
-    weather: <SunIcon />,
+    weather: <CloudIcon />,
     name: "remoting",
     lastSuccess: "16 hours ago",
     lastFailure: "One day ago",
@@ -63,7 +66,7 @@ const projects = [
   },
   {
     state: <FailedIcon />,
-    weather: <SunIcon />,
+    weather: <LightningIcon />,
     name: "slave-installer-module",
     lastSuccess: "16 hours ago",
     lastFailure: "One day ago",
@@ -71,7 +74,7 @@ const projects = [
   },
   {
     state: <PassingIcon />,
-    weather: <SunIcon />,
+    weather: <SunCloudIcon />,
     name: "stapler",
     lastSuccess: "16 hours ago",
     lastFailure: "One day ago",
@@ -87,7 +90,7 @@ const projects = [
   },
   {
     state: <FailedIcon />,
-    weather: <SunIcon />,
+    weather: <SunCloudIcon />,
     name: "winstone",
     lastSuccess: "16 hours ago",
     lastFailure: "One day ago",

@@ -59,6 +59,9 @@ function Dashboard() {
               buildPlugin()
             </p>
           </Card>
+          <Card title={"Recent activity"}>
+
+          </Card>
         </div>
         <BuildTable projects={projects} />
       </div>
