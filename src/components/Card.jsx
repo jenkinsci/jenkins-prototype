@@ -3,7 +3,7 @@ import tippyProps from "../data/tooltips";
 import {Link} from "react-router-dom";
 import ResizeOutline from "./icons/ResizeOutline";
 
-export default function Card({title, children, expandable}) {
+export default function Card({title, children, expandable, expandableLink}) {
   return (
     <div className={"jenkins-cards__item"}>
       {title &&
@@ -12,7 +12,7 @@ export default function Card({title, children, expandable}) {
           <div className="jenkins-cards__item__title__actions">
             {expandable &&
               <Tippy content="Expand" {...tippyProps}>
-                <Link to="/project/build/console">
+                <Link to={expandableLink}>
                   <ResizeOutline/>
                 </Link>
               </Tippy>

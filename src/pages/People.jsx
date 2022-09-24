@@ -62,7 +62,7 @@ export default function People() {
                   <SettingsOutline />
                   Configure
                 </a>
-                <a>
+                <a className="app-color-red">
                   <CloseCircleOutline />
                   Delete user
                 </a>

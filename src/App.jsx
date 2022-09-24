@@ -30,6 +30,7 @@ import ConsolePage from "./pages/project/ConsolePage";
 import Person from "./pages/Person";
 import {default as props} from "./data/tooltips";
 import Builds from "./components/panels/Builds";
+import BuildHistoryPage from "./pages/project/BuildHistoryPage";
 
 function App() {
 
@@ -150,6 +151,7 @@ function App() {
             <Route path="/project/build/console" element={<ConsolePage/>} />
             <Route path="/project/build" element={<Build/>} />
             <Route path="/project/stageview" element={<StageviewPage />} />
+            <Route path="/project/build-history" element={<BuildHistoryPage />} />
             <Route path="/project" element={<Project/>} />
             <Route path="/" element={<Dashboard/>} />
           </Routes>

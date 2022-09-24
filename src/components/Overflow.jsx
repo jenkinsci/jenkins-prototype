@@ -18,7 +18,7 @@ export default function Overflow(props) {
       onShow={() => setIcon(<EllipsisHorizontal />)}
       onHidden={() => setIcon(<EllipsisHorizontalOutline />)}
     >
-      <button className={"jenkins-button overflow-button"}>
+      <button className={"jenkins-button overflow-button " + props.clazz}>
         { icon }
       </button>
     </Tippy>

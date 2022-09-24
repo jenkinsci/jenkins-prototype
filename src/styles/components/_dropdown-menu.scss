@@ -43,6 +43,22 @@
         opacity: 0.25;
       }
     }
+
+    &.app-color-green {
+      color: var(--green);
+
+      &::before {
+        background: currentColor;
+      }
+    }
+
+    &.app-color-red {
+      color: var(--red);
+
+      &::before {
+        background: currentColor;
+      }
+    }
   }
 
   hr {
