@@ -1,4 +1,7 @@
 import {Link} from "react-router-dom";
+import builds from "../data/builds";
+import tippyProps from "../data/tooltips";
+import Tippy from "@tippyjs/react";
 
 function Stageview() {
   return (
@@ -28,49 +31,37 @@ function Stageview() {
             <p>14s</p>
           </th>
         </tr>
-        <tr className={"jenkins-stageview__build"}>
-          <td>
-            <Link to={"/project/build"} className={"jenkins-button jenkins-button--green"}>Build 374</Link>
-          </td>
-          <td>
-            <button className={"jenkins-button jenkins-button--green"}>6s</button>
-          </td>
-          <td>
-            <button className={"jenkins-button jenkins-button--green"}>983ms</button>
-          </td>
-          <td>
-            <button className={"jenkins-button jenkins-button--green"}>2m</button>
-          </td>
-          <td>
-            <button className={"jenkins-button jenkins-button--red"}>37m</button>
-          </td>
-          <td>
-            <button className={"jenkins-button jenkins-button--green"}>37m</button>
-          </td>
-        </tr>
-        {Array.from(Array(4), (e, i) => {
-          return (
-            <tr className={"jenkins-stageview__build"}>
-              <td>
-                <Link to={"/project/build"} className={"jenkins-button jenkins-button--red"}>Build {373 - i}</Link>
-              </td>
-              <td>
-                <button className={"jenkins-button jenkins-button--green"}>6s</button>
-              </td>
-              <td>
-                <button className={"jenkins-button jenkins-button--green"}>983ms</button>
-              </td>
-              <td>
-                <button className={"jenkins-button jenkins-button--green"}>2m</button>
-              </td>
-              <td>
-                <button className={"jenkins-button jenkins-button--red"}>37m</button>
-              </td>
-              <td>
-                <button className={"jenkins-button jenkins-button--green"}>37m</button>
-              </td>
-            </tr>
-        )})}
+
+      {builds.slice(0, 5).map(build => {
+        const state = build.name === "375" ? 'green' : 'red';
+
+        return (
+          <tr className={"jenkins-stageview__build"}>
+            <td>
+              <Tippy content={build.message} {...tippyProps}>
+                <Link to={"/project/build/" + build.name} className={"jenkins-button jenkins-button--" + state}>
+                  #{build.name}
+                </Link>
+              </Tippy>
+            </td>
+            <td>
+              <button className={"jenkins-button jenkins-button--green"}>6s</button>
+            </td>
+            <td>
+              <button className={"jenkins-button jenkins-button--green"}>983ms</button>
+            </td>
+            <td>
+              <button className={"jenkins-button jenkins-button--green"}>2m</button>
+            </td>
+            <td>
+              <button className={"jenkins-button jenkins-button--" + state}>36m</button>
+            </td>
+            <td>
+              <button className={"jenkins-button jenkins-button--green"}>37m</button>
+            </td>
+          </tr>
+        )
+      })}
     </table>
   )
 }

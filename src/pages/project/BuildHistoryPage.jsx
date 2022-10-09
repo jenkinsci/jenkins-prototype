@@ -71,7 +71,7 @@ export default function BuildHistoryPage() {
 
                 <td>
                   <div className={"jenkins-table-centerer"}>
-                    <Link className={"jenkins-link"} to={"/project/build"}>
+                    <Link className={"jenkins-link"} to={"/project/build/" + build.name}>
                       #{build.name}
                     </Link>
                   </div>
@@ -79,7 +79,7 @@ export default function BuildHistoryPage() {
 
                 <td>
                   <div className={"jenkins-table-centerer"}>
-                    <Link className={"jenkins-link"}  to={"/project/build"}>
+                    <Link className={"jenkins-link"}  to={"/project/build" + build.name}>
                       {build.commit}
                     </Link>
                   </div>

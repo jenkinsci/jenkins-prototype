@@ -40,7 +40,7 @@
   --table-row-border-radius: 4px;
 
   // Root
-  --button-background-color: hsl(212, 25%, 92.5%);
+  --button-background-color: var(--table-background-color);
   --button-background-color-hover: hsl(212, 25%, 82.5%);
   --button-background-color-active: hsl(212, 25%, 72.5%);
   --button-foreground-color: var(--foreground-color);

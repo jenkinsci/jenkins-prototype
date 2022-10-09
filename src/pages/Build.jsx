@@ -35,13 +35,13 @@ function Build() {
         <Link to={"/project"} className={"jenkins-breadcrumb"}>Core</Link>
         <Link to={"/project"} className={"jenkins-breadcrumb"}>Jenkins</Link>
         <Link to={"/project"} className={"jenkins-breadcrumb"}>master</Link>
-        <Link to={"/project/build"} className={"jenkins-breadcrumb"}>#{build.name}</Link>
+        <Link to={"/project/build/" + number} className={"jenkins-breadcrumb"}>#{build.name}</Link>
       </div>
       <div className="jenkins-app-bar jenkins-app-bar--responsive">
         <div className={"jenkins-app-bar__content"}>
           <h1 className={"jenkins-project-heading"}>
             {build.state}
-            Build #{build.name}
+            {build.message}
           </h1>
         </div>
         <div className={"jenkins-app-bar__controls"}>
@@ -80,7 +80,7 @@ function Build() {
                   </a>
                 </Tippy>
                 <Tippy content="Expand" {...tippyProps}>
-                  <Link to="/project/build/console">
+                  <Link to={`/project/build/${number}/console`}>
                     <ResizeOutline />
                   </Link>
                 </Tippy>
@@ -134,7 +134,7 @@ function Build() {
           <a className={"jenkins-link"} style={{display: "flex", marginBottom: "1rem"}}>jenkins-core-2.370-rc32873.a_643d8fefa_72.jar</a>
           <a className={"jenkins-link"} style={{display: "flex", marginBottom: "1rem"}}>jenkins-core-2.370-rc32873.a_643d8fefa_72.pom</a>
         </Card>
-        <Card title={"Test results"} expandable={true}>
+        <Card title={"Test results"} expandable={true} expandableLink={"test-results"}>
           <div className={"app-linting-card"}>
             <CheckmarkDoneOutline />
             <p>All tests passed</p>
@@ -142,7 +142,7 @@ function Build() {
             <p>Took 15 hours</p>
           </div>
         </Card>
-        <Card title={"Test coverage"} expandable={true}>
+        <Card title={"Test coverage"} expandable={true} expandableLink={"test-coverage"}>
           <p>Project Coverage:</p>
           <p>Line: 47.70% (-0.05%)</p>
           <p>Branch: 59.83% (-0.05%)</p>

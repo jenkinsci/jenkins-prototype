@@ -1,12 +1,15 @@
-import {Link} from "react-router-dom";
+import {Link, useParams} from "react-router-dom";
 import {CopyOutline, DownloadOutline, SearchOutline} from "react-ionicons";
 import TerminalText from "../../terminal";
+import builds from "../../data/builds";
 
 export default function ConsolePage() {
+  let { number } = useParams();
+
   return (
     <div className={"app-console-page app-console-colors"}>
       <div className={"app-console-page__inner"}>
-        <Link className={"app-back-link"} to={"/project/build"}>Back to Build 374</Link>
+        <Link className={"app-back-link"} to={"/project/build/" + number}>Back to #{number}</Link>
         <div className="jenkins-app-bar jenkins-app-bar--sticky">
           <div className={"jenkins-app-bar__content"}>
             <h1 className={"jenkins-project-heading"}>

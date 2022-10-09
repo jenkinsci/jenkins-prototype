@@ -32,6 +32,8 @@ import {default as props} from "./data/tooltips";
 import Builds from "./components/panels/Builds";
 import BuildHistoryPage from "./pages/project/BuildHistoryPage";
 import ScrollToTop from "./components/ScrollToTop";
+import TestResultsPage from "./pages/project/TestResults";
+import TestCoveragePage from "./pages/project/TestCoverage";
 
 function App() {
 
@@ -150,11 +152,12 @@ function App() {
             <Route path="/people" element={<People/>} />
             <Route path="/build-monitor" element={<BuildMonitor/>} />
             <Route path="/project/configure" element={<ProjectSettings/>} />
-            <Route path="/project/build/console" element={<ConsolePage/>} />
-            <Route path="/project/build" element={<Build/>} />
             <Route path="/project/stageview" element={<StageviewPage />} />
             <Route path="/project/build-history" element={<BuildHistoryPage />} />
             <Route path="/project/build/:number" element={<Build/>} />
+            <Route path="/project/build/:number/console" element={<ConsolePage/>} />
+            <Route path="/project/build/:number/test-results" element={<TestResultsPage />} />
+            <Route path="/project/build/:number/test-coverage" element={<TestCoveragePage />} />
             <Route path="/project" element={<Project/>} />
             <Route path="/" element={<Dashboard/>} />
           </Routes>

@@ -1,15 +1,17 @@
 import {Link} from "react-router-dom";
-import {FingerPrintOutline, LogoGithub, LogoGitlab, PlayOutline, SearchOutline, ShieldOutline} from "react-ionicons";
+import {
+  CheckmarkCircleOutline, CloseCircleOutline,
+  LogoGithub,
+  PlayOutline,
+  SearchOutline,
+  ShieldOutline, TimerOutline
+} from "react-ionicons";
 import Stageview from "../components/Stageview";
-import Tippy from "@tippyjs/react";
-import ResizeOutline from "../components/icons/ResizeOutline";
 import {CartesianGrid, Line, LineChart, Tooltip, XAxis, YAxis} from 'recharts';
 import Overflow from "../components/Overflow";
-import tippyProps from "../data/tooltips";
 import PassingIcon from "../components/icons/PassingIcon";
 import Card from "../components/Card";
 import builds from "../data/builds";
-import {cssClasses} from "react-ionicons/lib/LogoGithub";
 
 export default function Project() {
   const data = [{name: 'Page A', uv: 400},
@@ -48,19 +50,10 @@ export default function Project() {
         </div>
       </div>
       <div className={"jenkins-cards"}>
-        <div className={"jenkins-cards__item jenkins-cards__item--wide"}>
-          <p className="jenkins-cards__item__title">
-            Stage view
-            <div className="jenkins-cards__item__title__actions">
-              <Tippy content="Expand" {...tippyProps}>
-                <Link to={"/project/stageview"}>
-                  <ResizeOutline />
-                </Link>
-              </Tippy>
-            </div>
-          </p>
-          <Stageview/>
-        </div>
+        <Card title={"Stage view"} expandable={true} expandableLink={"stageview"} size={"wide"}>
+          <Stageview />
+        </Card>
+
         <Card title="Builds" expandable={true} expandableLink={"/project/build-history"}>
           <div className={"app-search-bar"} style={{"margin": "20px 0"}}>
             <SearchOutline />
@@ -100,8 +93,8 @@ export default function Project() {
             })}
           </div>
         </Card>
-        <div className={"jenkins-cards__item jenkins-cards__item--wide"}>
-          <p className="jenkins-cards__item__title">Test result trend</p>
+
+        <Card title={"Test result trend"} expandable={true} size={"wide"}>
           <LineChart width={800} height={300} data={data} margin={{ top: 5, right: 20, bottom: 5, left: 0 }}>
             <Line type="monotone" dataKey="uv" stroke="var(--green)" />
             <CartesianGrid stroke="var(--color-secondary)" strokeDasharray="5 5" />
@@ -109,22 +102,32 @@ export default function Project() {
             <YAxis />
             <Tooltip />
           </LineChart>
-        </div>
-        <div className={"jenkins-cards__item"}><p className="jenkins-cards__item__title">Stuff</p></div>
-        <div className={"jenkins-cards__item jenkins-cards__item--wide"}>
-          <p className="jenkins-cards__item__title">
-            Stages
-            <div className="jenkins-cards__item__title__actions">
-              <Tippy content="Expand" {...tippyProps}>
-                <a href="#">
-                  <ResizeOutline />
-                </a>
-              </Tippy>
-            </div>
+        </Card>
+
+        <Card title={"Details"}>
+          <p className={"app-details__item"}>
+            <CheckmarkCircleOutline />
+            Last success
+            16 hours ago
+            <Link to="/project/build/375" className={"app-tag"}>#375</Link>
           </p>
+          <p className={"app-details__item"}>
+            <CloseCircleOutline />
+            Last failure
+            One day ago
+            <Link to="/project/build/370" className={"app-tag"}>#370</Link>
+          </p>
+          <p className={"app-details__item"}>
+            <TimerOutline />
+            Last duration
+            30 seconds
+            <Link to="/project/build/375" className={"app-tag"}>#375</Link>
+          </p>
+        </Card>
+
+        <Card title={"Stages"} expandable={true} size={"wide"}>
           <img src="/assets/img_1.png" alt="" width={"100%"}/>
-        </div>
-        <div className={"jenkins-cards__item"}><p className="jenkins-cards__item__title">Stuff</p></div>
+        </Card>
       </div>
     </div>
   );
