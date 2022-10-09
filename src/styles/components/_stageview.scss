@@ -9,7 +9,6 @@
     border-collapse: collapse;
     min-width: 130px;
     width: 130px;
-    max-width: 130px;
   }
 
   .jenkins-stageview__stages {
@@ -77,6 +76,26 @@
       .jenkins-button {
         border-radius: 0 10px 10px 0;
       }
+    }
+  }
+
+  .jenkins-build-history__item {
+    margin-right: 1rem;
+    min-width: 400px;
+    padding: 0.25rem;
+
+    &::before {
+      inset: -6.5px -5px -6.5px -5px;
+      border-radius: 10px;
+    }
+
+    .jenkins-build-history__item__link__details {
+      align-items: flex-start;
+      text-align: left;
+    }
+
+    .jenkins-button {
+      min-height: 30px;
     }
   }
 }

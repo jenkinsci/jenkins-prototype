@@ -6,7 +6,7 @@ export default function StageviewPage() {
     <div className={"jenkins-body"}>
       <Link className={"app-back-link"} to={"/project"}>Back to master</Link>
       <h1>Stage view</h1>
-      <Stageview />
+      <Stageview expanded={true} />
     </div>
   );
 }
