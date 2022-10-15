@@ -128,7 +128,7 @@ function Build() {
             Took 3 min 2 sec
           </p>
         </Card>
-        <Card title={"Artifacts"}>
+        <Card title={"Artifacts"} expandable={true} expandableLink={"artifacts"}>
           <a className={"jenkins-link"} style={{display: "flex", marginBottom: "1rem"}}>jenkins-core-2.370-rc32873.a_643d8fefa_72-javadoc.jar</a>
           <a className={"jenkins-link"} style={{display: "flex", marginBottom: "1rem"}}>jenkins-core-2.370-rc32873.a_643d8fefa_72-sources.jar</a>
           <a className={"jenkins-link"} style={{display: "flex", marginBottom: "1rem"}}>jenkins-core-2.370-rc32873.a_643d8fefa_72.jar</a>
