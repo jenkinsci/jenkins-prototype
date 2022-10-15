@@ -41,11 +41,11 @@ export default function BuildTable({projects}) {
               </td>
               <td width="20%">
                 {item.lastSuccess}
-                <Link to={"/project/build/375"} className={"app-tag"}>#1337</Link>
+                <Link to={"/project/build/375"} className={"app-tag"}>#375</Link>
               </td>
               <td width="20%">
                 {item.lastFailure}
-                <Link to={"/project/build/375"} className={"app-tag"}>#1336</Link>
+                <Link to={"/project/build/373"} className={"app-tag"}>#373</Link>
               </td>
               <td width="15%">{item.lastDuration}</td>
               <td className="jenkins-table-icon-host">

@@ -14,7 +14,7 @@ const projects = [
     name: "Jenkins",
     lastSuccess: "16 hours ago",
     lastFailure: "One day ago",
-    lastDuration: "30 seconds"
+    lastDuration: "30s"
   },
   {
     state: <FailedIcon />,
@@ -22,7 +22,7 @@ const projects = [
     name: "acceptance-test-harness",
     lastSuccess: "16 hours ago",
     lastFailure: "One day ago",
-    lastDuration: "54 minutes"
+    lastDuration: "54m"
   },
   {
     state: <UnstableIcon />,
@@ -30,7 +30,7 @@ const projects = [
     name: "core-pr-tester",
     lastSuccess: "16 hours ago",
     lastFailure: "One day ago",
-    lastDuration: "3 minutes"
+    lastDuration: "3m"
   },
   {
     state: <PassingIcon />,
@@ -38,7 +38,7 @@ const projects = [
     name: "jenkins-test-harness",
     lastSuccess: "16 hours ago",
     lastFailure: "One day ago",
-    lastDuration: "20 seconds"
+    lastDuration: "20s"
   },
   {
     state: <PassingIcon />,
@@ -46,7 +46,7 @@ const projects = [
     name: "jenkins-test-harness-htmlunit",
     lastSuccess: "16 hours ago",
     lastFailure: "One day ago",
-    lastDuration: "5 minutes"
+    lastDuration: "5m"
   },
   {
     state: <PassingIcon />,
@@ -54,7 +54,7 @@ const projects = [
     name: "pom",
     lastSuccess: "16 hours ago",
     lastFailure: "One day ago",
-    lastDuration: "30 seconds"
+    lastDuration: "30s"
   },
   {
     state: <UnstableIcon />,
@@ -62,7 +62,7 @@ const projects = [
     name: "remoting",
     lastSuccess: "16 hours ago",
     lastFailure: "One day ago",
-    lastDuration: "44 seconds"
+    lastDuration: "44s"
   },
   {
     state: <FailedIcon />,
@@ -70,7 +70,7 @@ const projects = [
     name: "slave-installer-module",
     lastSuccess: "16 hours ago",
     lastFailure: "One day ago",
-    lastDuration: "1 minute"
+    lastDuration: "1m"
   },
   {
     state: <PassingIcon />,
@@ -78,7 +78,7 @@ const projects = [
     name: "stapler",
     lastSuccess: "16 hours ago",
     lastFailure: "One day ago",
-    lastDuration: "2 minutes"
+    lastDuration: "2m"
   },
   {
     state: <PassingIcon />,
@@ -86,7 +86,7 @@ const projects = [
     name: "windows-slave-installer-module",
     lastSuccess: "16 hours ago",
     lastFailure: "One day ago",
-    lastDuration: "4 seconds"
+    lastDuration: "4s"
   },
   {
     state: <FailedIcon />,
@@ -94,7 +94,7 @@ const projects = [
     name: "winstone",
     lastSuccess: "16 hours ago",
     lastFailure: "One day ago",
-    lastDuration: "12 seconds"
+    lastDuration: "12s"
   }
 ]
 

@@ -1,5 +1,12 @@
 import {Link} from "react-router-dom";
-import {AddOutline, FingerPrintOutline, NewspaperOutline, ScanCircleOutline, SunnyOutline} from "react-ionicons";
+import {
+  AddOutline,
+  FingerPrintOutline,
+  NewspaperOutline,
+  PencilOutline,
+  ScanCircleOutline,
+  SunnyOutline
+} from "react-ionicons";
 import Overflow from "../components/Overflow";
 import projects from "../data/projects";
 import Card from "../components/Card";
@@ -25,6 +32,11 @@ function Dashboard() {
             <span className={"jenkins-mobile-hide"}>New project</span>
           </Link>
           <Overflow>
+            <a>
+              <PencilOutline />
+              Customize view
+            </a>
+            <hr/>
             <a>
               <ScanCircleOutline />
               Project relationship

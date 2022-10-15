@@ -123,6 +123,10 @@ export default function Project() {
             30 seconds
             <Link to="/project/build/375" className={"app-tag"}>#375</Link>
           </p>
+          <p className={"app-details__item"}>
+            <LogoGithub />
+            <a href={"https://github.com/jenkinsci/jenkins"} className={"jenkins-link"}>jenkinsci/jenkins</a>
+          </p>
         </Card>
 
         <Card title={"Stages"} expandable={true} size={"wide"}>
