@@ -62,7 +62,8 @@ export default function BuildTable({projects}) {
               {item.state}
               <div>
                 <p className={"title"}>{item.name}</p>
-                <p>{item.lastSuccess} by Jan Faracik - Duration {item.lastDuration}</p>
+                <p>Manual push by Tim Jacomb</p>
+                <p>{item.lastSuccess} - Duration {item.lastDuration}</p>
               </div>
             </Link>
           )})}

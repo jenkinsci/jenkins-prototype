@@ -37,11 +37,11 @@ function Dashboard() {
             <span className={"jenkins-mobile-hide"}>New project</span>
           </Link>
           <Overflow>
-            <a>
+            <a className={"jenkins-mobile-hide"}>
               <PencilOutline />
               Customize view
             </a>
-            <hr/>
+            <hr className={"jenkins-mobile-hide"} />
             <a>
               <ScanCircleOutline />
               Project relationship
