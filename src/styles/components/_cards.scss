@@ -1,13 +1,17 @@
 .jenkins-cards {
+  gap: var(--card-gap);
+
   @media (max-width: 699px) {
+    display: flex;
+    flex-direction: column;
+
     &__item {
-      margin-bottom: var(--card-gap);
+      min-height: 0 !important;
     }
   }
 
   @media (min-width: 700px) {
     display: grid;
-    grid-gap: var(--card-gap);
     grid-template-columns: 1fr 1fr;
   }
 
