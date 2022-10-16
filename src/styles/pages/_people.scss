@@ -81,3 +81,51 @@
   grid-template-columns: 360px 1fr;
   grid-gap: 1rem;
 }
+
+.app-people-avatars {
+  display: flex;
+  align-items: center;
+
+  a {
+    color: var(--foreground-color);
+    transition: z-index 0s linear, 0.3s ease-in-out;
+
+    &:not(:first-of-type) {
+      margin-left: -0.2rem;
+    }
+
+    @for $i from 0 through 7 {
+      &:nth-of-type(#{$i}) {
+        z-index: 7 - $i;
+      }
+    }
+
+
+    &:hover {
+      z-index: 10;
+      translate: 0 -0.3rem;
+
+      .app-avatar {
+        box-shadow: 0 0 1rem var(--card-background);
+      }
+    }
+  }
+
+  .app-avatar {
+    box-shadow: 0 0 0.2rem var(--card-background);
+  }
+
+  & > span {
+    margin-left: 1rem;
+    font-size: 0.9rem;
+    color: var(--color-secondary);
+    font-weight: 500;
+  }
+
+  &:has(a:hover) {
+    a:not(:hover) {
+      scale: 90%;
+      filter: saturate(0.75) blur(1px);
+    }
+  }
+}

@@ -34,6 +34,7 @@ import BuildHistoryPage from "./pages/project/BuildHistoryPage";
 import ScrollToTop from "./components/ScrollToTop";
 import TestResultsPage from "./pages/project/TestResults";
 import TestCoveragePage from "./pages/project/TestCoverage";
+import ArtifactsPage from "./pages/build/ArtifactsPage";
 
 function App() {
 
@@ -155,6 +156,7 @@ function App() {
             <Route path="/project/stageview" element={<StageviewPage />} />
             <Route path="/project/build-history" element={<BuildHistoryPage />} />
             <Route path="/project/build/:number" element={<Build/>} />
+            <Route path="/project/build/:number/artifacts" element={<ArtifactsPage />} />
             <Route path="/project/build/:number/console" element={<ConsolePage/>} />
             <Route path="/project/build/:number/test-results" element={<TestResultsPage />} />
             <Route path="/project/build/:number/test-coverage" element={<TestCoveragePage />} />

@@ -1,9 +1,9 @@
 import {Link} from "react-router-dom";
 import {
   AddOutline,
-  FingerPrintOutline,
+  FingerPrintOutline, LogoGithub,
   NewspaperOutline,
-  PencilOutline,
+  PencilOutline, PlayOutline,
   ScanCircleOutline,
   SunnyOutline
 } from "react-ionicons";
@@ -11,6 +11,11 @@ import Overflow from "../components/Overflow";
 import projects from "../data/projects";
 import Card from "../components/Card";
 import BuildTable from "../components/BuildTable";
+import Avatar from "../components/Avatar";
+import people from "../data/people";
+import Tippy from "@tippyjs/react";
+import tippyProps from "../data/tooltips";
+import builds from "../data/builds";
 
 function Dashboard() {
 
@@ -65,14 +70,59 @@ function Dashboard() {
               This instance hosts several GitHub Organization folders organized by subject area.
               <br/>
               <br/>
-              To add continuous integration and PR builds for a Jenkins plugin in the jenkinsci organization, just add a Jenkinsfile to your repository. You'll likely only need one line:
-              <br/>
-              <br/>
-              buildPlugin()
+              To add continuous integration and PR builds for a Jenkins plugin in the jenkinsci organization, just add a Jenkinsfile to your repository.
             </p>
           </Card>
-          <Card title={"Recent activity"}>
-
+          <Card title={"Running builds"}>
+            <div className={"jenkins-build-history"} style={{maxHeight: "300px"}}>
+              {builds.map(build => {
+                return (
+                  <div className={"jenkins-build-history__item"}>
+                    <Link to={"/project/build/" + build.name} className={"jenkins-build-history__item__link"}>
+                      <div className={"jenkins-build-history__item__link__icon"}>
+                        {build.state}
+                        <div className={"jenkins-build-history__item__link__icon__owner"}>
+                          {build.icon ? build.icon : (
+                            <LogoGithub color={"var(--foreground-color)"} cssClasses={"ionicon"} />
+                          )}
+                        </div>
+                      </div>
+                      <div className={"jenkins-build-history__item__link__details"}>
+                        <p className="jenkins-build-history__item__link__details__build-number">#{build.name}</p>
+                        <p className="jenkins-build-history__item__link__details__message">{build.message}</p>
+                      </div>
+                    </Link>
+                    <Overflow clazz={"jenkins-button--transparent"}>
+                      <a className={"app-color-green"}>
+                        <PlayOutline />
+                        Rebuild
+                      </a>
+                      <hr/>
+                      <a>
+                        <LogoGithub />
+                        Open on GitHub
+                      </a>
+                    </Overflow>
+                  </div>
+                )
+              })}
+            </div>
+          </Card>
+          <Card title={"People"}>
+            <div className={"app-people-avatars"}>
+              {people.slice(0, 7).map(person => {
+                return (
+                  <Tippy content={person.name} {...tippyProps}>
+                    <Link to={"/people/" + person.username}>
+                      <Avatar person={person} size={"2.25rem"} />
+                    </Link>
+                  </Tippy>
+                )
+              })}
+              <span>
+                +7
+              </span>
+            </div>
           </Card>
         </div>
         <BuildTable projects={projects} />

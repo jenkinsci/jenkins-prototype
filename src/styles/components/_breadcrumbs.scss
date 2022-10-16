@@ -35,6 +35,12 @@
     opacity: 0.35;
   }
 
+  &:last-of-type {
+    &::after {
+      display: none;
+    }
+  }
+
   @media screen and (max-width: 768px) {
     &:not(:first-child):not(:last-child) {
       display: none;
