@@ -25,15 +25,11 @@
     min-height: 400px;
     border-radius: 15px;
     -webkit-font-smoothing: subpixel-antialiased;
-
-    @media (prefers-color-scheme: light) {
-      border: 2px solid var(--card-background);
-      padding: calc(1.2rem - 2px);
-    }
+    border: 2px solid var(--card-border);
+    background: var(--card-background);
+    padding: calc(1.2rem - 4px) calc(1.2rem - 2px);
 
     @media (prefers-color-scheme: dark) {
-      background: var(--card-background);
-      padding: 1.2rem;
       --button-background-color: hsl(230, 16%, 13%);
       mask-border-source: url("data:image/svg+xml,%3Csvg width='45' height='45' viewBox='0 0 45 45' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 22.5C0 15.5109 0 12.0163 1.14181 9.25975C2.66422 5.58433 5.58433 2.66422 9.25975 1.14181C12.0163 0 15.5109 0 22.5 0C29.4891 0 32.9837 0 35.7402 1.14181C39.4157 2.66422 42.3358 5.58433 43.8582 9.25975C45 12.0163 45 15.5109 45 22.5C45 29.4891 45 32.9837 43.8582 35.7402C42.3358 39.4157 39.4157 42.3358 35.7402 43.8582C32.9837 45 29.4891 45 22.5 45C15.5109 45 12.0163 45 9.25975 43.8582C5.58433 42.3358 2.66422 39.4157 1.14181 35.7402C0 32.9837 0 29.4891 0 22.5Z' fill='%23D9D9D9'/%3E%3C/svg%3E%0A");
       mask-border-slice: 49% fill;

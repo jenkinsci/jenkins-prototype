@@ -9,7 +9,7 @@ export default function BuildTable({projects}) {
       <table className={"jenkins-table jenkins-mobile-hide"}>
         <thead>
         <tr>
-          <th className="jenkins-table-icon-host">S</th>
+          <th className="jenkins-table-icon-host" style={{paddingLeft: "0.5rem"}}>S</th>
           <th className="jenkins-table-icon-host">W</th>
           <th>Name</th>
           <th>Last success</th>
@@ -23,7 +23,7 @@ export default function BuildTable({projects}) {
           return (
             <tr key={index}>
               <td className="jenkins-table-icon-host">
-                <div className={"jenkins-table-centerer"} style={{marginLeft: "1rem"}}>
+                <div className={"jenkins-table-centerer"} style={{marginLeft: "0.5rem"}}>
                   <Tippy content="This build passed"  {...tippyProps}>
                     {item.state}
                   </Tippy>

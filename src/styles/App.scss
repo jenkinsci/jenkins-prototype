@@ -10,7 +10,8 @@
   --border-color: rgba(0, 0, 0, 0.1);
 
   // Card
-  --card-background: var(--table-background-color);
+  --card-background: hsl(212, 40%, 100%);
+  --card-border: hsl(212, 40%, 96%);
   --card-gap: 1rem;
 
   // Color
@@ -103,6 +104,7 @@
 
   // Card
   --card-background: var(--overlap-color);
+  --card-border: hsl(230, 15%, 8.25%);
 
   // Colors
   --blue: hsl(210, 100%, 55%);
@@ -125,8 +127,8 @@
   --focus-input-glow: rgba(43, 116, 160, 0.4);
 
   // Table
-  --table-background-color: var(--overlap-color);
-  --table-body-background: var(--background-color);
+  --table-background-color: var(--card-background);
+  --table-body-background: hsl(230, 15%, 5.5%);
 
   // Root
   --button-background-color: var(--overlap-color);

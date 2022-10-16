@@ -55,7 +55,7 @@ export default function Project() {
         </Card>
 
         <Card title="Builds" expandable={true} expandableLink={"/project/build-history"}>
-          <div className={"app-search-bar"} style={{"margin": "20px 0"}}>
+          <div className={"app-search-bar"} style={{"margin": "calc(1.2rem - 4px) 0 1.3rem 0"}}>
             <SearchOutline />
             <input type="search" placeholder={"Search"} />
           </div>

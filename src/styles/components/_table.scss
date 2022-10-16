@@ -3,8 +3,8 @@
 
   background: var(--table-background-color);
   border-radius: calc(var(--table-border-radius) + 2px);
-  border: 5px solid var(--table-background-color);
-  border-bottom-width: 3px;
+  border: 4px solid var(--table-background-color);
+  border-bottom-width: 2px;
   border-spacing: 0 2px;
   margin-bottom: var(--section-padding);
   width: 100%;
@@ -268,8 +268,8 @@
 
 .jenkins-table-icon-host {
   box-sizing: border-box;
-  min-width: 58px;
-  width: 58px;
+  min-width: 54px;
+  width: 54px;
   height: 100%;
   aspect-ratio: 1;
   text-align: center !important;

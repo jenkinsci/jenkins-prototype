@@ -80,15 +80,12 @@ function Dashboard() {
                   <div className={"jenkins-build-history__item"}>
                     <Link to={"/project/build/" + build.name} className={"jenkins-build-history__item__link"}>
                       <div className={"jenkins-build-history__item__link__icon"}>
-                        {build.state}
-                        <div className={"jenkins-build-history__item__link__icon__owner"}>
-                          {build.icon ? build.icon : (
-                            <LogoGithub color={"var(--foreground-color)"} cssClasses={"ionicon"} />
-                          )}
+                        <div className={"build-loading-icon"}>
+
                         </div>
                       </div>
                       <div className={"jenkins-build-history__item__link__details"}>
-                        <p className="jenkins-build-history__item__link__details__build-number">#{build.name}</p>
+                        <p className="jenkins-build-history__item__link__details__build-number">#{build.name} - Jenkins - Master</p>
                         <p className="jenkins-build-history__item__link__details__message">{build.message}</p>
                       </div>
                     </Link>
