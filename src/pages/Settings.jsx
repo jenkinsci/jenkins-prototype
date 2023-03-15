@@ -2,6 +2,7 @@ import {OpenOutline, SearchOutline,} from 'react-ionicons'
 import {NavLink, Route, Routes, useLocation } from "react-router-dom";
 import System from "./settings/System";
 import Tools from "./settings/Tools";
+import About from "./settings/About";
 import Appearance from "./settings/Appearance";
 import NotImplemented from "./settings/NotImplemented";
 import settings from "../data/settings";
@@ -48,6 +49,7 @@ function Settings() {
           <Route path="/" exact="true" element={<System/>} />
           <Route path="/tools" element={<Tools/>} />
           <Route path="/appearance"  element={<Appearance/>} />
+          <Route path="/about-jenkins"  element={<About/>} />
           <Route path="*" element={<NotImplemented/>} />
         </Routes>
         { !useLocation().pathname.includes("tools") &&
