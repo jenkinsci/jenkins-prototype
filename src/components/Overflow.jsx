@@ -3,7 +3,7 @@ import {EllipsisHorizontal, EllipsisHorizontalOutline} from "react-ionicons";
 import {useState} from "react";
 
 export default function Overflow(props) {
-  const [icon, setIcon] = useState(<EllipsisHorizontalOutline />)
+  const [icon, setIcon] = useState(props.icon ?? <EllipsisHorizontalOutline />)
 
   return (
     <Tippy
@@ -20,6 +20,7 @@ export default function Overflow(props) {
     >
       <button className={"jenkins-button overflow-button " + props.clazz}>
         { icon }
+        { props.text }
       </button>
     </Tippy>
   )

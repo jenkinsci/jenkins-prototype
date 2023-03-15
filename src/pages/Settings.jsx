@@ -1,5 +1,5 @@
 import {OpenOutline, SearchOutline,} from 'react-ionicons'
-import {NavLink, Route, Routes} from "react-router-dom";
+import {NavLink, Route, Routes, useLocation } from "react-router-dom";
 import System from "./settings/System";
 import Tools from "./settings/Tools";
 import Appearance from "./settings/Appearance";
@@ -50,7 +50,9 @@ function Settings() {
           <Route path="/appearance"  element={<Appearance/>} />
           <Route path="*" element={<NotImplemented/>} />
         </Routes>
-        <button style={{"padding": "0.75rem 1.8rem", "height": "unset"}} className={"jenkins-button jenkins-button--primary"} type="submit">Save</button>
+        { !useLocation().pathname.includes("tools") &&
+          <button style={{"padding": "0.75rem 1.8rem", "height": "unset"}} className={"jenkins-button jenkins-button--primary"} type="submit">Save</button>
+        }
       </div>
     </div>
   );
