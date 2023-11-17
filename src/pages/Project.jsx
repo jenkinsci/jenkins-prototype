@@ -7,18 +7,20 @@ import {
   ShieldOutline, TimerOutline
 } from "react-ionicons";
 import Stageview from "../components/Stageview";
-import {CartesianGrid, Line, LineChart, Tooltip, XAxis, YAxis} from 'recharts';
+import {Area, AreaChart, CartesianGrid, Line, LineChart, Tooltip, XAxis, YAxis} from 'recharts';
 import Overflow from "../components/Overflow";
 import PassingIcon from "../components/icons/PassingIcon";
 import Card from "../components/Card";
 import builds from "../data/builds";
 
 export default function Project() {
-  const data = [{name: 'Page A', uv: 400},
-    {name: 'Page A', uv: 200},
-    {name: 'Page A', uv: 700},
-    {name: 'Page A', uv: 300},
-    {name: 'Page A', uv: 100}];
+  const data = [
+    {name: '#371', uv: 80},
+    {name: '#372', uv: 60},
+    {name: '#373', uv: 90},
+    {name: '#374', uv: 100},
+    {name: '#375', uv: 100}
+  ];
 
   return (
     <div className="jenkins-body">
@@ -95,13 +97,12 @@ export default function Project() {
         </Card>
 
         <Card title={"Test result trend"} expandable={true} size={"wide"}>
-          <LineChart width={800} height={300} data={data} margin={{ top: 5, right: 20, bottom: 5, left: 0 }}>
-            <Line type="monotone" dataKey="uv" stroke="var(--green)" />
-            <CartesianGrid stroke="var(--color-secondary)" strokeDasharray="5 5" />
-            <XAxis dataKey="name" />
-            <YAxis />
-            <Tooltip />
-          </LineChart>
+          <AreaChart width={800} height={320} data={data} margin={{ top: 5, right: 20, bottom: 5, left: 0 }}>
+            <Area type="monotone" dataKey="uv" stroke="var(--green)" strokeWidth={2} fill="var(--green-subtle)" />
+            <CartesianGrid stroke="var(--green-subtle)" opacity={0.5} strokeWidth={2} />
+            <XAxis dataKey="name" stroke="var(--foreground-color)" strokeWidth={0} />
+            <YAxis stroke="var(--foreground-color)" strokeWidth={0} />
+          </AreaChart>
         </Card>
 
         <Card title={"Details"}>
