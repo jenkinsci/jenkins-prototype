@@ -99,3 +99,96 @@
     }
   }
 }
+
+.app-graphview {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 30px;
+  height: 100%;
+  margin-top: -50px;
+  z-index: 0;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: calc(50% + 20px);
+    bottom: calc(50% - 24px);
+    left: 50px;
+    right: 50px;
+    background: color-mix(in srgb, var(--color-secondary) 25%, transparent);
+    z-index: -1;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    p {
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+
+    div {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 100%;
+      z-index: 0;
+
+      &::before, &::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border-radius: 100%;
+      }
+
+      &::before {
+        background: var(--card-background);
+        z-index: -1;
+      }
+
+      &::after {
+        background: var(--card-background);
+        z-index: 0;
+      }
+
+      &:not(:has(svg)) {
+        width: 20px;
+        height: 20px;
+        margin-block: 5px;
+
+        &::after {
+          background: color-mix(in srgb, var(--color-secondary) 25%, transparent);
+        }
+      }
+
+      &:has(svg) {
+        width: 30px;
+        height: 30px;
+
+        &::after {
+          background: color-mix(in srgb, var(--green) 25%, transparent);
+        }
+
+        span {
+          display: contents;
+        }
+
+        svg {
+          color: var(--green) !important;
+          width: 18px !important;
+          height: 18px !important;
+
+          * {
+            stroke-width: 50px;
+          }
+        }
+      }
+    }
+  }
+}

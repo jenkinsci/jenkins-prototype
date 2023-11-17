@@ -1,6 +1,6 @@
 import {Link} from "react-router-dom";
 import {
-  CheckmarkCircleOutline, CloseCircleOutline,
+  CheckmarkCircleOutline, CheckmarkOutline, CloseCircleOutline,
   LogoGithub,
   PlayOutline,
   SearchOutline,
@@ -130,7 +130,43 @@ export default function Project() {
         </Card>
 
         <Card title={"Stages"} expandable={true} size={"wide"}>
-          <img src="/assets/img_1.png" alt="" width={"100%"}/>
+          <div className={"app-graphview"}>
+            <div className={"app-graphview__item"}>
+              <p>Start</p>
+              <div>
+              </div>
+            </div>
+            <div className={"app-graphview__item"}>
+              <p>Parallel</p>
+              <div>
+                <CheckmarkOutline/>
+              </div>
+            </div>
+            <div className={"app-graphview__item"}>
+              <p>Deploy</p>
+              <div>
+                <CheckmarkOutline/>
+              </div>
+            </div>
+            <div className={"app-graphview__item"}>
+              <p>Linux publishing</p>
+              <div>
+                <CheckmarkOutline/>
+              </div>
+            </div>
+            <div className={"app-graphview__item"}>
+              <p>Windows publishing</p>
+              <div>
+                <CheckmarkOutline/>
+              </div>
+            </div>
+            <div className={"app-graphview__item"}>
+              <p>End</p>
+              <div>
+              </div>
+            </div>
+          </div>
+          {/*<img src="/assets/img_1.png" alt="" width={"100%"}/>*/}
         </Card>
       </div>
     </div>
