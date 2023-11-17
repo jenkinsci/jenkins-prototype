@@ -5,7 +5,7 @@ import {
 import {Link, useParams} from "react-router-dom";
 import people from "../data/people";
 import Avatar from "../components/Avatar";
-import projects from "../data/projects";
+import {projects} from "../data/projects";
 import BuildTable from "../components/BuildTable";
 
 export default function Person() {

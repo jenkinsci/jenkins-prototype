@@ -35,6 +35,7 @@ import ScrollToTop from "./components/ScrollToTop";
 import TestResultsPage from "./pages/project/TestResults";
 import TestCoveragePage from "./pages/project/TestCoverage";
 import ArtifactsPage from "./pages/build/ArtifactsPage";
+import Folder from "./pages/Folder";
 
 function App() {
 
@@ -152,6 +153,7 @@ function App() {
             <Route path="/people/:username" element={<Person />} />
             <Route path="/people" element={<People/>} />
             <Route path="/build-monitor" element={<BuildMonitor/>} />
+            <Route path="/folder" element={<Folder/>} />
             <Route path="/project/configure" element={<ProjectSettings/>} />
             <Route path="/project/stageview" element={<StageviewPage />} />
             <Route path="/project/build-history" element={<BuildHistoryPage />} />

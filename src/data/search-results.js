@@ -1,7 +1,7 @@
 import people from "./people";
 import settings from "./settings";
 import Avatar from "../components/Avatar";
-import projects from "./projects";
+import {projects} from "./projects";
 
 const searchResults = [
   {

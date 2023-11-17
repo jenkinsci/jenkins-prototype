@@ -32,8 +32,7 @@ function Build() {
     <div className="jenkins-body">
       <div className={"jenkins-breadcrumbs"}>
         <Link to={"/"} className={"jenkins-breadcrumb"}>Dashboard</Link>
-        <Link to={"/project"} className={"jenkins-breadcrumb"}>Core</Link>
-        <Link to={"/project"} className={"jenkins-breadcrumb"}>Jenkins</Link>
+        <Link to={"/folder"} className={"jenkins-breadcrumb"}>Jenkins</Link>
         <Link to={"/project"} className={"jenkins-breadcrumb"}>master</Link>
         <Link to={"/project/build/" + number} className={"jenkins-breadcrumb"}>#{build.name}</Link>
       </div>

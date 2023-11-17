@@ -3,7 +3,7 @@ import tippyProps from "../data/tooltips";
 import {Link} from "react-router-dom";
 import {PlayOutline} from "react-ionicons";
 
-export default function BuildTable({projects}) {
+export default function BuildTable({projects, isFolder}) {
   return (
     <>
       <table className={"jenkins-table jenkins-mobile-hide"}>
@@ -37,7 +37,7 @@ export default function BuildTable({projects}) {
                 </div>
               </td>
               <td width="30%">
-                <Link className={"jenkins-link"} to={"/project"}>{item.name}</Link>
+                <Link className={"jenkins-link"} to={isFolder ? "/folder" : "/project"}>{item.name}</Link>
               </td>
               <td width="20%">
                 {item.lastSuccess}

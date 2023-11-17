@@ -8,7 +8,7 @@ import {
   SunnyOutline
 } from "react-ionicons";
 import Overflow from "../components/Overflow";
-import projects from "../data/projects";
+import {projects} from "../data/projects";
 import Card from "../components/Card";
 import BuildTable from "../components/BuildTable";
 import Avatar from "../components/Avatar";
@@ -122,7 +122,7 @@ function Dashboard() {
             </div>
           </Card>
         </div>
-        <BuildTable projects={projects} />
+        <BuildTable projects={projects} isFolder={true} />
       </div>
     </div>
   );

@@ -7,7 +7,7 @@ import {
   ShieldOutline, TimerOutline
 } from "react-ionicons";
 import Stageview from "../components/Stageview";
-import {Area, AreaChart, CartesianGrid, Line, LineChart, Tooltip, XAxis, YAxis} from 'recharts';
+import {Area, AreaChart, CartesianGrid, XAxis, YAxis} from 'recharts';
 import Overflow from "../components/Overflow";
 import PassingIcon from "../components/icons/PassingIcon";
 import Card from "../components/Card";
@@ -26,8 +26,7 @@ export default function Project() {
     <div className="jenkins-body">
       <div className={"jenkins-breadcrumbs"}>
         <Link to={"/"} className={"jenkins-breadcrumb"}>Dashboard</Link>
-        <Link to={"/"} className={"jenkins-breadcrumb"}>Core</Link>
-        <Link to={"/"} className={"jenkins-breadcrumb"}>Jenkins</Link>
+        <Link to={"/folder"} className={"jenkins-breadcrumb"}>Jenkins</Link>
         <Link to={"/"} className={"jenkins-breadcrumb"}>master</Link>
       </div>
       <div className="jenkins-app-bar jenkins-app-bar--responsive">
