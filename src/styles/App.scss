@@ -17,6 +17,28 @@
   // Color
   --white: #fff;
 
+  --light-blue: #4da3ff;
+  --dark-blue: #003e80;
+  --light-brown: #c7b59f;
+  --dark-brown: #624f38;
+  --light-cyan: #8dd1f1;
+  --dark-cyan: #13739f;
+  --light-green: #4bdf7c;
+  --dark-green: #0e5024;
+  --light-indigo: #a9a8ea;
+  --dark-indigo: #29279f;
+  --light-orange: #feb670;
+  --dark-orange: #a15001;
+  --light-pink: #fd7393;
+  --dark-pink: #a10327;
+  --light-purple: #d7a8ee;
+  --dark-purple: #7c20aa;
+  --light-red: #ff4d65;
+  --dark-red: #800011;
+  --light-yellow: #ffd580;
+  --dark-yellow: #b37800;
+  --black: #14141f;
+
   --blue: #007aff;
   --brown: #a2845e;
   --cyan: #32ade6;
@@ -26,6 +48,8 @@
   --pink: #fb0f45;
   --purple: #af52de;
   --red: #e6001f;
+
+
   --yellow: hsl(40, 100%, 55%);
 
   --green-subtle: hsla(130, 59%, 47%, 15%);
@@ -422,5 +446,88 @@ h1 {
     border-radius: 5px;
     mix-blend-mode: overlay;
     box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+  }
+}
+
+.app-aurora {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    min-height: 130%;
+    min-width: 130%;
+    aspect-ratio: 1;
+    object-fit: cover;
+    z-index: -1;
+  }
+
+  &::before {
+    background-image: radial-gradient(
+        at 40% 20%,
+        var(--orange) 0,
+        transparent 50%
+    ),
+    radial-gradient(at 80% 0%, var(--cyan) 0, transparent 50%),
+    radial-gradient(at 0% 50%, var(--light-pink) 0, transparent 50%),
+    radial-gradient(at 80% 50%, var(--light-red) 0, transparent 50%),
+    radial-gradient(at 0% 100%, var(--light-yellow) 0, transparent 50%),
+    radial-gradient(at 80% 100%, var(--dark-purple) 0, transparent 50%),
+    radial-gradient(at 0% 0%, var(--pink) 0, transparent 50%);
+    animation: aurora-one 10s linear infinite;
+  }
+
+  &::after {
+    background-image: radial-gradient(
+        at 40% 20%,
+        var(--light-cyan) 0,
+        transparent 50%
+    ),
+    radial-gradient(at 80% 0%, var(--dark-orange) 0, transparent 50%),
+    radial-gradient(at 0% 50%, var(--light-blue) 0, transparent 50%),
+    radial-gradient(at 80% 50%, var(--light-green) 0, transparent 50%),
+    radial-gradient(at 0% 100%, var(--light-red) 0, transparent 50%),
+    radial-gradient(at 80% 100%, var(--light-yellow) 0, transparent 50%),
+    radial-gradient(at 0% 0%, var(--cyan) 0, transparent 50%);
+    animation: aurora-two 15s linear infinite;
+  }
+}
+
+@keyframes aurora-one {
+  0% {
+    opacity: 0.3;
+  }
+
+  50% {
+    opacity: 0.15;
+    transform: rotate(-180deg);
+  }
+
+  100% {
+    opacity: 0.3;
+    transform: rotate(-360deg);
+  }
+}
+
+@keyframes aurora-two {
+  0% {
+    opacity: 0.15;
+  }
+
+  50% {
+    opacity: 0.5;
+    transform: rotate(180deg);
+  }
+
+  100% {
+    opacity: 0.15;
+    transform: rotate(360deg);
   }
 }

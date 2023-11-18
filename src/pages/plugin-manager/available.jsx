@@ -1,6 +1,14 @@
 import {Link} from "react-router-dom";
-import {DownloadOutline, SearchOutline} from "react-ionicons";
+import {
+  BrushOutline,
+  ColorPaletteOutline,
+  DownloadOutline, GitBranchOutline, HammerOutline,
+  HandLeftOutline,
+  LayersOutline,
+  SearchOutline
+} from "react-ionicons";
 import plugins from "../../data/plugins";
+import Aurora from "../../components/Aurora";
 
 export default function Available() {
   return (
@@ -12,10 +20,61 @@ export default function Available() {
         <SearchOutline />
         Search available plugins
       </div>
+
+      <div className={'app-plugin-manager-carousel'}>
+        <div>
+          <Aurora opacity={0.75} />
+          <div className={'carousel-tags'}>
+            <h1>Trending</h1>
+            <h1>250K downloads</h1>
+          </div>
+          <p>Timestamper</p>
+          <span>Add timestamps to the console output of your Jenkins jobs</span>
+        </div>
+        <div>
+          <Aurora opacity={0.75} />
+          <p>Hello</p>
+          <span>Hello</span>
+        </div>
+        <div>
+          <Aurora opacity={0.75} />
+          <p>Hello</p>
+          <span>Hello</span>
+        </div>
+        <div>
+          <Aurora opacity={0.75} />
+          <p>Hello</p>
+          <span>Hello</span>
+        </div>
+      </div>
+
+      <div className={'app-plugin-manager-categories'}>
+        <div>
+          <LayersOutline/>
+          <p>Platforms</p>
+        </div>
+        <div>
+          <BrushOutline/>
+          <p>Appearance</p>
+        </div>
+        <div>
+          <HandLeftOutline/>
+          <p>Security</p>
+        </div>
+        <div>
+          <HammerOutline/>
+          <p>Builds</p>
+        </div>
+        <div>
+          <GitBranchOutline/>
+          <p>SCM</p>
+        </div>
+      </div>
+
       <table className={"jenkins-table"}>
         <thead>
         <tr>
-          <th></th>
+        <th></th>
           <th>Name</th>
           <th>Released</th>
         </tr>
