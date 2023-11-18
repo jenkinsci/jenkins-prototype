@@ -1,9 +1,9 @@
 import {
-  AnalyticsOutline,
+  AnalyticsOutline, BagHandleOutline,
   BrushOutline,
   CloudOutline,
   CodeWorkingOutline,
-  CubeOutline,
+  CubeOutline, DownloadOutline,
   ExtensionPuzzleOutline,
   FileTrayFullOutline,
   HammerOutline,
@@ -13,7 +13,7 @@ import {
   PowerOutline,
   ReloadOutline,
   ServerOutline,
-  SettingsOutline,
+  SettingsOutline, StorefrontOutline,
   TerminalOutline
 } from "react-ionicons";
 
@@ -41,7 +41,20 @@ const settings = [
       {
         icon: <ExtensionPuzzleOutline />,
         name: "Plugins",
-        external: true
+        children: [
+          {
+            icon: <BagHandleOutline />,
+            name: "Available plugins"
+          },
+          {
+            icon: <DownloadOutline />,
+            name: "Updates and installed plugins"
+          },
+          {
+            icon: <SettingsOutline />,
+            name: "Advanced settings"
+          }
+        ]
       }
     ]
   },

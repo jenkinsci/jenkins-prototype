@@ -23,7 +23,6 @@ import Search from "./components/panels/Search";
 import Project from "./pages/Project";
 import ProjectSettings from "./pages/ProjectSettings";
 import Build from "./pages/Build";
-import PluginManager from "./pages/PluginManager";
 import NewProject from "./pages/NewProject";
 import StageviewPage from "./pages/project/StageviewPage";
 import ConsolePage from "./pages/project/ConsolePage";
@@ -147,8 +146,8 @@ function App() {
         <div id="app-layer" className="jenkins-container">
           <Routes>
             <Route path="/new/*" element={<NewProject/>} />
-            <Route path="/settings/plugins" element={<PluginManager/>} />
-            <Route path="/settings/plugins/*" element={<PluginManager/>} />
+            {/*<Route path="/settings/plugins" element={<PluginManager/>} />*/}
+            {/*<Route path="/settings/plugins/*" element={<PluginManager/>} />*/}
             <Route path="/settings/*" element={<Settings/>} />
             <Route path="/people/:username" element={<Person />} />
             <Route path="/people" element={<People/>} />

@@ -328,7 +328,7 @@ h1 {
     font-size: 0.9rem;
     z-index: 0;
     cursor: pointer;
-    transition: 0.2s ease;
+    transition: var(--standard-transition);
     color: var(--foreground-color) !important;
     text-decoration: none;
 
@@ -383,6 +383,62 @@ h1 {
 
     &--selected::before {
       background: var(--color-secondary);
+    }
+  }
+
+  &__group {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin: 0 -9px 0 11px;
+    gap: 0.2rem;
+    padding: 5px 10px;
+    border-radius: 13px;
+    background: color-mix(in srgb, var(--color-secondary) 5%, transparent);
+    transition: var(--standard-transition);
+
+    .external svg {
+      transition: var(--standard-transition);
+    }
+
+    &:not(&--collapsed) {
+      & > .jenkins-sidebar__item {
+        color: var(--color-secondary) !important;
+        pointer-events: none;
+
+        &::before {
+          opacity: 0 !important;
+        }
+      }
+
+      .external svg {
+        rotate: 90deg;
+      }
+
+      .jenkins-sidebar__item {
+        margin: 0;
+      }
+    }
+
+    &__children {
+      display: flex;
+      flex-direction: column;
+      gap: 0.2rem;
+      transition: margin 0s;
+
+      & > .jenkins-sidebar__item {
+        margin: 0 !important;
+      }
+    }
+
+    &--collapsed {
+      background: transparent;
+      margin: 0;
+      padding: 0;
+
+      .jenkins-sidebar__group__children {
+        display: none !important;
+      }
     }
   }
 }
