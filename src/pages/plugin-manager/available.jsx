@@ -13,17 +13,16 @@ import Aurora from "../../components/Aurora";
 export default function Available() {
   return (
     <div className={'app-plugin-manager'}>
-      <div className={"jenkins-breadcrumbs"} style={{"margin": "30px 30px 0 30px"}}>
-        <Link to={"/"} className={"jenkins-breadcrumb"} style={{"opacity": 0}}>Settings</Link>
-      </div>
-      <div className={"big-search-bar"}>
-        <SearchOutline />
-        Search available plugins
+      <div className={'sticky-app-bar'}>
+        <div className={"big-search-bar"}>
+          <SearchOutline/>
+          Search available plugins
+        </div>
       </div>
 
       <div className={'app-plugin-manager-carousel'}>
         <div>
-          <Aurora opacity={0.75} />
+          <Aurora opacity={0.75}/>
           <div className={'carousel-tags'}>
             <h1>Trending</h1>
             <h1>250K downloads</h1>

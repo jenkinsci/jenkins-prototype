@@ -28,12 +28,11 @@ export default function UpdatesAndInstalled() {
 
   return (
     <div className={'app-plugin-manager'}>
-      <div className={"jenkins-breadcrumbs"} style={{"margin": "30px 30px 0 30px"}}>
-        <Link to={"/"} className={"jenkins-breadcrumb"} style={{"opacity": 0}}>Settings</Link>
-      </div>
-      <div className={"big-search-bar"}>
-        <SearchOutline />
-        Search updates and installed plugins
+      <div className={'sticky-app-bar'}>
+        <div className={"big-search-bar"}>
+          <SearchOutline />
+          Search updates and installed plugins
+        </div>
       </div>
       <table className={"jenkins-table"}>
         <thead>
