@@ -20,32 +20,39 @@ function PipelineSyntax() {
   const directives = [
     {
       label: 'Agent',
+      script: 'agent',
       description: 'Specify the agent on which a Pipeline or individual stage will run',
       selected: true,
     },
     {
       label: 'Environment',
+      script: 'environment',
       description: 'Specify one or more environment variables to make available in this Pipeline or stage',
     },
     {
       label: 'Input',
+      script: 'input',
       description: 'Specify an input step to run at the beginning of a stage',
     },
     {
       label: 'Matrix',
+      script: 'matrix',
       description: 'Specify what the matrix contents should be',
     },
     {
-      label: 'Agent 2',
-      description: 'Specify the2 agent on which a Pipeline or individual stage will run',
+      label: 'Options',
+      script: 'options',
+      description: 'Specify one or more options, including appropriate job properties',
     },
     {
-      label: 'Agent 2',
-      description: 'Specify the2 agent on which a Pipeline or individual stage will run',
+      label: 'Parameters',
+      script: 'parameters',
+      description: 'Specify one or more job parameters. Users will be prompted to enter values for the parameters or choose the default values',
     },
     {
-      label: 'Agent 2',
-      description: 'Specify the2 agent on which a Pipeline or individual stage will run',
+      label: 'Post Stage or Build Conditions',
+      script: 'post',
+      description: 'Specify one or more post conditions to be evaluated after the stage or build completes, if the condition is satisfied',
     },
     {
       label: 'Agent 2',
