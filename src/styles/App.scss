@@ -588,3 +588,59 @@ h1 {
     transform: rotate(360deg);
   }
 }
+
+.ebs-preview {
+  position: relative;
+  height: 350px;
+  background-image: url('https://ci.jenkins.io/job/Core/job/jenkins/job/master/badge/icon?subject=Custom%20Subject&status=Any%20State&color=darkturquoise');
+  background-position: center;
+  background-size: 240px;
+  background-repeat: no-repeat;
+  border-radius: 1rem;
+  z-index: 0;
+  overflow: hidden;
+  margin-top: 30px;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: color-mix(in srgb, var(--color-secondary) 10%, transparent);
+    opacity: 0.5;
+    z-index: -1;
+  }
+
+  //&::after {
+  //  content: "";
+  //  position: absolute;
+  //  inset: 0;
+  //  backdrop-filter: blur(20px);
+  //  z-index: -1;
+  //}
+}
+
+.ebs-url {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.1rem;
+  gap: 2rem;
+  background: color-mix(in srgb, var(--color-secondary) 10%, transparent);
+  border-radius: 10px;
+  font-size: var(--font-6);
+  cursor: pointer;
+
+  span {
+    display: contents;
+  }
+
+  svg {
+    width: 1rem !important;
+    height: 1rem !important;
+
+    * {
+      color: var(--foreground-color);
+      stroke-width: 40px;
+    }
+  }
+}

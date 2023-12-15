@@ -43,10 +43,10 @@ export default function Project() {
           </a>
           <Link to={"/project/configure"} className={"jenkins-button"}>Configure</Link>
           <Overflow>
-            <a>
+            <Link to={"/project/embeddable-build-status"}>
               <ShieldOutline/>
               Embeddable Build Status
-            </a>
+            </Link>
             <Link to={"/project/pipeline-syntax"}>
               <HelpCircleOutline/>
               Pipeline Syntax
