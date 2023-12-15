@@ -35,6 +35,7 @@ import TestResultsPage from "./pages/project/TestResults";
 import TestCoveragePage from "./pages/project/TestCoverage";
 import ArtifactsPage from "./pages/build/ArtifactsPage";
 import Folder from "./pages/Folder";
+import PipelineSyntax from "./pages/project/PipelineSyntax";
 
 function App() {
 
@@ -154,6 +155,7 @@ function App() {
             <Route path="/build-monitor" element={<BuildMonitor/>} />
             <Route path="/folder" element={<Folder/>} />
             <Route path="/project/configure" element={<ProjectSettings/>} />
+            <Route path="/project/pipeline-syntax" element={<PipelineSyntax/>} />
             <Route path="/project/stageview" element={<StageviewPage />} />
             <Route path="/project/build-history" element={<BuildHistoryPage />} />
             <Route path="/project/build/:number" element={<Build/>} />

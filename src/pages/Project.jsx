@@ -1,6 +1,6 @@
 import {Link} from "react-router-dom";
 import {
-  CheckmarkCircleOutline, CheckmarkOutline, CloseCircleOutline,
+  CheckmarkCircleOutline, CheckmarkOutline, CloseCircleOutline, HelpCircleOutline,
   LogoGithub,
   PlayOutline,
   SearchOutline,
@@ -44,9 +44,13 @@ export default function Project() {
           <Link to={"/project/configure"} className={"jenkins-button"}>Configure</Link>
           <Overflow>
             <a>
-              <ShieldOutline />
+              <ShieldOutline/>
               Embeddable Build Status
             </a>
+            <Link to={"/project/pipeline-syntax"}>
+              <HelpCircleOutline/>
+              Pipeline Syntax
+            </Link>
           </Overflow>
         </div>
       </div>
