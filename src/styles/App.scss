@@ -309,6 +309,16 @@ h1 {
   min-height: 100vh;
   margin-bottom: 2rem;
 
+  .jenkins-app-bar {
+    margin: 30px 0 0 30px;
+  }
+
+  hr {
+    margin: 10px 0 10px 20px;
+    border: 0.25px solid var(--color-secondary);
+    opacity: 0.1;
+  }
+
   &__heading {
     font-size: var(--font-6);
     font-weight: 600;
