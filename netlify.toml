@@ -1,0 +1,10 @@
+[build]
+    command = "npm install && npm run build"
+    publish = "build"
+    functions = "functions"
+
+[context.deploy-preview]
+    command = "/usr/local/bin/netlify-deploy --siteName "jenkins-prototype-pr" --title "Preview deploy for ${CHANGE_ID}" --alias "deploy-preview-${CHANGE_ID}" -d ./build/"
+
+[context.branch-deploy]
+    command = "/usr/local/bin/netlify-deploy --siteName "jenkins-prototype" --title "Preview main branch" --alias "deploy-preview-main" -d ./build/"
