@@ -20,7 +20,6 @@ import tippyProps from "../data/tooltips";
 import people from "../data/people";
 import Avatar from "../components/Avatar";
 import Card from "../components/Card";
-import PassingIcon from "../components/icons/PassingIcon";
 import builds from "../data/builds";
 
 function Build() {

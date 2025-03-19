@@ -1,7 +1,6 @@
 import {Link, useParams} from "react-router-dom";
 import {CopyOutline, DownloadOutline, SearchOutline} from "react-ionicons";
 import TerminalText from "../../terminal";
-import builds from "../../data/builds";
 
 export default function ConsolePage() {
   let { number } = useParams();

@@ -6,7 +6,7 @@ export default function GitHub() {
   const [loaded, setLoaded] = useState(false);
   const items = [
     {
-      icon: <img src={"https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Jenkins_logo.svg/1200px-Jenkins_logo.svg.png"} />,
+      icon: <img alt="Jenkins logo" src={"https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Jenkins_logo.svg/1200px-Jenkins_logo.svg.png"} />,
       name: "Jenkins",
       description: "Jenkins automation server"
     },
@@ -16,7 +16,7 @@ export default function GitHub() {
       description: "Jenkins Dark Theme"
     },
     {
-      icon: <img src={"https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Jenkins_logo.svg/1200px-Jenkins_logo.svg.png"} />,
+      icon: <img alt="Jenkins logo" src={"https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Jenkins_logo.svg/1200px-Jenkins_logo.svg.png"} />,
       name: "Jenkins Prototype",
       description: "Prototype of Jenkins UI",
       locked: true

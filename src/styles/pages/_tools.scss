@@ -42,7 +42,7 @@
 .tool-row {
   display: grid;
   grid-template-columns: 200px 1fr;
-  align-items: start;
+  align-items: flex-start;
   justify-content: start;
 
   padding: 1rem 1.1rem;

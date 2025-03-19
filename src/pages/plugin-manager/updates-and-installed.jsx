@@ -3,29 +3,6 @@ import {SearchOutline} from "react-ionicons";
 import plugins from "../../data/plugins";
 
 export default function UpdatesAndInstalled() {
-  const updates = [
-    {
-      name: "Credentials",
-      released: "16 hours ago",
-      description: "This plugin allows you to store credentials in Jenkins."
-    },
-    {
-      name: "SSH Credentials",
-      released: "16 hours ago",
-      description: "Allows storage of SSH credentials in Jenkins"
-    },
-    {
-      name: "JUnit",
-      released: "16 hours ago",
-      description: "Allows JUnit-format test results to be published."
-    },
-    {
-      name: "GitHub",
-      released: "16 hours ago",
-      description: "Integrates GitHub into Jenkins"
-    }
-  ]
-
   return (
     <div className={'app-plugin-manager'}>
       <div className={'sticky-app-bar'}>

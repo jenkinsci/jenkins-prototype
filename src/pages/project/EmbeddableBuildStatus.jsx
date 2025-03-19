@@ -1,19 +1,10 @@
 import {
-  AccessibilityOutline,
-  AlbumsOutline,
   CopyOutline,
-  ExtensionPuzzleOutline, HelpCircleOutline,
-  SearchOutline,
-  SettingsOutline
+  HelpCircleOutline,
 } from 'react-ionicons'
 import {Link} from "react-router-dom";
-import people from "../../data/people";
 
 function EmbeddableBuildStatus() {
-  const types = [
-    'Markdown', 'Link', 'HTML', 'Asciidoc', 'Confluence', 'XWiki', 'RDoc', 'Textile', 'Bitbucket', 'Plain text'
-  ]
-
   return (
     <div className="jenkins-body" style={{'padding': '2rem 0 0 0'}}>
       <div className={"jenkins-breadcrumbs"} style={{"margin": "30px 30px 0 30px"}}>
