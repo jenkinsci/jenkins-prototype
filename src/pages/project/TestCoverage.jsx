@@ -1,9 +1,7 @@
 import {Link, useParams} from "react-router-dom";
-import builds from "../../data/builds";
 
 export default function TestCoveragePage() {
   let { number } = useParams();
-  const build = builds.find(b => b.name === number);
 
   return (
     <div className={"jenkins-body"}>

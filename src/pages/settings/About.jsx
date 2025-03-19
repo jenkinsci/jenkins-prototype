@@ -9,7 +9,7 @@ export default function About() {
         <div className="jenkins-app-bar__content"><h1 className="app-about-heading">Jenkins</h1><p
           className="app-about-version">Version 2.396-SNAPSHOT</p></div>
         <div className="jenkins-app-bar__controls"><a href="https://www.jenkins.io/participate/"
-                                                      className="jenkins-button" target="_blank">
+                                                      className="jenkins-button" target="_blank" rel="noreferrer">
           <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 0 512 512"><title></title>
             <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"
                   d="M368 368L144 144M368 144L144 368"></path>

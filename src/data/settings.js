@@ -13,7 +13,7 @@ import {
   PowerOutline,
   ReloadOutline,
   ServerOutline,
-  SettingsOutline, StorefrontOutline,
+  SettingsOutline,
   TerminalOutline
 } from "react-ionicons";
 

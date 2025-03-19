@@ -1,7 +1,6 @@
 import {Link} from "react-router-dom";
 import {
   BrushOutline,
-  ColorPaletteOutline,
   DownloadOutline, GitBranchOutline, HammerOutline,
   HandLeftOutline,
   LayersOutline,

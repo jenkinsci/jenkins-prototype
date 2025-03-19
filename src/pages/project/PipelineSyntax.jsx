@@ -1,4 +1,4 @@
-import {AccessibilityOutline, AlbumsOutline, ExtensionPuzzleOutline, SettingsOutline} from 'react-ionicons'
+import {SettingsOutline} from 'react-ionicons'
 import {Link} from "react-router-dom";
 
 function PipelineSyntax() {

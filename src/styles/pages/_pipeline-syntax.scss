@@ -55,7 +55,7 @@ $ps-gap: 2rem;
       .ps-item {
         gap: 0.6rem;
         padding: 0.9rem 1.15rem !important;
-        align-items: start !important;
+        align-items: flex-start !important;
         margin-left: 0.3rem;
 
         span:last-of-type {

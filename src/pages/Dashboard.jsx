@@ -26,7 +26,7 @@ function Dashboard() {
       <div className="jenkins-app-bar">
         <div className={"jenkins-app-bar__content"}>
           <div className="rotating-title">
-            <p>{ hour < 12 && "Morning" || hour < 18 && "Afternoon" || "Evening" } Jan</p>
+            <p>{ (hour < 12 && "Morning") || (hour < 18 && "Afternoon") || "Evening" } Jan</p>
             <p>Jenkins</p>
           </div>
           <h1>Dashboard</h1>

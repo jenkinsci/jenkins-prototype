@@ -1,10 +1,6 @@
 import {
   AddOutline,
-  ChevronForwardOutline,
   ChevronUpOutline,
-  FingerPrintOutline, NewspaperOutline,
-  PencilOutline,
-  ScanCircleOutline, SunnyOutline
 } from "react-ionicons";
 import Overflow from "../../components/Overflow";
 

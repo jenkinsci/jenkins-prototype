@@ -1,10 +1,8 @@
 import {Link, useParams} from "react-router-dom";
-import builds from "../../data/builds";
 import {DownloadOutline} from "react-ionicons";
 
 export default function ArtifactsPage() {
   let { number } = useParams();
-  const build = builds.find(b => b.name === number);
 
   return (
     <div className={"jenkins-body"}>
