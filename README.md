@@ -10,4 +10,4 @@ Run `npm start`
 
 ## Preview the prototype
 
-https://jenkins-redesign.vercel.app
+https://jenkins-prototype.netlify.app/
