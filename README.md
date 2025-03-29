@@ -10,4 +10,4 @@ Run `npm start`
 
 ## Preview the prototype
 
-https://jenkins-prototype.netlify.app/
+https://jenkins-prototype.netlify.app
